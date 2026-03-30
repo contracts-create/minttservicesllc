@@ -26,7 +26,7 @@ nav ul{list-style:none;display:flex;gap:32px;}
 nav ul a{text-decoration:none;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
 nav ul a:hover{color:var(--mint);}
 section{padding:96px 6%;}
-.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding-top:40px;}
+.hero{min-height:88vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding-top:40px;gap:60px;}
 .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,160,0.10) 0%,transparent 70%);pointer-events:none;}
 .hero-logo-wrap{margin-bottom:40px;display:inline-block;}
 .hero-logo-wrap img{height:120px;width:auto;display:block;}
@@ -86,6 +86,12 @@ section{padding:96px 6%;}
 footer{background:var(--navy);border-top:1px solid var(--border);padding:28px 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
 .footer-logo{height:36px;width:auto;background:#fff;padding:4px 10px;border-radius:4px;}
 footer p{font-size:12px;color:var(--muted);font-weight:300;}
+.hero-left{display:flex;flex-direction:column;justify-content:center;}
+.hero-right{display:flex;flex-direction:column;justify-content:center;padding-left:40px;border-left:1px solid var(--border);}
+.hero-mission{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3.5vw,48px);line-height:1.1;color:var(--white);margin-bottom:24px;letter-spacing:1px;}
+.hero-mission em{font-style:normal;color:var(--mint);}
+.hero-mission-sub{font-size:15px;font-weight:300;color:var(--muted);line-height:1.9;}
+@media(max-width:900px){.hero{grid-template-columns:1fr;}.hero-right{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:32px;margin-top:8px;}}
 @media(max-width:900px){.what-grid,.steps{grid-template-columns:1fr 1fr;}.supply-inner,.contact-inner,.serve-grid{grid-template-columns:1fr;gap:48px;}nav ul{display:none;}}
 @media(max-width:540px){.what-grid,.steps,.serve-grid{grid-template-columns:1fr;}}
 </style>
@@ -104,14 +110,20 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;}
 </nav>
 
 <section class="hero">
-  <div class="hero-logo-wrap">
-    <img src="logo.png" alt="Mintt Services LLC">
+  <div class="hero-left">
+    <div class="hero-logo-wrap">
+      <img src="logo.png" alt="Mintt Services LLC">
+    </div>
+    <p class="hero-sub">Procurement and logistics solutions for organizations and institutions.</p>
+    <p class="hero-capability">Focused on cost-effective sourcing, reliable fulfillment, and scalable supply solutions.</p>
+    <div class="btn-row">
+      <a href="#contact" class="cta-primary">Request a Quote</a>
+      <a href="#what" class="cta-ghost">See What We Do</a>
+    </div>
   </div>
-  <p class="hero-sub">Procurement and logistics solutions for organizations and institutions.</p>
-  <p class="hero-capability">Focused on cost-effective sourcing, reliable fulfillment, and scalable supply solutions.</p>
-  <div class="btn-row">
-    <a href="#contact" class="cta-primary">Request a Quote</a>
-    <a href="#what" class="cta-ghost">See What We Do</a>
+  <div class="hero-right">
+    <p class="hero-mission">We connect organizations with the products they need, on time and within budget.</p>
+    <p class="hero-mission-sub">From bulk apparel to safety equipment, Mintt Services LLC handles sourcing, coordination, and fulfillment so you can focus on your mission.</p>
   </div>
 </section>
 
