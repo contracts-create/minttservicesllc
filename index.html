@@ -28,8 +28,8 @@ nav ul a:hover{color:var(--mint);}
 section{padding:96px 6%;}
 .hero{min-height:88vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding-top:40px;gap:60px;}
 .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,160,0.10) 0%,transparent 70%);pointer-events:none;}
-.hero-logo-wrap{margin-bottom:40px;display:inline-block;}
-.hero-logo-wrap img{height:120px;width:auto;display:block;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--mint);border:1px solid var(--border);padding:6px 16px;border-radius:2px;margin-bottom:36px;width:fit-content;}
+.eyebrow::before{content:'';width:6px;height:6px;background:var(--mint);border-radius:50%;display:block;}
 .hero-sub{font-size:18px;font-weight:300;color:var(--muted);max-width:520px;margin-bottom:24px;line-height:1.8;}
 .hero-capability{font-size:13px;font-weight:400;color:var(--muted);max-width:540px;margin-bottom:48px;border-left:2px solid var(--border);padding-left:16px;font-style:italic;}
 .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
@@ -111,9 +111,7 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;}
 
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-logo-wrap">
-      <img src="logo.png" alt="Mintt Services LLC">
-    </div>
+    <div class="eyebrow">Procurement &amp; Logistics</div>
     <p class="hero-sub">Procurement and logistics solutions for organizations and institutions.</p>
     <p class="hero-capability">Focused on cost-effective sourcing, reliable fulfillment, and scalable supply solutions.</p>
     <div class="btn-row">
