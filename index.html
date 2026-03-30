@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mintt Services LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0A0F1E;
+  --navy-mid:#111827;
+  --navy-card:#0E1422;
+  --mint:#00D4A0;
+  --mint-dim:#00A87E;
+  --white:#F5F7FA;
+  --muted:#8B96A8;
+  --border:rgba(0,212,160,0.18);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);line-height:1.6;}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,15,30,0.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav-logo{height:48px;width:auto;display:block;background:#fff;padding:4px 10px;border-radius:4px;}
+nav ul{list-style:none;display:flex;gap:32px;}
+nav ul a{text-decoration:none;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+nav ul a:hover{color:var(--mint);}
+section{padding:96px 6%;}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding-top:40px;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,160,0.10) 0%,transparent 70%);pointer-events:none;}
+.hero-logo-wrap{margin-bottom:40px;background:#fff;display:inline-block;padding:16px 28px;border-radius:6px;}
+.hero-logo-wrap img{height:80px;width:auto;display:block;}
+.hero-sub{font-size:18px;font-weight:300;color:var(--muted);max-width:520px;margin-bottom:24px;line-height:1.8;}
+.hero-capability{font-size:13px;font-weight:400;color:var(--muted);max-width:540px;margin-bottom:48px;border-left:2px solid var(--border);padding-left:16px;font-style:italic;}
+.btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+.cta-primary{display:inline-block;background:var(--mint);color:var(--navy);font-weight:500;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:15px 32px;border-radius:2px;text-decoration:none;transition:background 0.2s,transform 0.15s;}
+.cta-primary:hover{background:var(--mint-dim);transform:translateY(-2px);}
+.cta-ghost{display:inline-block;color:var(--white);border:1px solid var(--border);font-weight:400;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:15px 32px;border-radius:2px;text-decoration:none;transition:border-color 0.2s,color 0.2s;}
+.cta-ghost:hover{border-color:var(--mint);color:var(--mint);}
+.what{background:var(--navy-mid);}
+.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--mint);margin-bottom:16px;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,5vw,58px);letter-spacing:1px;color:var(--white);margin-bottom:16px;line-height:1;}
+.section-sub{font-size:16px;color:var(--muted);max-width:540px;font-weight:300;line-height:1.8;margin-bottom:56px;}
+.what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.what-card{background:var(--navy);padding:36px 28px;border-top:2px solid transparent;transition:border-color 0.2s;}
+.what-card:hover{border-color:var(--mint);}
+.what-num{font-family:'Bebas Neue',sans-serif;font-size:42px;color:rgba(0,212,160,0.12);margin-bottom:14px;display:block;}
+.what-card h3{font-size:16px;font-weight:500;color:var(--white);margin-bottom:10px;}
+.what-card p{font-size:13px;color:var(--muted);line-height:1.8;font-weight:300;}
+.supply{background:var(--navy);}
+.supply-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.supply-list{display:flex;flex-direction:column;}
+.supply-item{display:flex;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--border);font-size:15px;font-weight:400;color:var(--white);transition:color 0.2s;}
+.supply-item:last-child{border-bottom:none;}
+.supply-item::before{content:'';flex-shrink:0;width:6px;height:6px;background:var(--mint);border-radius:50%;}
+.supply-item:hover{color:var(--mint);}
+.serve{background:var(--navy-mid);}
+.serve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
+.serve-card{background:var(--navy-card);padding:40px 32px;border-top:2px solid transparent;transition:border-color 0.2s;}
+.serve-card:hover{border-color:var(--mint);}
+.serve-icon{font-size:28px;margin-bottom:16px;display:block;}
+.serve-card h3{font-size:17px;font-weight:500;color:var(--white);margin-bottom:8px;}
+.serve-card p{font-size:13px;color:var(--muted);line-height:1.8;font-weight:300;}
+.how{background:var(--navy);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.step{background:var(--navy-mid);padding:36px 28px;border-top:2px solid transparent;transition:border-color 0.2s;}
+.step:hover{border-color:var(--mint);}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:52px;color:rgba(0,212,160,0.10);line-height:1;margin-bottom:12px;}
+.step h3{font-size:15px;font-weight:500;color:var(--white);margin-bottom:8px;}
+.step p{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300;}
+.contact{background:var(--navy-mid);}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-info{display:flex;flex-direction:column;gap:32px;}
+.contact-badge{display:inline-block;background:rgba(0,212,160,0.08);border:1px solid var(--border);color:var(--mint);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border-radius:2px;margin-bottom:8px;}
+.c-item .label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mint);margin-bottom:6px;}
+.c-item a,.c-item p{font-size:16px;color:var(--white);text-decoration:none;font-weight:300;}
+.c-item a:hover{color:var(--mint);}
+.contact-form{display:flex;flex-direction:column;gap:14px;}
+.contact-form input,.contact-form select,.contact-form textarea{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:2px;padding:13px 16px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;outline:none;transition:border-color 0.2s;width:100%;appearance:none;}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--muted);}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--mint);}
+.contact-form select option{background:var(--navy-mid);color:var(--white);}
+.contact-form textarea{min-height:110px;resize:vertical;}
+.submit-btn{background:var(--mint);color:var(--navy);border:none;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:15px 32px;border-radius:2px;cursor:pointer;transition:background 0.2s;width:fit-content;}
+.submit-btn:hover{background:var(--mint-dim);}
+footer{background:var(--navy);border-top:1px solid var(--border);padding:28px 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{height:36px;width:auto;background:#fff;padding:4px 10px;border-radius:4px;}
+footer p{font-size:12px;color:var(--muted);font-weight:300;}
+@media(max-width:900px){.what-grid,.steps{grid-template-columns:1fr 1fr;}.supply-inner,.contact-inner,.serve-grid{grid-template-columns:1fr;gap:48px;}nav ul{display:none;}}
+@media(max-width:540px){.what-grid,.steps,.serve-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <img src="logo.png" class="nav-logo" alt="Mintt Services LLC">
+  <ul>
+    <li><a href="#what">Services</a></li>
+    <li><a href="#supply">Supply</a></li>
+    <li><a href="#serve">Clients</a></li>
+    <li><a href="#how">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-logo-wrap">
+    <img src="logo.png" alt="Mintt Services LLC">
+  </div>
+  <p class="hero-sub">Procurement and logistics solutions for organizations and institutions.</p>
+  <p class="hero-capability">Focused on cost-effective sourcing, reliable fulfillment, and scalable supply solutions.</p>
+  <div class="btn-row">
+    <a href="#contact" class="cta-primary">Request a Quote</a>
+    <a href="#what" class="cta-ghost">See What We Do</a>
+  </div>
+</section>
+
+<section class="what" id="what">
+  <div class="section-label">What We Do</div>
+  <h2 class="section-title">Simple. Direct. Efficient.</h2>
+  <p class="section-sub">We help organizations source and deliver bulk goods efficiently, reducing cost and lead time through established supplier relationships.</p>
+  <div class="what-grid">
+    <div class="what-card"><span class="what-num">01</span><h3>Bulk Product Sourcing</h3><p>We identify and secure the right products at scale, leveraging supplier relationships to keep your costs down.</p></div>
+    <div class="what-card"><span class="what-num">02</span><h3>Vendor Coordination</h3><p>We manage supplier communication, contracts, and timelines so your team stays focused on operations.</p></div>
+    <div class="what-card"><span class="what-num">03</span><h3>Order Fulfillment Support</h3><p>From purchase order to delivery, we track and manage each step to keep your supply chain on schedule.</p></div>
+  </div>
+</section>
+
+<section class="supply" id="supply">
+  <div class="supply-inner">
+    <div>
+      <div class="section-label">What We Supply</div>
+      <h2 class="section-title">Products We Source</h2>
+      <p class="section-sub">We work across a range of product categories to meet the operational needs of our clients.</p>
+    </div>
+    <div class="supply-list">
+      <div class="supply-item">Apparel and Uniforms</div>
+      <div class="supply-item">Wristbands and Event Materials</div>
+      <div class="supply-item">Safety Equipment</div>
+      <div class="supply-item">Office and Facility Supplies</div>
+    </div>
+  </div>
+</section>
+
+<section class="serve" id="serve">
+  <div class="section-label">Who We Serve</div>
+  <h2 class="section-title">Our Clients</h2>
+  <p class="section-sub">We work with organizations that need reliable, scalable sourcing without the overhead of managing it internally.</p>
+  <div class="serve-grid">
+    <div class="serve-card"><span class="serve-icon">🏛</span><h3>Government Agencies</h3><p>Federal, state, and local agencies that require procurement partners with documented processes and compliance awareness.</p></div>
+    <div class="serve-card"><span class="serve-icon">🎓</span><h3>Schools and Districts</h3><p>K-12 districts and higher education institutions sourcing supplies, uniforms, and operational materials at scale.</p></div>
+    <div class="serve-card"><span class="serve-icon">🎟</span><h3>Event Organizers</h3><p>Organizations that need wristbands, branded materials, and event supplies delivered on tight timelines.</p></div>
+    <div class="serve-card"><span class="serve-icon">🏢</span><h3>Businesses</h3><p>Companies looking to consolidate vendor relationships and reduce procurement costs across product categories.</p></div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="section-label">How We Work</div>
+  <h2 class="section-title">Our Process</h2>
+  <p class="section-sub">Four steps from initial need to final delivery.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">01</div><h3>Identify the Need</h3><p>We review your requirements, quantities, and delivery timeline to scope the order accurately.</p></div>
+    <div class="step"><div class="step-num">02</div><h3>Source from Vetted Suppliers</h3><p>We match your need to the right supplier from our established network, prioritizing cost and reliability.</p></div>
+    <div class="step"><div class="step-num">03</div><h3>Manage Order and Delivery</h3><p>We handle purchase orders, logistics coordination, and delivery tracking from start to finish.</p></div>
+    <div class="step"><div class="step-num">04</div><h3>Ensure Quality and Timelines</h3><p>We confirm delivery, verify product quality, and follow up to make sure everything meets your expectations.</p></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-label">Contact</div>
+  <h2 class="section-title">Start the Conversation</h2>
+  <br>
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="contact-badge">We respond within 24 hours</div>
+      <div class="c-item">
+        <div class="label">Email</div>
+        <a href="mailto:contracts@minttservices.com">contracts@minttservices.com</a>
+      </div>
+      <div class="c-item">
+        <div class="label">Phone</div>
+        <a href="tel:+17025181813">(702) 518-1813</a>
+      </div>
+      <div class="c-item">
+        <div class="label">Location</div>
+        <p>Las Vegas, NV</p>
+      </div>
+    </div>
+    <div class="contact-form">
+      <input type="text" placeholder="Your name">
+      <input type="email" placeholder="Email address">
+      <input type="text" placeholder="Organization or agency name">
+      <select>
+        <option value="" disabled selected>What do you need?</option>
+        <option>Bulk product sourcing</option>
+        <option>Vendor coordination</option>
+        <option>Order fulfillment support</option>
+        <option>Other</option>
+      </select>
+      <textarea placeholder="Describe your need, quantity, and timeline"></textarea>
+      <button class="submit-btn">Send Request</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="logo.png" class="footer-logo" alt="Mintt Services LLC">
+  <p>Las Vegas, NV &nbsp;|&nbsp; (702) 518-1813 &nbsp;|&nbsp; contracts@minttservices.com</p>
+  <p>© 2026 Mintt Services LLC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
