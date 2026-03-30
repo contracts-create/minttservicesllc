@@ -218,18 +218,25 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;}
   </div>
 </section>
 
-<footer>
+<footer style="text-align:center; padding:20px 0; font-size:14px; color:#ccc;">
   <img src="logo.png" class="footer-logo" alt="Mintt Services LLC">
-  <footer style="text-align:center; padding:20px 0; font-size:14px; color:#ccc;">
-  <p>© <span id="year"></span> Mintt Services LLC. All rights reserved.
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+
+  <p>
+    © <span id="year"></span> Mintt Services LLC. All rights reserved.
+  </p>
+
   <p>Las Vegas, NV</p>
+
   <p>
     <a href="/privacy.html" style="color:#ccc; text-decoration:none; margin:0 10px;">Privacy Policy</a> |
     <a href="/terms.html" style="color:#ccc; text-decoration:none; margin:0 10px;">Terms of Use</a>
   </p>
+
   <p style="font-size:12px; color:#888;">
     DUNS, UEI, and SAM registration available upon request.
   </p>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
