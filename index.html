@@ -196,6 +196,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .footer-links{display:flex;gap:16px;}
 .footer-links a{color:var(--muted);text-decoration:none;font-size:10px;transition:color 0.2s;}
 .footer-links a:hover{color:var(--gold);}
+.email-copy{font-size:14px;color:var(--white);cursor:pointer;font-weight:400;position:relative;display:inline-flex;align-items:center;gap:8px;}
+.email-copy:hover{color:var(--green);}
+.copy-tip{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+.email-copy:hover .copy-tip{color:var(--green);}
 .footer-copy{font-size:10px;color:#3A3A4A;}
 @media(max-width:1024px){.services-layout{grid-template-columns:1fr;}.services-nav{flex-direction:row;flex-wrap:wrap;position:static;margin-bottom:16px;}.rfq-layout{grid-template-columns:1fr;}}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.hero-right{border-left:none;border-top:1px solid var(--teal-border);padding-left:0;padding-top:24px;margin-top:8px;}.stats-grid,.teaming-grid,.steps-grid{grid-template-columns:1fr 1fr;}.cred-logos,.cred-grid{grid-template-columns:1fr 1fr;}.naics-grid,.serve-grid,.contact-layout,.svc-grid{grid-template-columns:1fr;}.page-indicator{display:none;}.nav-links{display:none;}.hamburger{display:flex;}}
@@ -387,7 +391,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="rfq-sla">4 Hours<span>Government RFQ response guarantee, business hours</span></div>
       <p class="rfq-detail">Submit your requirements directly. Include part numbers, quantities, delivery timelines, and any SOW or specifications. We review every government submission personally and respond within 4 business hours.</p>
       <div class="rfq-contacts">
-        <div class="rfq-contact-item"><div class="rlabel">Government &amp; Contracts</div><a href="mailto:contracts@minttservices.com" style="font-size:14px;color:var(--white);text-decoration:none;">contracts@minttservices.com</a></div>
+        <div class="rfq-contact-item"><div class="rlabel">Government &amp; Contracts</div><span class="email-copy" onclick="copyEmail(this,'contracts@minttservices.com')">contracts@minttservices.com <span class="copy-tip">click to copy</span></span></div>
         <div class="rfq-contact-item"><div class="rlabel">Direct Line</div><a href="tel:+17025181813">(702) 518-1813</a></div>
       </div>
     </div>
@@ -432,8 +436,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="section-line"></div>
   <div class="contact-layout" style="margin-bottom:48px;">
     <div class="contact-info">
-      <div class="c-item"><div class="clabel">General Email</div><a href="mailto:info@minttservices.com" style="font-size:14px;color:var(--white);text-decoration:none;font-weight:400;">info@minttservices.com</a></div>
-      <div class="c-item"><div class="clabel">Government &amp; Contracts</div><a href="mailto:contracts@minttservices.com" style="font-size:14px;color:var(--white);text-decoration:none;font-weight:400;">contracts@minttservices.com</a></div>
+      <div class="c-item"><div class="clabel">General Email</div><span class="email-copy" onclick="copyEmail(this,'info@minttservices.com')">info@minttservices.com <span class="copy-tip">click to copy</span></span></div>
+      <div class="c-item"><div class="clabel">Government &amp; Contracts</div><span class="email-copy" onclick="copyEmail(this,'contracts@minttservices.com')">contracts@minttservices.com <span class="copy-tip">click to copy</span></span></div>
       <div class="c-item"><div class="clabel">Phone</div><a href="tel:+17025181813">(702) 518-1813</a></div>
       <div class="c-item"><div class="clabel">Location</div><p>Las Vegas, NV</p></div>
       <div class="c-item"><div class="clabel">Hours</div><p>Monday &ndash; Friday, 9am &ndash; 5pm PST</p></div>
@@ -536,6 +540,16 @@ function closeMenu(page) {
   spans[1].style.opacity = '1';
   spans[2].style.transform = '';
   setTimeout(() => { document.getElementById(page).scrollIntoView({behavior:'smooth'}); }, 100);
+}
+
+function copyEmail(el, email) {
+  navigator.clipboard.writeText(email).then(function(){
+    const tip = el.querySelector('.copy-tip');
+    const orig = tip.textContent;
+    tip.textContent = 'copied!';
+    el.style.color = 'var(--green)';
+    setTimeout(function(){ tip.textContent = orig; el.style.color = ''; }, 2000);
+  });
 }
 
 function showFileName(input, labelId) {
