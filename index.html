@@ -391,7 +391,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="rfq-sla">4 Hours<span>Government RFQ response guarantee, business hours</span></div>
       <p class="rfq-detail">Submit your requirements directly. Include part numbers, quantities, delivery timelines, and any SOW or specifications. We review every government submission personally and respond within 4 business hours.</p>
       <div class="rfq-contacts">
-        <div class="rfq-contact-item"><div class="rlabel">Government &amp; Contracts</div><span class="email-copy" onclick="copyEmail(this,'contracts@minttservices.com')"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="294a46475d5b484a5d5a694440475d5d5a4c5b5f404a4c5a074a4644">[email&#160;protected]</a> <span class="copy-tip">click to copy</span></span></div>
+        <div class="rfq-contact-item"><div class="rlabel">Government &amp; Contracts</div><span class="email-copy" data-email="contracts@minttservices.com" data-user="contracts" data-domain="minttservices.com"> <span class="copy-tip">click to copy</span></span></div>
         <div class="rfq-contact-item"><div class="rlabel">Direct Line</div><a href="tel:+17025181813">(702) 518-1813</a></div>
       </div>
     </div>
@@ -418,7 +418,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
         <div class="dollar-wrap"><input type="number" name="estimated_value" min="0" step="100" placeholder="Estimated value (optional)" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:2px;padding:11px 14px 11px 26px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;width:100%;appearance:none;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='rgba(255,255,255,0.07)'"></div>
       </div>
       <textarea name="requirements" placeholder="Describe your requirement: item, NSN or part number, quantity, delivery location, and any special requirements *" required></textarea>
-      <p style="font-size:11px;color:var(--muted);padding:4px 0;">To attach a SOW or requirements document, email it directly to <span class="email-copy" onclick="copyEmail(this,'contracts@minttservices.com')" style="font-size:11px;">contracts@minttservices.com <span class="copy-tip">click to copy</span></span></p>
+      <p style="font-size:11px;color:var(--muted);padding:4px 0;">To attach a SOW or requirements document, email it directly to <span class="email-copy" data-user="contracts" data-domain="minttservices.com" style="font-size:11px;"><span class="copy-tip">click to copy</span></span></p>
       <button type="submit" class="rfq-submit">Submit RFQ</button>
       <div id="rfqSuccess" style="display:none;background:rgba(76,175,111,0.1);border:1px solid var(--green);border-radius:2px;padding:16px;color:var(--green);font-size:13px;text-align:center;">✓ Your RFQ has been submitted. We will respond within 4 business hours.</div>
       <div id="rfqError" style="display:none;background:rgba(212,60,60,0.1);border:1px solid #D43C3C;border-radius:2px;padding:16px;color:#D43C3C;font-size:13px;text-align:center;">Something went wrong. Please email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c5a6aaabb1b7a4a6b1b685a8acabb1b1b6a0b7b3aca6a0b6eba6aaa8">[email&#160;protected]</a> directly.</div>
@@ -433,8 +433,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="section-line"></div>
   <div class="contact-layout" style="margin-bottom:48px;">
     <div class="contact-info">
-      <div class="c-item"><div class="clabel">General Email</div><span class="email-copy" onclick="copyEmail(this,'info@minttservices.com')"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="553c3b333a15383c3b2121263027233c3630267b363a38">[email&#160;protected]</a> <span class="copy-tip">click to copy</span></span></div>
-      <div class="c-item"><div class="clabel">Government &amp; Contracts</div><span class="email-copy" onclick="copyEmail(this,'contracts@minttservices.com')"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fa9995948e889b998e89ba9793948e8e899f888c93999f89d4999597">[email&#160;protected]</a> <span class="copy-tip">click to copy</span></span></div>
+      <div class="c-item"><div class="clabel">General Email</div><span class="email-copy" data-email="info@minttservices.com" data-user="info" data-domain="minttservices.com"> <span class="copy-tip">click to copy</span></span></div>
+      <div class="c-item"><div class="clabel">Government &amp; Contracts</div><span class="email-copy" data-email="contracts@minttservices.com" data-user="contracts" data-domain="minttservices.com"> <span class="copy-tip">click to copy</span></span></div>
       <div class="c-item"><div class="clabel">Phone</div><a href="tel:+17025181813">(702) 518-1813</a></div>
       <div class="c-item"><div class="clabel">Location</div><p>Las Vegas, NV</p></div>
       <div class="c-item"><div class="clabel">Hours</div><p>Monday &ndash; Friday, 9am &ndash; 5pm PST</p></div>
@@ -473,6 +473,12 @@ window.addEventListener('load', function(){
   document.getElementById('panel-procurement').style.display='block';
   document.getElementById('panel-supply').style.display='none';
   document.getElementById('panel-naics').style.display='none';
+  document.querySelectorAll('.email-copy[data-user]').forEach(function(el) {
+    const email = el.getAttribute('data-user') + '@' + el.getAttribute('data-domain');
+    const tip = el.querySelector('.copy-tip');
+    el.insertBefore(document.createTextNode(email + ' '), tip);
+    el.addEventListener('click', function(){ copyEmail(el, email); });
+  });
 });
 
 const pages = document.querySelectorAll('.snap-section');
@@ -541,25 +547,24 @@ function closeMenu(page) {
 
 function copyEmail(el, email) {
   const tip = el.querySelector('.copy-tip');
-  const orig = tip.textContent;
   function success() {
     tip.textContent = 'copied!';
+    tip.style.color = '#4CAF6F';
     el.style.color = 'var(--green)';
-    setTimeout(function(){ tip.textContent = orig; el.style.color = ''; }, 2000);
+    setTimeout(function(){ tip.textContent = 'click to copy'; tip.style.color = ''; el.style.color = ''; }, 2000);
   }
-  if(navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(email).then(success).catch(fallback);
-  } else { fallback(); }
   function fallback() {
     const ta = document.createElement('textarea');
     ta.value = email;
     ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0;';
     document.body.appendChild(ta);
-    ta.focus();
-    ta.select();
-    try { document.execCommand('copy'); success(); } catch(e) { tip.textContent = 'use ctrl+c'; }
+    ta.focus(); ta.select();
+    try { if(document.execCommand('copy')) success(); else tip.textContent = 'use ctrl+c'; } catch(e) { tip.textContent = 'use ctrl+c'; }
     document.body.removeChild(ta);
   }
+  if(navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(email).then(success).catch(fallback);
+  } else { fallback(); }
 }
 
 function showFileName(input, labelId) {
