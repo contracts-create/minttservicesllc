@@ -83,7 +83,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .svc-tab:hover{color:var(--white);border-color:var(--teal);}
 .svc-tab.active{color:var(--white);border-color:var(--green);background:rgba(76,175,111,0.06);}
 .svc-panel{display:none;}
-.svc-panel.active{display:block;}
 .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
 .svc-card{background:var(--navy-card);padding:24px;border-top:2px solid transparent;transition:border-color 0.2s;}
 .svc-card:hover{border-color:var(--green);}
@@ -165,8 +164,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .contact-form textarea{min-height:90px;resize:vertical;}
 .contact-submit{background:var(--green);color:var(--navy);border:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:12px 24px;border-radius:2px;cursor:pointer;transition:background 0.2s;width:fit-content;}
 .contact-submit:hover{background:var(--green-dim);}
-.copy-btn{background:rgba(76,175,111,0.15);border:1px solid var(--teal-border);color:var(--green);font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;margin-left:6px;}
-.copy-btn:hover{background:rgba(76,175,111,0.25);}
 .site-footer{background:var(--navy);border-top:1px solid var(--gold-border);padding:36px 5%;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;position:relative;z-index:1;}
 .footer-logo{height:48px;width:auto;}
 .footer-story{font-size:12px;color:var(--muted);max-width:400px;line-height:1.8;}
@@ -366,9 +363,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="rfq-contacts">
         <div class="rfq-contact-item">
           <div class="rlabel">Government &amp; Contracts</div>
-          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-            <a href="mailto:contracts@minttservices.com" style="font-size:14px;color:var(--white);text-decoration:none;">contracts&#64;minttservices&#46;com</a>
-          </div>
+          <a href="mailto:contracts@minttservices.com">contracts&#64;minttservices&#46;com</a>
         </div>
         <div class="rfq-contact-item"><div class="rlabel">Direct Line</div><a href="tel:+17025181813">(702) 518-1813</a></div>
       </div>
@@ -411,18 +406,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="section-line"></div>
   <div class="contact-layout" style="margin-bottom:48px;">
     <div class="contact-info">
-      <div class="c-item">
-        <div class="clabel">General Email</div>
-        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-          <a href="mailto:info@minttservices.com">info&#64;minttservices&#46;com</a>
-        </div>
-      </div>
-      <div class="c-item">
-        <div class="clabel">Government &amp; Contracts</div>
-        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-          <a href="mailto:contracts@minttservices.com">contracts&#64;minttservices&#46;com</a>
-        </div>
-      </div>
+      <div class="c-item"><div class="clabel">General Email</div><a href="mailto:info@minttservices.com">info&#64;minttservices&#46;com</a></div>
+      <div class="c-item"><div class="clabel">Government &amp; Contracts</div><a href="mailto:contracts@minttservices.com">contracts&#64;minttservices&#46;com</a></div>
       <div class="c-item"><div class="clabel">Phone</div><a href="tel:+17025181813">(702) 518-1813</a></div>
       <div class="c-item"><div class="clabel">Location</div><p>Las Vegas, NV</p></div>
       <div class="c-item"><div class="clabel">Hours</div><p>Monday &ndash; Friday, 9am &ndash; 5pm PST</p></div>
@@ -566,3 +551,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 </body>
+</html>
