@@ -221,17 +221,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     <li><a href="#contact" data-page="contact">Contact</a></li>
     <li><a href="#rfq" class="nav-rfq" data-page="rfq">Submit RFQ</a></li>
   </ul>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+  <div class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#home" onclick="closeMenu('home')">Home</a>
-  <a href="#services" onclick="closeMenu('services')">Services</a>
-  <a href="#clients" onclick="closeMenu('clients')">Clients</a>
-  <a href="#credentials" onclick="closeMenu('credentials')">Credentials</a>
-  <a href="#contact" onclick="closeMenu('contact')">Contact</a>
-  <a href="#rfq" class="mob-rfq" onclick="closeMenu('rfq')">Submit RFQ</a>
+  <a href="#home" data-page-target="home">Home</a>
+  <a href="#services" data-page-target="services">Services</a>
+  <a href="#clients" data-page-target="clients">Clients</a>
+  <a href="#credentials" data-page-target="credentials">Credentials</a>
+  <a href="#contact" data-page-target="contact">Contact</a>
+  <a href="#rfq" class="mob-rfq" data-page-target="rfq">Submit RFQ</a>
 </div>
 
 <!-- HOME -->
@@ -282,9 +282,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="section-line"></div>
   <div class="services-layout">
     <div class="services-nav">
-      <button class="svc-tab active" onclick="showPanel('procurement',this)">Procurement</button>
-      <button class="svc-tab" onclick="showPanel('supply',this)">Supply Categories</button>
-      <button class="svc-tab" onclick="showPanel('naics',this)">NAICS Codes</button>
+      <button class="svc-tab active" data-panel="procurement">Procurement</button>
+      <button class="svc-tab" data-panel="supply">Supply Categories</button>
+      <button class="svc-tab" data-panel="naics">NAICS Codes</button>
     </div>
     <div>
       <div class="svc-panel active" id="panel-procurement">
@@ -313,15 +313,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="svc-panel" id="panel-naics">
         <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Click any code to view the full description and size standard threshold.</p>
         <div class="naics-grid">
-          <button class="naics-card" onclick="toggleNaics(this)"><div class="naics-header"><span class="naics-code">541614<span class="naics-primary">Primary</span></span><span class="naics-name">Process, Physical Distribution &amp; Logistics Consulting</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Management consulting related to physical distribution, transportation, logistics, and supply chain management including procurement consulting and process optimization.</p><span class="naics-size">Size Standard: $25.5M average annual receipts</span></div></button>
-          <button class="naics-card" onclick="toggleNaics(this)"><div class="naics-header"><span class="naics-code">493110</span><span class="naics-name">General Warehousing and Storage</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Operating merchandise warehousing and storage facilities including general merchandise, refrigerated goods, and other warehouse products.</p><span class="naics-size">Size Standard: $34M average annual receipts</span></div></button>
-          <button class="naics-card" onclick="toggleNaics(this)"><div class="naics-header"><span class="naics-code">488510</span><span class="naics-name">Freight Transportation Arrangement</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Arranging transportation of freight between shippers and carriers. Includes freight forwarders, shipping agents, brokers, and customs brokers.</p><span class="naics-size">Size Standard: $20M average annual receipts</span></div></button>
-          <button class="naics-card" onclick="toggleNaics(this)"><div class="naics-header"><span class="naics-code">424990</span><span class="naics-name">Other Misc. Nondurable Goods Wholesalers</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Merchant wholesale distribution of miscellaneous nondurable goods including supplies, safety equipment, and consumables.</p><span class="naics-size">Size Standard: 250 employees</span></div></button>
-          <button class="naics-card" onclick="toggleNaics(this)"><div class="naics-header"><span class="naics-code">423990</span><span class="naics-name">Other Misc. Durable Goods Wholesalers</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Merchant wholesale distribution of miscellaneous durable goods including equipment, hardware, and other durable items.</p><span class="naics-size">Size Standard: 250 employees</span></div></button>
-          <button class="naics-card" onclick="toggleNaics(this)"><div class="naics-header"><span class="naics-code">339999</span><span class="naics-name">All Other Misc. Manufacturing</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Miscellaneous manufacturing including wristbands, novelty items, identification materials, and other manufactured goods.</p><span class="naics-size">Size Standard: 750 employees</span></div></button>
-          <button class="naics-card" onclick="toggleNaics(this)"><div class="naics-header"><span class="naics-code">561720</span><span class="naics-name">Janitorial Services</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Cleaning building interiors, transportation equipment interiors, and windows. Covers custodial, housekeeping, and facility sanitation services.</p><span class="naics-size">Size Standard: $22M average annual receipts</span></div></button>
-          <button class="naics-card" onclick="toggleNaics(this)"><div class="naics-header"><span class="naics-code">492110</span><span class="naics-name">Couriers and Express Delivery Services</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Air, surface, or combined courier and express delivery services covering local, regional, and national delivery of parcels and freight.</p><span class="naics-size">Size Standard: 1,500 employees</span></div></button>
-          <button class="naics-card" onclick="toggleNaics(this)"><div class="naics-header"><span class="naics-code">561110</span><span class="naics-name">Office Administrative Services</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Day-to-day office administrative services including records management, supply procurement coordination, and operational support.</p><span class="naics-size">Size Standard: $12M average annual receipts</span></div></button>
+          <button class="naics-card"><div class="naics-header"><span class="naics-code">541614<span class="naics-primary">Primary</span></span><span class="naics-name">Process, Physical Distribution &amp; Logistics Consulting</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Management consulting related to physical distribution, transportation, logistics, and supply chain management including procurement consulting and process optimization.</p><span class="naics-size">Size Standard: $25.5M average annual receipts</span></div></button>
+          <button class="naics-card"><div class="naics-header"><span class="naics-code">493110</span><span class="naics-name">General Warehousing and Storage</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Operating merchandise warehousing and storage facilities including general merchandise, refrigerated goods, and other warehouse products.</p><span class="naics-size">Size Standard: $34M average annual receipts</span></div></button>
+          <button class="naics-card"><div class="naics-header"><span class="naics-code">488510</span><span class="naics-name">Freight Transportation Arrangement</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Arranging transportation of freight between shippers and carriers. Includes freight forwarders, shipping agents, brokers, and customs brokers.</p><span class="naics-size">Size Standard: $20M average annual receipts</span></div></button>
+          <button class="naics-card"><div class="naics-header"><span class="naics-code">424990</span><span class="naics-name">Other Misc. Nondurable Goods Wholesalers</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Merchant wholesale distribution of miscellaneous nondurable goods including supplies, safety equipment, and consumables.</p><span class="naics-size">Size Standard: 250 employees</span></div></button>
+          <button class="naics-card"><div class="naics-header"><span class="naics-code">423990</span><span class="naics-name">Other Misc. Durable Goods Wholesalers</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Merchant wholesale distribution of miscellaneous durable goods including equipment, hardware, and other durable items.</p><span class="naics-size">Size Standard: 250 employees</span></div></button>
+          <button class="naics-card"><div class="naics-header"><span class="naics-code">339999</span><span class="naics-name">All Other Misc. Manufacturing</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Miscellaneous manufacturing including wristbands, novelty items, identification materials, and other manufactured goods.</p><span class="naics-size">Size Standard: 750 employees</span></div></button>
+          <button class="naics-card"><div class="naics-header"><span class="naics-code">561720</span><span class="naics-name">Janitorial Services</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Cleaning building interiors, transportation equipment interiors, and windows. Covers custodial, housekeeping, and facility sanitation services.</p><span class="naics-size">Size Standard: $22M average annual receipts</span></div></button>
+          <button class="naics-card"><div class="naics-header"><span class="naics-code">492110</span><span class="naics-name">Couriers and Express Delivery Services</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Air, surface, or combined courier and express delivery services covering local, regional, and national delivery of parcels and freight.</p><span class="naics-size">Size Standard: 1,500 employees</span></div></button>
+          <button class="naics-card"><div class="naics-header"><span class="naics-code">561110</span><span class="naics-name">Office Administrative Services</span><span class="naics-arrow">▼</span></div><div class="naics-body"><p>Day-to-day office administrative services including records management, supply procurement coordination, and operational support.</p><span class="naics-size">Size Standard: $12M average annual receipts</span></div></button>
         </div>
       </div>
     </div>
@@ -350,7 +350,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="teaming-card"><h3>Joint Ventures</h3><p>Partnering with established contractors to pursue set-aside contracts, expanding reach and capabilities for both parties.</p></div>
       <div class="teaming-card"><h3>Mentor-Protege</h3><p>Seeking experienced primes for SBA Mentor-Protege relationships to accelerate growth and expand contract vehicle access.</p></div>
     </div>
-    <span class="email-copy cta-green" data-ek="c" style="display:inline-block;padding:14px 28px;border-radius:2px;cursor:pointer;"><span class="copy-tip" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--navy);">Discuss a Teaming Opportunity</span></span>
+    <a href="mailto:contracts@minttservices.com" class="cta-green">Discuss a Teaming Opportunity</a>
   </div>
 </section>
 
@@ -394,11 +394,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="rfq-sla">4 Hours<span>Government RFQ response guarantee, business hours</span></div>
       <p class="rfq-detail">Submit your requirements directly. Include part numbers, quantities, delivery timelines, and any SOW or specifications. We review every government submission personally and respond within 4 business hours.</p>
       <div class="rfq-contacts">
-        <div class="rfq-contact-item"><div class="rlabel">Government &amp; Contracts</div><span class="email-copy" data-email="contracts@minttservices.com" data-ek="c"> <span class="copy-tip">click to copy</span></span></div>
+        <div class="rfq-contact-item"><div class="rlabel">Government &amp; Contracts</div><span style="font-size:14px;color:var(--white);">contracts&#64;minttservices&#46;com</span> <button class="copy-btn" data-copy="Y29udHJhY3RzQG1pbnR0c2VydmljZXMuY29t" style="background:rgba(76,175,111,0.15);border:1px solid var(--teal-border);color:var(--green);font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;">copy</button></div>
         <div class="rfq-contact-item"><div class="rlabel">Direct Line</div><a href="tel:+17025181813">(702) 518-1813</a></div>
       </div>
     </div>
-    <form class="rfq-form" id="rfqForm" action="https://formspree.io/f/xbdpazjr" method="POST" onsubmit="handleSubmit(event,'rfqForm','rfqSuccess')">
+    <form class="rfq-form" id="rfqForm" action="https://formspree.io/f/xbdpazjr" method="POST">
       <div class="rfq-row">
         <input type="text" name="name" placeholder="Your name *" required>
         <input type="text" name="agency" placeholder="Agency or organization *" required>
@@ -418,10 +418,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       </select>
       <div class="rfq-row">
         <input type="date" name="delivery_date" style="color-scheme:dark;" required>
-        <div class="dollar-wrap"><input type="number" name="estimated_value" min="0" step="100" placeholder="Estimated value (optional)" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:2px;padding:11px 14px 11px 26px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;width:100%;appearance:none;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='rgba(255,255,255,0.07)'"></div>
+        <div class="dollar-wrap"><input type="number" id="estimatedValue" name="estimated_value" min="0" step="100" placeholder="Estimated value (optional)" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:2px;padding:11px 14px 11px 26px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;width:100%;appearance:none;"></div>
       </div>
       <textarea name="requirements" placeholder="Describe your requirement: item, NSN or part number, quantity, delivery location, and any special requirements *" required></textarea>
-      <p style="font-size:11px;color:var(--muted);padding:4px 0;">To attach a SOW or requirements document, email it directly to <span class="email-copy" data-ek="c" style="font-size:11px;"><span class="copy-tip">click to copy</span></span></p>
+      <p style="font-size:11px;color:var(--muted);padding:4px 0;">To attach a SOW or requirements document, email it directly to <span style="color:var(--white);">contracts&#64;minttservices&#46;com</span> <button class="copy-btn" data-copy="Y29udHJhY3RzQG1pbnR0c2VydmljZXMuY29t" style="background:rgba(76,175,111,0.15);border:1px solid var(--teal-border);color:var(--green);font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;">copy</button></p>
       <button type="submit" class="rfq-submit">Submit RFQ</button>
       <div id="rfqSuccess" style="display:none;background:rgba(76,175,111,0.1);border:1px solid var(--green);border-radius:2px;padding:16px;color:var(--green);font-size:13px;text-align:center;">✓ Your RFQ has been submitted. We will respond within 4 business hours.</div>
       <div id="rfqError" style="display:none;background:rgba(212,60,60,0.1);border:1px solid #D43C3C;border-radius:2px;padding:16px;color:#D43C3C;font-size:13px;text-align:center;">Something went wrong. Please use the contact information on the left to reach us directly.</div>
@@ -436,13 +436,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="section-line"></div>
   <div class="contact-layout" style="margin-bottom:48px;">
     <div class="contact-info">
-      <div class="c-item"><div class="clabel">General Email</div><span class="email-copy" data-email="info@minttservices.com" data-ek="i"> <span class="copy-tip">click to copy</span></span></div>
-      <div class="c-item"><div class="clabel">Government &amp; Contracts</div><span class="email-copy" data-email="contracts@minttservices.com" data-ek="c"> <span class="copy-tip">click to copy</span></span></div>
+      <div class="c-item"><div class="clabel">General Email</div><span style="font-size:14px;color:var(--white);font-weight:400;">info&#64;minttservices&#46;com</span> <button class="copy-btn" data-copy="aW5mb0BtaW50dHNlcnZpY2VzLmNvbQ==" style="background:rgba(76,175,111,0.15);border:1px solid var(--teal-border);color:var(--green);font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;">copy</button></div>
+      <div class="c-item"><div class="clabel">Government &amp; Contracts</div><span style="font-size:14px;color:var(--white);font-weight:400;">contracts&#64;minttservices&#46;com</span> <button class="copy-btn" data-copy="Y29udHJhY3RzQG1pbnR0c2VydmljZXMuY29t" style="background:rgba(76,175,111,0.15);border:1px solid var(--teal-border);color:var(--green);font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;">copy</button></div>
       <div class="c-item"><div class="clabel">Phone</div><a href="tel:+17025181813">(702) 518-1813</a></div>
       <div class="c-item"><div class="clabel">Location</div><p>Las Vegas, NV</p></div>
       <div class="c-item"><div class="clabel">Hours</div><p>Monday &ndash; Friday, 9am &ndash; 5pm PST</p></div>
     </div>
-    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xojpnkvp" method="POST" onsubmit="handleSubmit(event,'contactForm','contactSuccess')">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xojpnkvp" method="POST">
       <input type="text" name="name" placeholder="Your name *" required>
       <input type="email" name="email" placeholder="Email address *" required>
       <input type="text" name="organization" placeholder="Organization or agency name *" required>
@@ -463,7 +463,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="site-footer" style="margin:0 -5%;width:calc(100% + 10%);">
     <img src="logo.png" class="footer-logo" alt="Mintt Services LLC">
     <p class="footer-story">Mintt is built from the initials of our founder's five children.<br>Mekhi, Izaiah, Nevaiah, Tyler, and Trenton.<br><em>It's not just a business. It's a legacy.</em></p>
-    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <span class="email-copy" data-ek="i" style="font-size:11px;"><span class="copy-tip" style="font-size:9px;">click to copy</span></span></p>
+    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <span style="color:var(--muted);">info&#64;minttservices&#46;com</span> <button class="copy-btn" data-copy="aW5mb0BtaW50dHNlcnZpY2VzLmNvbQ==" style="background:none;border:none;color:var(--muted);font-size:9px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:underline;">copy</button></p>
     <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
     <p class="footer-copy">&copy; <span id="year"></span> Mintt Services LLC. All rights reserved.</p>
   </div>
@@ -476,62 +476,65 @@ window.addEventListener('load', function(){
   document.getElementById('panel-procurement').style.display='block';
   document.getElementById('panel-supply').style.display='none';
   document.getElementById('panel-naics').style.display='none';
-  var emails = {
-    'i': ['aW5mb0BtaW50dHNlcnZpY2VzLmNvbQ==', 'info'],
-    'c': ['Y29udHJhY3RzQG1pbnR0c2VydmljZXMuY29t', 'contracts']
-  };
-  document.querySelectorAll('.email-copy[data-ek]').forEach(function(el) {
-    var key = el.getAttribute('data-ek');
-    var entry = emails[key];
-    if(!entry) return;
-    var email = atob(entry[0]);
-    var user = entry[1];
-    var domain = 'minttservices.com';
-    var tip = el.querySelector('.copy-tip');
-    var u = document.createElement('span');
-    u.textContent = user;
-    var a = document.createElement('span');
-    a.style.color = 'var(--gold)';
-    a.textContent = '[@]';
-    var d = document.createElement('span');
-    d.textContent = domain;
-    var confirm = document.createElement('span');
-    confirm.style.cssText = 'display:none;color:#4CAF6F;margin-left:8px;font-size:11px;';
-    confirm.textContent = '\u2713 copied';
-    el.insertBefore(u, tip);
-    el.insertBefore(a, tip);
-    el.insertBefore(d, tip);
-    el.appendChild(confirm);
-    el.addEventListener('click', function(){
-      function showConfirm() {
-        if(tip) tip.style.display = 'none';
-        confirm.style.display = 'inline';
-        el.style.color = '#4CAF6F';
-        setTimeout(function(){
-          if(tip) tip.style.display = '';
-          confirm.style.display = 'none';
-          el.style.color = '';
-        }, 2000);
+
+  var rfqForm = document.getElementById('rfqForm');
+  if(rfqForm) rfqForm.addEventListener('submit', function(e){ handleSubmit(e,'rfqForm','rfqSuccess'); });
+  var contactForm = document.getElementById('contactForm');
+  if(contactForm) contactForm.addEventListener('submit', function(e){ handleSubmit(e,'contactForm','contactSuccess'); });
+
+  document.querySelectorAll('.copy-btn[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var email = atob(btn.getAttribute('data-copy'));
+      var orig = btn.textContent;
+      function showConfirm(){
+        btn.textContent = '\u2713 copied';
+        btn.style.color = '#4CAF6F';
+        setTimeout(function(){ btn.textContent = orig; btn.style.color = ''; }, 2000);
       }
-      if(navigator.clipboard && window.isSecureContext) {
+      if(navigator.clipboard && window.isSecureContext){
         navigator.clipboard.writeText(email).then(showConfirm).catch(function(){
           var ta = document.createElement('textarea');
-          ta.value = email;
-          ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0;';
-          document.body.appendChild(ta);
-          ta.focus(); ta.select();
+          ta.value = email; ta.style.cssText = 'position:fixed;left:-9999px;opacity:0;';
+          document.body.appendChild(ta); ta.focus(); ta.select();
           try { document.execCommand('copy'); showConfirm(); } catch(e){}
           document.body.removeChild(ta);
         });
       } else {
         var ta = document.createElement('textarea');
-        ta.value = email;
-        ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0;';
-        document.body.appendChild(ta);
-        ta.focus(); ta.select();
+        ta.value = email; ta.style.cssText = 'position:fixed;left:-9999px;opacity:0;';
+        document.body.appendChild(ta); ta.focus(); ta.select();
         try { document.execCommand('copy'); showConfirm(); } catch(e){}
         document.body.removeChild(ta);
       }
+    });
+  });
+
+  document.getElementById('hamburger').addEventListener('click', toggleMenu);
+
+  document.querySelectorAll('.mobile-menu [data-page-target]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      closeMenu(this.getAttribute('data-page-target'));
+    });
+  });
+
+  document.querySelectorAll('.svc-tab[data-panel]').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var name = tab.getAttribute('data-panel');
+      ['procurement','supply','naics'].forEach(function(p){
+        var el = document.getElementById('panel-'+p);
+        if(el) el.style.display = (p===name) ? 'block' : 'none';
+      });
+      document.querySelectorAll('.svc-tab').forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.naics-card').forEach(function(card){
+    card.addEventListener('click', function(){
+      var isOpen = card.classList.contains('open');
+      document.querySelectorAll('.naics-card').forEach(function(c){ c.classList.remove('open'); });
+      if(!isOpen) card.classList.add('open');
     });
   });
 });
@@ -600,27 +603,6 @@ function closeMenu(page) {
   setTimeout(() => { document.getElementById(page).scrollIntoView({behavior:'smooth'}); }, 100);
 }
 
-function copyEmail(el, email) {
-  const tip = el.querySelector('.copy-tip');
-  function success() {
-    tip.textContent = 'copied!';
-    tip.style.color = '#4CAF6F';
-    el.style.color = 'var(--green)';
-    setTimeout(function(){ tip.textContent = 'click to copy'; tip.style.color = ''; el.style.color = ''; }, 2000);
-  }
-  function fallback() {
-    const ta = document.createElement('textarea');
-    ta.value = email;
-    ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0;';
-    document.body.appendChild(ta);
-    ta.focus(); ta.select();
-    try { if(document.execCommand('copy')) success(); else tip.textContent = 'use ctrl+c'; } catch(e) { tip.textContent = 'use ctrl+c'; }
-    document.body.removeChild(ta);
-  }
-  if(navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(email).then(success).catch(fallback);
-  } else { fallback(); }
-}
 
 function showFileName(input, labelId) {
   const label = document.getElementById(labelId);
