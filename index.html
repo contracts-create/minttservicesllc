@@ -83,7 +83,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .svc-tab:hover{color:var(--white);border-color:var(--teal);}
 .svc-tab.active{color:var(--white);border-color:var(--green);background:rgba(76,175,111,0.06);}
 .svc-panel{display:none;}
-#panel-procurement{display:block;}
+.svc-panel.active{display:block;}
 .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
 .svc-card{background:var(--navy-card);padding:24px;border-top:2px solid transparent;transition:border-color 0.2s;}
 .svc-card:hover{border-color:var(--green);}
@@ -257,7 +257,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <button class="svc-tab" data-panel="naics">NAICS Codes</button>
     </div>
     <div>
-      <div class="svc-panel" id="panel-procurement">
+      <div class="svc-panel active" id="panel-procurement">
         <div class="svc-grid">
           <div class="svc-card"><div class="svc-num">01</div><h3>Bulk Product Sourcing</h3><p>We identify and secure the right products at scale, leveraging supplier relationships to keep your costs down and delivery on schedule.</p></div>
           <div class="svc-card"><div class="svc-num">02</div><h3>Vendor Coordination</h3><p>We manage supplier communication, contracts, and timelines so your team stays focused on operations rather than procurement overhead.</p></div>
@@ -482,10 +482,10 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.svc-tab[data-panel]').forEach(function(tab) {
     tab.addEventListener('click', function() {
       var name = tab.getAttribute('data-panel');
-      document.querySelectorAll('.svc-panel').forEach(function(p) { p.style.display = 'none'; });
+      document.querySelectorAll('.svc-panel').forEach(function(p) { p.classList.remove('active'); });
       document.querySelectorAll('.svc-tab').forEach(function(t) { t.classList.remove('active'); });
       var panel = document.getElementById('panel-' + name);
-      if (panel) panel.style.display = 'block';
+      if (panel) panel.classList.add('active');
       tab.classList.add('active');
     });
   });
@@ -497,9 +497,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!isOpen) card.classList.add('open');
     });
   });
-
-  var pp = document.getElementById('panel-procurement');
-  if (pp) pp.style.display = 'block';
 
   var rfq = document.getElementById('rfqForm');
   if (rfq) rfq.addEventListener('submit', function(e) {
