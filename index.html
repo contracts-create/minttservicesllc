@@ -41,6 +41,12 @@ section{padding:80px 6%;}
 .hero-right{display:flex;flex-direction:column;justify-content:center;padding-left:40px;border-left:1px solid var(--border);}
 .hero-mission{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4vw,56px);line-height:1.05;color:var(--white);margin-bottom:24px;letter-spacing:1px;}
 .hero-mission-sub{font-size:15px;font-weight:300;color:var(--muted);line-height:1.9;}
+.trust-bar{background:var(--navy-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 6%;}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;}
+.trust-badge{display:flex;align-items:center;gap:10px;}
+.trust-icon{color:var(--mint);font-size:10px;}
+.trust-text{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.trust-divider{width:1px;height:20px;background:var(--border);}
 .what{background:var(--navy-mid);}
 .section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--mint);margin-bottom:16px;}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,5vw,58px);letter-spacing:1px;color:var(--white);margin-bottom:16px;line-height:1;}
@@ -105,7 +111,7 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;}
   .supply-inner,.contact-inner,.serve-grid{grid-template-columns:1fr;gap:48px;}
   nav ul{display:none;}
 }
-@media(max-width:540px){.what-grid,.steps,.serve-grid{grid-template-columns:1fr;}}
+@media(max-width:540px){.what-grid,.steps,.serve-grid{grid-template-columns:1fr;}.trust-divider{display:none;}.trust-inner{gap:16px;}}
 </style>
 </head>
 <body id="top">
@@ -137,6 +143,30 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;}
   </div>
 </section>
 
+<section class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-badge">
+      <span class="trust-icon">✦</span>
+      <span class="trust-text">Minority-Owned Business</span>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-badge">
+      <span class="trust-icon">✦</span>
+      <span class="trust-text">Small Business</span>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-badge">
+      <span class="trust-icon">✦</span>
+      <span class="trust-text">SAM Registered</span>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-badge">
+      <span class="trust-icon">✦</span>
+      <span class="trust-text">Nevada Licensed</span>
+    </div>
+  </div>
+</section>
+
 <section class="what" id="what">
   <div class="section-label">What We Do</div>
   <h2 class="section-title">Simple. Direct. Efficient.</h2>
@@ -153,103 +183,4 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;}
     <div>
       <div class="section-label">What We Supply</div>
       <h2 class="section-title">Products We Source</h2>
-      <p class="section-sub">We work across a range of product categories to meet the operational needs of our clients.</p>
-    </div>
-    <div class="supply-list">
-      <div class="supply-item">Government and Military Supply</div>
-      <div class="supply-item">Apparel and Uniforms</div>
-      <div class="supply-item">Wristbands and Event Materials</div>
-      <div class="supply-item">Safety Equipment</div>
-      <div class="supply-item">Office and Facility Supplies</div>
-    </div>
-  </div>
-</section>
-
-<section class="serve" id="serve">
-  <div class="section-label">Who We Serve</div>
-  <h2 class="section-title">Our Clients</h2>
-  <p class="section-sub">We work with organizations that need reliable, scalable sourcing without the overhead of managing it internally.</p>
-  <div class="serve-grid">
-    <div class="serve-card"><span class="serve-icon">🏛</span><h3>Government Agencies</h3><p>Federal, state, and local agencies that require procurement partners with documented processes and compliance awareness.</p></div>
-    <div class="serve-card"><span class="serve-icon">🎓</span><h3>Schools and Districts</h3><p>K-12 districts and higher education institutions sourcing supplies, uniforms, and operational materials at scale.</p></div>
-    <div class="serve-card"><span class="serve-icon">🎟</span><h3>Event Organizers</h3><p>Organizations that need wristbands, branded materials, and event supplies delivered on tight timelines.</p></div>
-    <div class="serve-card"><span class="serve-icon">🏢</span><h3>Businesses</h3><p>Companies looking to consolidate vendor relationships and reduce procurement costs across product categories.</p></div>
-  </div>
-</section>
-
-<section class="how" id="how">
-  <div class="section-label">How We Work</div>
-  <h2 class="section-title">Our Process</h2>
-  <p class="section-sub">Four steps from initial need to final delivery.</p>
-  <div class="steps">
-    <div class="step"><div class="step-num">01</div><h3>Identify the Need</h3><p>We review your requirements, quantities, and delivery timeline to scope the order accurately.</p></div>
-    <div class="step"><div class="step-num">02</div><h3>Source from Vetted Suppliers</h3><p>We match your need to the right supplier from our established network, prioritizing cost and reliability.</p></div>
-    <div class="step"><div class="step-num">03</div><h3>Manage Order and Delivery</h3><p>We handle purchase orders, logistics coordination, and delivery tracking from start to finish.</p></div>
-    <div class="step"><div class="step-num">04</div><h3>Ensure Quality and Timelines</h3><p>We confirm delivery, verify product quality, and follow up to make sure everything meets your expectations.</p></div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="section-label">Contact</div>
-  <h2 class="section-title">Start the Conversation</h2>
-  <br>
-  <div class="contact-inner">
-    <div class="contact-info">
-      <div class="contact-badge">We respond within 24 hours</div>
-      <div class="c-item">
-        <div class="label">Email</div>
-        <p>info&#64;minttservices&#46;com</p>
-      </div>
-      <div class="c-item">
-        <div class="label">Phone</div>
-        <a href="tel:+17025181813">(702) 518-1813</a>
-      </div>
-      <div class="c-item">
-        <div class="label">Location</div>
-        <p>Las Vegas, NV</p>
-      </div>
-      <div class="c-item">
-        <div class="label">Hours</div>
-        <p>Monday &ndash; Friday, 9am &ndash; 5pm PST</p>
-      </div>
-      <div class="c-item">
-        <div class="label">Capabilities Statement</div>
-        <a href="/MinttServices_CapabilitiesStatement.pdf" download class="cap-download">Download Capabilities Statement</a>
-      </div>
-    </div>
-    <div class="contact-form">
-      <input type="text" placeholder="Your name">
-      <input type="email" placeholder="Email address">
-      <input type="text" placeholder="Organization or agency name">
-      <select>
-        <option value="" disabled selected>What do you need?</option>
-        <option>Bulk product sourcing</option>
-        <option>Vendor coordination</option>
-        <option>Order fulfillment support</option>
-        <option>Other</option>
-      </select>
-      <textarea placeholder="Describe your need, quantity, and timeline"></textarea>
-      <button class="submit-btn">Send Request</button>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <img src="logo.png" class="footer-logo" alt="Mintt Services LLC">
-  <p class="footer-story">
-    Mintt is built from the initials of our founder's five children.<br>
-    Mekhi, Izaiah, Nevaiah, Tyler, and Trenton.<br>
-    <span>It's not just a business. It's a legacy.</span>
-  </p>
-  <p>Las Vegas, NV &nbsp;|&nbsp; (702) 518-1813 &nbsp;|&nbsp; info&#64;minttservices&#46;com</p>
-  <div class="footer-links">
-    <a href="/privacy.html">Privacy Policy</a> |
-    <a href="/terms.html">Terms of Use</a>
-  </div>
-  <p class="footer-sam">UEI, and SAM registration available upon request.</p>
-  <p>&copy; <span id="year"></span> Mintt Services LLC. All rights reserved.</p>
-</footer>
-
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+      <p class="sect
