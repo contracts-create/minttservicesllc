@@ -458,10 +458,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   </div>
 </section>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false">
 document.getElementById('year').textContent = new Date().getFullYear();
-const fe=document.getElementById('footerEmail');
-if(fe){const p=['i','n','f','o'];const d=['m','i','n','t','t','s','e','r','v','i','c','e','s','.','c','o','m'];const e=p.join('')+'@'+d.join('');const a=document.createElement('a');a.href='mail'+'to:'+e;a.textContent=e;a.style.color='var(--muted)';a.style.textDecoration='none';fe.appendChild(a);}
+window.addEventListener('load', function(){
+  const fe=document.getElementById('footerEmail');
+  if(fe){
+    const e='info'+'@'+'minttservices'+'.com';
+    const a=document.createElement('a');
+    a.setAttribute('href','mai'+'lto:'+e);
+    a.textContent=e;
+    a.style.color='var(--muted)';
+    a.style.textDecoration='none';
+    fe.appendChild(a);
+  }
+});
 const pages = document.querySelectorAll('.snap-section');
 const indicator = document.getElementById('pageIndicator');
 pages.forEach((page,i) => {
