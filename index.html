@@ -87,6 +87,9 @@ section{padding:80px 6%;}
 .contact-form textarea{min-height:110px;resize:vertical;}
 .submit-btn{background:var(--mint);color:var(--navy);border:none;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:15px 32px;border-radius:2px;cursor:pointer;transition:background 0.2s;width:fit-content;}
 .submit-btn:hover{background:var(--mint-dim);}
+.cap-download{display:inline-flex;align-items:center;gap:10px;background:rgba(0,212,160,0.08);border:1px solid var(--border);color:var(--mint);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:12px 20px;border-radius:2px;text-decoration:none;transition:background 0.2s,border-color 0.2s;width:fit-content;}
+.cap-download:hover{background:rgba(0,212,160,0.16);border-color:var(--mint);}
+.cap-download::before{content:'↓';font-size:14px;}
 footer{background:var(--navy);border-top:1px solid var(--border);padding:48px 6%;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;}
 .footer-logo{height:60px;width:auto;}
 .footer-story{font-size:13px;color:var(--muted);font-weight:300;max-width:480px;line-height:1.8;}
@@ -153,6 +156,7 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;}
       <p class="section-sub">We work across a range of product categories to meet the operational needs of our clients.</p>
     </div>
     <div class="supply-list">
+      <div class="supply-item">Government and Military Supply</div>
       <div class="supply-item">Apparel and Uniforms</div>
       <div class="supply-item">Wristbands and Event Materials</div>
       <div class="supply-item">Safety Equipment</div>
@@ -207,6 +211,10 @@ footer p{font-size:12px;color:var(--muted);font-weight:300;}
       <div class="c-item">
         <div class="label">Hours</div>
         <p>Monday &ndash; Friday, 9am &ndash; 5pm PST</p>
+      </div>
+      <div class="c-item">
+        <div class="label">Capabilities Statement</div>
+        <a href="/MinttServices_CapabilitiesStatement.pdf" download class="cap-download">Download Capabilities Statement</a>
       </div>
     </div>
     <div class="contact-form">
