@@ -452,7 +452,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="site-footer" style="margin:0 -5%;width:calc(100% + 10%);">
     <img src="logo.png" class="footer-logo" alt="Mintt Services LLC">
     <p class="footer-story">Mintt is built from the initials of our founder's five children.<br>Mekhi, Izaiah, Nevaiah, Tyler, and Trenton.<br><em>It's not just a business. It's a legacy.</em></p>
-    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <span id="footerEmail" style="color:var(--muted);cursor:pointer;text-decoration:none;"></span></p>
+    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <span onclick="window.location='mai'+'lto:'+'inf'+'o@'+'minttservices.com'" style="color:var(--muted);cursor:pointer;text-decoration:underline;">inf<!-- -->o&#64;minttservices&#46;com</span></p>
     <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
     <p class="footer-copy">&copy; <span id="year"></span> Mintt Services LLC. All rights reserved.</p>
   </div>
@@ -463,14 +463,19 @@ document.getElementById('year').textContent = new Date().getFullYear();
 window.addEventListener('load', function(){
   const fe=document.getElementById('footerEmail');
   if(fe){
-    const e='info'+'@'+'minttservices'+'.com';
+    const c=[105,110,102,111,64,109,105,110,116,116,115,101,114,118,105,99,101,115,46,99,111,109];
+    const e=c.map(x=>String.fromCharCode(x)).join('');
+    const h=[109,97,105,108,116,111,58];
+    const href=h.map(x=>String.fromCharCode(x)).join('')+e;
     const a=document.createElement('a');
-    a.setAttribute('href','mai'+'lto:'+e);
+    a.setAttribute('href',href);
     a.textContent=e;
-    a.style.color='var(--muted)';
-    a.style.textDecoration='none';
+    a.style.cssText='color:var(--muted);text-decoration:none;';
     fe.appendChild(a);
   }
+  document.getElementById('panel-procurement').style.display='block';
+  document.getElementById('panel-supply').style.display='none';
+  document.getElementById('panel-naics').style.display='none';
 });
 const pages = document.querySelectorAll('.snap-section');
 const indicator = document.getElementById('pageIndicator');
@@ -501,10 +506,14 @@ function toggleNaics(card){
 }
 
 function showPanel(name, tab) {
-  document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.svc-tab').forEach(t => t.classList.remove('active'));
-  const panel = document.getElementById('panel-' + name);
-  if(panel) panel.classList.add('active');
+  const panels = ['procurement','supply','naics'];
+  panels.forEach(function(p){
+    const el = document.getElementById('panel-'+p);
+    if(el) el.style.display = (p === name) ? 'block' : 'none';
+  });
+  document.querySelectorAll('.svc-tab').forEach(function(t){
+    t.classList.remove('active');
+  });
   tab.classList.add('active');
 }
 
