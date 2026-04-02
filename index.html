@@ -14,12 +14,12 @@
   --navy-card:#0E1422;
   --mint:#3DBE6C;
   --mint-dim:#2EA058;
-  --warm:#E8D5A3;
-  --warm-dim:#C9B67A;
+  --warm:#D4AF37;
+  --warm-dim:#B8960C;
   --white:#F5F7FA;
   --muted:#A0ABBE;
   --border:rgba(61,190,108,0.15);
-  --warm-border:rgba(240,220,170,0.2);
+  --warm-border:rgba(212,175,55,0.25);
 }
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);line-height:1.6;}
@@ -32,7 +32,7 @@ nav ul a:hover{color:var(--warm);}
 
 .hero{min-height:62vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding:72px 6%;gap:60px;}
 .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:700px;height:700px;background:radial-gradient(circle,rgba(61,190,108,0.06) 0%,transparent 65%);pointer-events:none;}
-.hero::after{content:'';position:absolute;bottom:-60px;left:10%;width:400px;height:400px;background:radial-gradient(circle,rgba(240,220,170,0.04) 0%,transparent 65%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-60px;left:10%;width:400px;height:400px;background:radial-gradient(circle,rgba(212,175,55,0.04) 0%,transparent 65%);pointer-events:none;}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--warm);border:1px solid var(--warm-border);padding:6px 16px;border-radius:2px;margin-bottom:28px;width:fit-content;}
 .eyebrow::before{content:'';width:5px;height:5px;background:var(--warm);border-radius:50%;display:block;}
 .hero-sub{font-size:17px;font-weight:400;color:var(--muted);max-width:500px;margin-bottom:20px;line-height:1.8;}
@@ -65,7 +65,7 @@ section{padding:72px 6%;}
 .what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
 .what-card{background:var(--navy);padding:32px 28px;border-top:2px solid transparent;transition:border-color 0.2s;}
 .what-card:hover{border-color:var(--warm);}
-.what-num{font-family:'Bebas Neue',sans-serif;font-size:38px;color:rgba(232,213,163,0.12);margin-bottom:12px;display:block;}
+.what-num{font-family:'Bebas Neue',sans-serif;font-size:38px;color:rgba(212,175,55,0.12);margin-bottom:12px;display:block;}
 .what-card h3{font-size:15px;font-weight:500;color:var(--white);margin-bottom:8px;}
 .what-card p{font-size:13px;color:var(--muted);line-height:1.8;font-weight:400;}
 
@@ -81,23 +81,37 @@ section{padding:72px 6%;}
 .serve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
 .serve-card{background:var(--navy-card);padding:36px 32px;border-left:3px solid transparent;transition:border-color 0.2s,background 0.2s;display:flex;gap:24px;align-items:flex-start;}
 .serve-card:hover{border-color:var(--warm);background:#0D1320;}
-.serve-icon-wrap{flex-shrink:0;width:52px;height:52px;background:rgba(232,213,163,0.06);border:1px solid var(--warm-border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.serve-icon-wrap{flex-shrink:0;width:52px;height:52px;background:rgba(212,175,55,0.06);border:1px solid var(--warm-border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;}
 .serve-content{display:flex;flex-direction:column;}
 .serve-card h3{font-size:16px;font-weight:500;color:var(--white);margin-bottom:8px;}
 .serve-card p{font-size:13px;color:var(--muted);line-height:1.8;font-weight:400;}
+
+.why{background:var(--navy);}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.why-card{background:var(--navy-mid);padding:32px 28px;border-top:2px solid transparent;transition:border-color 0.2s;}
+.why-card:hover{border-color:var(--warm);}
+.why-stat{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--warm);line-height:1;margin-bottom:8px;}
+.why-card h3{font-size:14px;font-weight:500;color:var(--white);margin-bottom:8px;letter-spacing:0.3px;}
+.why-card p{font-size:13px;color:var(--muted);line-height:1.8;font-weight:400;}
+
+.credentials{background:var(--navy-mid);}
+.cred-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.cred-card{background:var(--navy-card);padding:24px 20px;border-top:2px solid var(--warm-border);text-align:center;}
+.cred-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--warm);margin-bottom:8px;}
+.cred-value{font-size:14px;font-weight:500;color:var(--white);}
 
 .how{background:var(--navy);}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
 .step{background:var(--navy-mid);padding:32px 24px;border-top:2px solid transparent;transition:border-color 0.2s;}
 .step:hover{border-color:var(--warm);}
-.step-num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(232,213,163,0.10);line-height:1;margin-bottom:10px;}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(212,175,55,0.10);line-height:1;margin-bottom:10px;}
 .step h3{font-size:14px;font-weight:500;color:var(--white);margin-bottom:8px;}
 .step p{font-size:13px;color:var(--muted);line-height:1.7;font-weight:400;}
 
 .contact{background:var(--navy-mid);}
 .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
 .contact-info{display:flex;flex-direction:column;gap:28px;}
-.contact-badge{display:inline-block;background:rgba(232,213,163,0.07);border:1px solid var(--warm-border);color:var(--warm);font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border-radius:2px;margin-bottom:4px;}
+.contact-badge{display:inline-block;background:rgba(212,175,55,0.08);border:1px solid var(--warm-border);color:var(--warm);font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border-radius:2px;margin-bottom:4px;}
 .c-item .label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--warm);margin-bottom:6px;}
 .c-item a,.c-item p{font-size:15px;color:var(--white);text-decoration:none;font-weight:400;}
 .c-item a:hover{color:var(--mint);}
@@ -109,7 +123,7 @@ section{padding:72px 6%;}
 .contact-form textarea{min-height:100px;resize:vertical;}
 .submit-btn{background:var(--mint);color:var(--navy);border:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;border-radius:2px;cursor:pointer;transition:background 0.2s;width:fit-content;}
 .submit-btn:hover{background:var(--mint-dim);}
-.cap-download{display:inline-flex;align-items:center;gap:10px;background:var(--warm);color:var(--navy);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:12px 20px;border-radius:2px;text-decoration:none;transition:background 0.2s;width:fit-content;}
+.cap-download{display:inline-flex;align-items:center;gap:10px;background:var(--warm);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:12px 20px;border-radius:2px;text-decoration:none;transition:background 0.2s;width:fit-content;}
 .cap-download:hover{background:var(--warm-dim);}
 .cap-download::before{content:'↓';font-size:13px;}
 
@@ -125,13 +139,15 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;}
   .hero-right{border-left:none;border-top:1px solid var(--warm-border);padding-left:0;padding-top:32px;margin-top:8px;}
-  .what-grid,.steps{grid-template-columns:1fr 1fr;}
+  .what-grid,.steps,.why-grid{grid-template-columns:1fr 1fr;}
+  .cred-grid{grid-template-columns:1fr 1fr;}
   .supply-inner,.contact-inner{grid-template-columns:1fr;gap:48px;}
   .serve-grid{grid-template-columns:1fr;}
   nav ul{display:none;}
 }
 @media(max-width:540px){
-  .what-grid,.steps{grid-template-columns:1fr;}
+  .what-grid,.steps,.why-grid{grid-template-columns:1fr;}
+  .cred-grid{grid-template-columns:1fr 1fr;}
   .trust-divider{display:none;}
   .trust-inner{gap:14px;}
   .serve-card{flex-direction:column;gap:16px;}
@@ -154,7 +170,7 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
 <section class="hero">
   <div class="hero-left">
     <div class="eyebrow">Government Procurement &amp; Logistics</div>
-    <p class="hero-sub">Procurement and logistics solutions for organizations and institutions.</p>
+    <p class="hero-sub">Procurement and logistics solutions for government agencies and institutions.</p>
     <p class="hero-capability">Focused on cost-effective sourcing, reliable fulfillment, and scalable supply solutions.</p>
     <div class="btn-row">
       <a href="#contact" class="cta-primary">Request a Quote</a>
@@ -188,6 +204,70 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
     <div class="what-card"><span class="what-num">01</span><h3>Bulk Product Sourcing</h3><p>We identify and secure the right products at scale, leveraging supplier relationships to keep your costs down.</p></div>
     <div class="what-card"><span class="what-num">02</span><h3>Vendor Coordination</h3><p>We manage supplier communication, contracts, and timelines so your team stays focused on operations.</p></div>
     <div class="what-card"><span class="what-num">03</span><h3>Order Fulfillment Support</h3><p>From purchase order to delivery, we track and manage each step to keep your supply chain on schedule.</p></div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="section-label">Why Mintt</div>
+  <h2 class="section-title">Experience That Delivers.</h2>
+  <div class="section-title-line"></div>
+  <p class="section-sub">Our leadership brings a decade of direct military logistics and federal contract execution to every engagement.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-stat">10+</div>
+      <h3>Years Military Logistics</h3>
+      <p>Direct experience managing military parts distribution and global shipments on behalf of Oshkosh Defense.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-stat">$9.6M</div>
+      <h3>Operations Managed</h3>
+      <p>Led a $9.6M annual revenue logistics operation with 100+ personnel and full P&amp;L responsibility.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-stat">800K</div>
+      <h3>Sq Ft Facility Leadership</h3>
+      <p>Built and scaled an 800,000 sq ft fulfillment center from startup to a fully operational 160-person team.</p>
+    </div>
+  </div>
+</section>
+
+<section class="credentials">
+  <div class="section-label">Compliance &amp; Credentials</div>
+  <h2 class="section-title">Verified. Registered. Ready.</h2>
+  <div class="section-title-line"></div>
+  <div class="cred-grid">
+    <div class="cred-card">
+      <div class="cred-label">SAM Status</div>
+      <div class="cred-value">Registered</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-label">Entity Type</div>
+      <div class="cred-value">Small Business LLC</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-label">Ownership</div>
+      <div class="cred-value">Minority-Owned</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-label">State License</div>
+      <div class="cred-value">Nevada Licensed</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-label">Primary NAICS</div>
+      <div class="cred-value">541614</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-label">Certification</div>
+      <div class="cred-value">C-TPAT</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-label">CAGE Code</div>
+      <div class="cred-value">Pending</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-label">8(a) Status</div>
+      <div class="cred-value">Eligible</div>
+    </div>
   </div>
 </section>
 
@@ -249,7 +329,7 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
 
 <section class="contact" id="contact">
   <div class="section-label">Contact</div>
-  <h2 class="section-title">Start the Conversation</h2>
+  <h2 class="section-title">Request a Quote</h2>
   <div class="section-title-line"></div>
   <br>
   <div class="contact-inner">
@@ -257,7 +337,11 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
       <div class="contact-badge">We respond within 24 hours</div>
       <div class="c-item">
         <div class="label">Email</div>
-        <p>info&#64;minttservices&#46;com</p>
+        <a href="mailto:info@minttservices.com">info&#64;minttservices&#46;com</a>
+      </div>
+      <div class="c-item">
+        <div class="label">Contracts</div>
+        <a href="mailto:contracts@minttservices.com">contracts&#64;minttservices&#46;com</a>
       </div>
       <div class="c-item">
         <div class="label">Phone</div>
@@ -300,7 +384,7 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
     Mekhi, Izaiah, Nevaiah, Tyler, and Trenton.<br>
     <span>It's not just a business. It's a legacy.</span>
   </p>
-  <p>Las Vegas, NV &nbsp;|&nbsp; (702) 518-1813 &nbsp;|&nbsp; info&#64;minttservices&#46;com</p>
+  <p>Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <a href="mailto:info@minttservices.com" style="color:var(--muted);text-decoration:none;">info&#64;minttservices&#46;com</a></p>
   <div class="footer-links">
     <a href="/privacy.html">Privacy Policy</a> |
     <a href="/terms.html">Terms of Use</a>
