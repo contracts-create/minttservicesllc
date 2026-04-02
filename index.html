@@ -12,106 +12,130 @@
   --navy:#0A0F1E;
   --navy-mid:#111827;
   --navy-card:#0E1422;
-  --mint:#00D4A0;
-  --mint-dim:#00A87E;
+  --mint:#3DBE6C;
+  --mint-dim:#2EA058;
+  --warm:#E8D5A3;
+  --warm-dim:#C9B67A;
   --white:#F5F7FA;
   --muted:#A0ABBE;
-  --border:rgba(0,212,160,0.18);
+  --border:rgba(61,190,108,0.15);
+  --warm-border:rgba(240,220,170,0.2);
 }
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);line-height:1.6;}
-nav{position:sticky;top:0;z-index:100;background:rgba(10,15,30,0.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:88px;}
-.nav-logo{height:80px;width:auto;display:block;}
-nav ul{list-style:none;display:flex;gap:32px;}
-nav ul a{text-decoration:none;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
-nav ul a:hover{color:var(--mint);}
-section{padding:80px 6%;}
-.hero{min-height:60vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding:80px 6%;gap:60px;}
-.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,160,0.10) 0%,transparent 70%);pointer-events:none;}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--mint);border:1px solid var(--border);padding:6px 16px;border-radius:2px;margin-bottom:36px;width:fit-content;}
-.eyebrow::before{content:'';width:6px;height:6px;background:var(--mint);border-radius:50%;display:block;}
-.hero-sub{font-size:18px;font-weight:400;color:var(--muted);max-width:520px;margin-bottom:24px;line-height:1.8;}
-.hero-capability{font-size:13px;font-weight:400;color:var(--muted);max-width:540px;margin-bottom:48px;border-left:2px solid var(--border);padding-left:16px;font-style:italic;}
-.btn-row{display:flex;gap:16px;flex-wrap:wrap;}
-.cta-primary{display:inline-block;background:var(--mint);color:var(--navy);font-weight:500;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:15px 32px;border-radius:2px;text-decoration:none;transition:background 0.2s,transform 0.15s;}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(10,15,30,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--warm-border);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:80px;}
+.nav-logo{height:72px;width:auto;display:block;}
+nav ul{list-style:none;display:flex;gap:36px;}
+nav ul a{text-decoration:none;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+nav ul a:hover{color:var(--warm);}
+
+.hero{min-height:62vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding:72px 6%;gap:60px;}
+.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:700px;height:700px;background:radial-gradient(circle,rgba(61,190,108,0.06) 0%,transparent 65%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-60px;left:10%;width:400px;height:400px;background:radial-gradient(circle,rgba(240,220,170,0.04) 0%,transparent 65%);pointer-events:none;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--warm);border:1px solid var(--warm-border);padding:6px 16px;border-radius:2px;margin-bottom:28px;width:fit-content;}
+.eyebrow::before{content:'';width:5px;height:5px;background:var(--warm);border-radius:50%;display:block;}
+.hero-sub{font-size:17px;font-weight:400;color:var(--muted);max-width:500px;margin-bottom:20px;line-height:1.8;}
+.hero-capability{font-size:13px;font-weight:400;color:var(--muted);max-width:500px;margin-bottom:40px;border-left:2px solid var(--warm-border);padding-left:16px;font-style:italic;}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;}
+.cta-primary{display:inline-block;background:var(--mint);color:var(--navy);font-weight:600;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;border-radius:2px;text-decoration:none;transition:background 0.2s,transform 0.15s;}
 .cta-primary:hover{background:var(--mint-dim);transform:translateY(-2px);}
-.cta-ghost{display:inline-block;color:var(--white);border:1px solid var(--border);font-weight:400;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:15px 32px;border-radius:2px;text-decoration:none;transition:border-color 0.2s,color 0.2s;}
-.cta-ghost:hover{border-color:var(--mint);color:var(--mint);}
+.cta-ghost{display:inline-block;color:var(--white);border:1px solid var(--warm-border);font-weight:400;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;border-radius:2px;text-decoration:none;transition:border-color 0.2s,color 0.2s;}
+.cta-ghost:hover{border-color:var(--warm);color:var(--warm);}
 .hero-left{display:flex;flex-direction:column;justify-content:center;}
-.hero-right{display:flex;flex-direction:column;justify-content:center;padding-left:40px;border-left:1px solid var(--border);}
-.hero-mission{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4vw,56px);line-height:1.05;color:var(--white);margin-bottom:24px;letter-spacing:1px;}
+.hero-right{display:flex;flex-direction:column;justify-content:center;padding-left:48px;border-left:1px solid var(--warm-border);}
+.hero-mission{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4vw,52px);line-height:1.08;color:var(--white);margin-bottom:20px;letter-spacing:1px;}
+.hero-mission em{color:var(--warm);font-style:normal;}
 .hero-mission-sub{font-size:15px;font-weight:400;color:var(--muted);line-height:1.9;}
-.trust-bar{background:var(--navy-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 6%;}
-.trust-inner{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;}
+
+.trust-bar{background:var(--navy-card);border-top:1px solid var(--warm-border);border-bottom:1px solid var(--warm-border);padding:18px 6%;}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
 .trust-badge{display:flex;align-items:center;gap:10px;}
-.trust-icon{color:var(--mint);font-size:10px;}
-.trust-text{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--white);}
-.trust-divider{width:1px;height:20px;background:var(--border);}
+.trust-icon{color:var(--warm);font-size:9px;}
+.trust-text{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--white);}
+.trust-divider{width:1px;height:18px;background:var(--warm-border);}
+
+section{padding:72px 6%;}
+.section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--warm);margin-bottom:12px;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4.5vw,54px);letter-spacing:1px;color:var(--white);margin-bottom:12px;line-height:1;}
+.section-title-line{display:inline-block;width:40px;height:2px;background:var(--warm);margin-bottom:20px;}
+.section-sub{font-size:15px;color:var(--muted);max-width:560px;font-weight:400;line-height:1.8;margin-bottom:48px;}
+
 .what{background:var(--navy-mid);}
-.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--mint);margin-bottom:16px;}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,5vw,58px);letter-spacing:1px;color:var(--white);margin-bottom:16px;line-height:1;}
-.section-sub{font-size:16px;color:var(--muted);max-width:540px;font-weight:400;line-height:1.8;margin-bottom:56px;}
 .what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
-.what-card{background:var(--navy);padding:36px 28px;border-top:2px solid transparent;transition:border-color 0.2s;}
-.what-card:hover{border-color:var(--mint);}
-.what-num{font-family:'Bebas Neue',sans-serif;font-size:42px;color:rgba(0,212,160,0.12);margin-bottom:14px;display:block;}
-.what-card h3{font-size:16px;font-weight:500;color:var(--white);margin-bottom:10px;}
+.what-card{background:var(--navy);padding:32px 28px;border-top:2px solid transparent;transition:border-color 0.2s;}
+.what-card:hover{border-color:var(--warm);}
+.what-num{font-family:'Bebas Neue',sans-serif;font-size:38px;color:rgba(232,213,163,0.12);margin-bottom:12px;display:block;}
+.what-card h3{font-size:15px;font-weight:500;color:var(--white);margin-bottom:8px;}
 .what-card p{font-size:13px;color:var(--muted);line-height:1.8;font-weight:400;}
+
 .supply{background:var(--navy);}
-.supply-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.supply-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
 .supply-list{display:flex;flex-direction:column;}
-.supply-item{display:flex;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--border);font-size:15px;font-weight:400;color:var(--white);transition:color 0.2s;}
+.supply-item{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--warm-border);font-size:15px;font-weight:400;color:var(--white);transition:color 0.2s;}
 .supply-item:last-child{border-bottom:none;}
-.supply-item::before{content:'';flex-shrink:0;width:6px;height:6px;background:var(--mint);border-radius:50%;}
-.supply-item:hover{color:var(--mint);}
+.supply-item::before{content:'';flex-shrink:0;width:5px;height:5px;background:var(--warm);border-radius:50%;}
+.supply-item:hover{color:var(--warm);}
+
 .serve{background:var(--navy-mid);}
 .serve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
-.serve-card{background:var(--navy-card);padding:40px 32px;border-top:2px solid transparent;transition:border-color 0.2s;}
-.serve-card:hover{border-color:var(--mint);}
-.serve-icon{font-size:28px;margin-bottom:16px;display:block;}
-.serve-card h3{font-size:17px;font-weight:500;color:var(--white);margin-bottom:8px;}
+.serve-card{background:var(--navy-card);padding:36px 32px;border-left:3px solid transparent;transition:border-color 0.2s,background 0.2s;display:flex;gap:24px;align-items:flex-start;}
+.serve-card:hover{border-color:var(--warm);background:#0D1320;}
+.serve-icon-wrap{flex-shrink:0;width:52px;height:52px;background:rgba(232,213,163,0.06);border:1px solid var(--warm-border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.serve-content{display:flex;flex-direction:column;}
+.serve-card h3{font-size:16px;font-weight:500;color:var(--white);margin-bottom:8px;}
 .serve-card p{font-size:13px;color:var(--muted);line-height:1.8;font-weight:400;}
+
 .how{background:var(--navy);}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
-.step{background:var(--navy-mid);padding:36px 28px;border-top:2px solid transparent;transition:border-color 0.2s;}
-.step:hover{border-color:var(--mint);}
-.step-num{font-family:'Bebas Neue',sans-serif;font-size:52px;color:rgba(0,212,160,0.10);line-height:1;margin-bottom:12px;}
-.step h3{font-size:15px;font-weight:500;color:var(--white);margin-bottom:8px;}
+.step{background:var(--navy-mid);padding:32px 24px;border-top:2px solid transparent;transition:border-color 0.2s;}
+.step:hover{border-color:var(--warm);}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(232,213,163,0.10);line-height:1;margin-bottom:10px;}
+.step h3{font-size:14px;font-weight:500;color:var(--white);margin-bottom:8px;}
 .step p{font-size:13px;color:var(--muted);line-height:1.7;font-weight:400;}
+
 .contact{background:var(--navy-mid);}
-.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.contact-info{display:flex;flex-direction:column;gap:32px;}
-.contact-badge{display:inline-block;background:rgba(0,212,160,0.08);border:1px solid var(--border);color:var(--mint);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border-radius:2px;margin-bottom:8px;}
-.c-item .label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mint);margin-bottom:6px;}
-.c-item a,.c-item p{font-size:16px;color:var(--white);text-decoration:none;font-weight:400;}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.contact-info{display:flex;flex-direction:column;gap:28px;}
+.contact-badge{display:inline-block;background:rgba(232,213,163,0.07);border:1px solid var(--warm-border);color:var(--warm);font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border-radius:2px;margin-bottom:4px;}
+.c-item .label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--warm);margin-bottom:6px;}
+.c-item a,.c-item p{font-size:15px;color:var(--white);text-decoration:none;font-weight:400;}
 .c-item a:hover{color:var(--mint);}
-.contact-form{display:flex;flex-direction:column;gap:14px;}
-.contact-form input,.contact-form select,.contact-form textarea{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:2px;padding:13px 16px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:400;outline:none;transition:border-color 0.2s;width:100%;appearance:none;}
+.contact-form{display:flex;flex-direction:column;gap:12px;}
+.contact-form input,.contact-form select,.contact-form textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:2px;padding:13px 16px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:400;outline:none;transition:border-color 0.2s;width:100%;appearance:none;}
 .contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--muted);}
-.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--mint);}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--warm);}
 .contact-form select option{background:var(--navy-mid);color:var(--white);}
-.contact-form textarea{min-height:110px;resize:vertical;}
-.submit-btn{background:var(--mint);color:var(--navy);border:none;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:15px 32px;border-radius:2px;cursor:pointer;transition:background 0.2s;width:fit-content;}
+.contact-form textarea{min-height:100px;resize:vertical;}
+.submit-btn{background:var(--mint);color:var(--navy);border:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;border-radius:2px;cursor:pointer;transition:background 0.2s;width:fit-content;}
 .submit-btn:hover{background:var(--mint-dim);}
-.cap-download{display:inline-flex;align-items:center;gap:10px;background:var(--mint);color:var(--navy);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:12px 20px;border-radius:2px;text-decoration:none;transition:background 0.2s;width:fit-content;}
-.cap-download:hover{background:var(--mint-dim);}
-.cap-download::before{content:'↓';font-size:14px;}
-footer{background:var(--navy);border-top:1px solid var(--border);padding:48px 6%;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;}
-.footer-logo{height:60px;width:auto;}
-.footer-story{font-size:13px;color:var(--muted);font-weight:400;max-width:480px;line-height:1.8;}
-.footer-story span{color:var(--mint);}
-.footer-links a{color:var(--muted);text-decoration:none;margin:0 10px;font-size:12px;transition:color 0.2s;}
-.footer-links a:hover{color:var(--mint);}
-.footer-sam{font-size:11px;color:#555;letter-spacing:1px;}
+.cap-download{display:inline-flex;align-items:center;gap:10px;background:var(--warm);color:var(--navy);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:12px 20px;border-radius:2px;text-decoration:none;transition:background 0.2s;width:fit-content;}
+.cap-download:hover{background:var(--warm-dim);}
+.cap-download::before{content:'↓';font-size:13px;}
+
+footer{background:var(--navy);border-top:1px solid var(--warm-border);padding:48px 6%;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;}
+.footer-logo{height:56px;width:auto;}
+.footer-story{font-size:13px;color:var(--muted);font-weight:400;max-width:460px;line-height:1.8;}
+.footer-story span{color:var(--warm);}
+.footer-links a{color:var(--muted);text-decoration:none;margin:0 10px;font-size:11px;transition:color 0.2s;}
+.footer-links a:hover{color:var(--warm);}
+.footer-sam{font-size:10px;color:#555;letter-spacing:1px;}
 footer p{font-size:12px;color:var(--muted);font-weight:400;}
+
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;}
-  .hero-right{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:32px;margin-top:8px;}
+  .hero-right{border-left:none;border-top:1px solid var(--warm-border);padding-left:0;padding-top:32px;margin-top:8px;}
   .what-grid,.steps{grid-template-columns:1fr 1fr;}
-  .supply-inner,.contact-inner,.serve-grid{grid-template-columns:1fr;gap:48px;}
+  .supply-inner,.contact-inner{grid-template-columns:1fr;gap:48px;}
+  .serve-grid{grid-template-columns:1fr;}
   nav ul{display:none;}
 }
-@media(max-width:540px){.what-grid,.steps,.serve-grid{grid-template-columns:1fr;}.trust-divider{display:none;}.trust-inner{gap:16px;}}
+@media(max-width:540px){
+  .what-grid,.steps{grid-template-columns:1fr;}
+  .trust-divider{display:none;}
+  .trust-inner{gap:14px;}
+  .serve-card{flex-direction:column;gap:16px;}
+}
 </style>
 </head>
 <body id="top">
@@ -129,7 +153,7 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
 
 <section class="hero">
   <div class="hero-left">
-    <div class="eyebrow">Procurement &amp; Logistics</div>
+    <div class="eyebrow">Government Procurement &amp; Logistics</div>
     <p class="hero-sub">Procurement and logistics solutions for organizations and institutions.</p>
     <p class="hero-capability">Focused on cost-effective sourcing, reliable fulfillment, and scalable supply solutions.</p>
     <div class="btn-row">
@@ -138,38 +162,27 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
     </div>
   </div>
   <div class="hero-right">
-    <p class="hero-mission">We connect organizations with the products they need, on time and within budget.</p>
+    <p class="hero-mission">We connect organizations with the products they need, <em>on time</em> and within budget.</p>
     <p class="hero-mission-sub">From bulk apparel to safety equipment, Mintt Services LLC handles sourcing, coordination, and fulfillment so you can focus on your mission.</p>
   </div>
 </section>
 
 <section class="trust-bar">
   <div class="trust-inner">
-    <div class="trust-badge">
-      <span class="trust-icon">✦</span>
-      <span class="trust-text">Minority-Owned Business</span>
-    </div>
+    <div class="trust-badge"><span class="trust-icon">✦</span><span class="trust-text">Minority-Owned Business</span></div>
     <div class="trust-divider"></div>
-    <div class="trust-badge">
-      <span class="trust-icon">✦</span>
-      <span class="trust-text">Small Business</span>
-    </div>
+    <div class="trust-badge"><span class="trust-icon">✦</span><span class="trust-text">Small Business</span></div>
     <div class="trust-divider"></div>
-    <div class="trust-badge">
-      <span class="trust-icon">✦</span>
-      <span class="trust-text">SAM Registered</span>
-    </div>
+    <div class="trust-badge"><span class="trust-icon">✦</span><span class="trust-text">SAM Registered</span></div>
     <div class="trust-divider"></div>
-    <div class="trust-badge">
-      <span class="trust-icon">✦</span>
-      <span class="trust-text">Nevada Licensed</span>
-    </div>
+    <div class="trust-badge"><span class="trust-icon">✦</span><span class="trust-text">Nevada Licensed</span></div>
   </div>
 </section>
 
 <section class="what" id="what">
   <div class="section-label">What We Do</div>
   <h2 class="section-title">Simple. Direct. Efficient.</h2>
+  <div class="section-title-line"></div>
   <p class="section-sub">We help organizations source and deliver bulk goods efficiently, reducing cost and lead time through established supplier relationships.</p>
   <div class="what-grid">
     <div class="what-card"><span class="what-num">01</span><h3>Bulk Product Sourcing</h3><p>We identify and secure the right products at scale, leveraging supplier relationships to keep your costs down.</p></div>
@@ -183,6 +196,7 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
     <div>
       <div class="section-label">What We Supply</div>
       <h2 class="section-title">Products We Source</h2>
+      <div class="section-title-line"></div>
       <p class="section-sub">We work across a range of product categories to meet the operational needs of our clients.</p>
     </div>
     <div class="supply-list">
@@ -198,18 +212,32 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
 <section class="serve" id="serve">
   <div class="section-label">Who We Serve</div>
   <h2 class="section-title">Our Clients</h2>
+  <div class="section-title-line"></div>
   <p class="section-sub">We work with organizations that need reliable, scalable sourcing without the overhead of managing it internally.</p>
   <div class="serve-grid">
-    <div class="serve-card"><span class="serve-icon">🏛</span><h3>Government Agencies</h3><p>Federal, state, and local agencies that require procurement partners with documented processes and compliance awareness.</p></div>
-    <div class="serve-card"><span class="serve-icon">🎓</span><h3>Schools and Districts</h3><p>K-12 districts and higher education institutions sourcing supplies, uniforms, and operational materials at scale.</p></div>
-    <div class="serve-card"><span class="serve-icon">🎟</span><h3>Event Organizers</h3><p>Organizations that need wristbands, branded materials, and event supplies delivered on tight timelines.</p></div>
-    <div class="serve-card"><span class="serve-icon">🏢</span><h3>Businesses</h3><p>Companies looking to consolidate vendor relationships and reduce procurement costs across product categories.</p></div>
+    <div class="serve-card">
+      <div class="serve-icon-wrap">🏛</div>
+      <div class="serve-content"><h3>Government Agencies</h3><p>Federal, state, and local agencies that require procurement partners with documented processes and compliance awareness.</p></div>
+    </div>
+    <div class="serve-card">
+      <div class="serve-icon-wrap">🎓</div>
+      <div class="serve-content"><h3>Schools and Districts</h3><p>K-12 districts and higher education institutions sourcing supplies, uniforms, and operational materials at scale.</p></div>
+    </div>
+    <div class="serve-card">
+      <div class="serve-icon-wrap">🎟</div>
+      <div class="serve-content"><h3>Event Organizers</h3><p>Organizations that need wristbands, branded materials, and event supplies delivered on tight timelines.</p></div>
+    </div>
+    <div class="serve-card">
+      <div class="serve-icon-wrap">🏢</div>
+      <div class="serve-content"><h3>Businesses</h3><p>Companies looking to consolidate vendor relationships and reduce procurement costs across product categories.</p></div>
+    </div>
   </div>
 </section>
 
 <section class="how" id="how">
   <div class="section-label">How We Work</div>
   <h2 class="section-title">Our Process</h2>
+  <div class="section-title-line"></div>
   <p class="section-sub">Four steps from initial need to final delivery.</p>
   <div class="steps">
     <div class="step"><div class="step-num">01</div><h3>Identify the Need</h3><p>We review your requirements, quantities, and delivery timeline to scope the order accurately.</p></div>
@@ -222,6 +250,7 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
 <section class="contact" id="contact">
   <div class="section-label">Contact</div>
   <h2 class="section-title">Start the Conversation</h2>
+  <div class="section-title-line"></div>
   <br>
   <div class="contact-inner">
     <div class="contact-info">
