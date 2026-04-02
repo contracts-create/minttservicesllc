@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -321,7 +321,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="teaming-card"><h3>Joint Ventures</h3><p>Partnering with established contractors to pursue set-aside contracts, expanding reach and capabilities for both parties.</p></div>
       <div class="teaming-card"><h3>Mentor-Protege</h3><p>Seeking experienced primes for SBA Mentor-Protege relationships to accelerate growth and expand contract vehicle access.</p></div>
     </div>
-    <a href="mailto:contracts@minttservices.com" class="cta-green">Discuss a Teaming Opportunity</a>
+    <a href="#contact" class="cta-green">Discuss a Teaming Opportunity</a>
   </div>
 </section>
 
@@ -367,8 +367,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
         <div class="rfq-contact-item">
           <div class="rlabel">Government &amp; Contracts</div>
           <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-            <span style="font-size:14px;color:var(--white);">contracts&#64;minttservices&#46;com</span>
-            <button type="button" class="copy-btn" id="copyRfq">copy</button>
+            <a href="mailto:contracts@minttservices.com" style="font-size:14px;color:var(--white);text-decoration:none;">contracts&#64;minttservices&#46;com</a>
           </div>
         </div>
         <div class="rfq-contact-item"><div class="rlabel">Direct Line</div><a href="tel:+17025181813">(702) 518-1813</a></div>
@@ -397,7 +396,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
         <div class="dollar-wrap"><input type="number" name="estimated_value" min="0" step="100" placeholder="Estimated value (optional)"></div>
       </div>
       <textarea name="requirements" placeholder="Describe your requirement: item, NSN or part number, quantity, delivery location, and any special requirements *" required></textarea>
-      <p style="font-size:11px;color:var(--muted);padding:4px 0;">To attach a SOW or specs, email it directly to contracts&#64;minttservices&#46;com</p>
+      <p style="font-size:11px;color:var(--muted);padding:4px 0;">To attach a SOW or specs, email it directly to <a href="mailto:contracts@minttservices.com" style="color:var(--white);text-decoration:none;">contracts&#64;minttservices&#46;com</a></p>
       <button type="submit" class="rfq-submit" id="rfqSubmit">Submit RFQ</button>
       <div class="msg-success" id="rfqSuccess">&#10003; Your RFQ has been submitted. We will respond within 4 business hours.</div>
       <div class="msg-error" id="rfqError">Something went wrong. Please call (702) 518-1813 to reach us directly.</div>
@@ -415,15 +414,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="c-item">
         <div class="clabel">General Email</div>
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-          <span>info&#64;minttservices&#46;com</span>
-          <button type="button" class="copy-btn" id="copyInfo">copy</button>
+          <a href="mailto:info@minttservices.com">info&#64;minttservices&#46;com</a>
         </div>
       </div>
       <div class="c-item">
         <div class="clabel">Government &amp; Contracts</div>
         <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-          <span>contracts&#64;minttservices&#46;com</span>
-          <button type="button" class="copy-btn" id="copyContracts">copy</button>
+          <a href="mailto:contracts@minttservices.com">contracts&#64;minttservices&#46;com</a>
         </div>
       </div>
       <div class="c-item"><div class="clabel">Phone</div><a href="tel:+17025181813">(702) 518-1813</a></div>
@@ -451,7 +448,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="site-footer" style="margin:0 -5%;width:calc(100% + 10%);">
     <img src="logo.png" class="footer-logo" alt="Mintt Services LLC">
     <p class="footer-story">Mintt is built from the initials of our founder's five children.<br>Mekhi, Izaiah, Nevaiah, Tyler, and Trenton.<br><em>It's not just a business. It's a legacy.</em></p>
-    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <span style="color:var(--muted);">info&#64;minttservices&#46;com</span> <button type="button" class="copy-btn" id="copyFooter" style="background:none;border:none;color:var(--muted);font-size:9px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:underline;">copy</button></p>
+    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <a href="mailto:info@minttservices.com" style="color:var(--muted);text-decoration:none;">info&#64;minttservices&#46;com</a></p>
     <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
     <p class="footer-copy">&copy; <span id="year"></span> Mintt Services LLC. All rights reserved.</p>
   </div>
@@ -460,46 +457,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
-function doCopy(email, btn) {
-  var orig = btn.textContent;
-  function ok() {
-    btn.textContent = 'copied!';
-    btn.style.color = '#4CAF6F';
-    setTimeout(function(){ btn.textContent = orig; btn.style.color = ''; }, 2000);
-  }
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(email).then(ok).catch(function() {
-      fallback();
-    });
-  } else {
-    fallback();
-  }
-  function fallback() {
-    var ta = document.createElement('textarea');
-    ta.value = email;
-    ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0;';
-    document.body.appendChild(ta);
-    ta.focus();
-    ta.select();
-    try { document.execCommand('copy'); ok(); } catch(e) { btn.textContent = 'use ctrl+c'; }
-    document.body.removeChild(ta);
-  }
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-
-  var d = atob('bWludHRzZXJ2aWNlcy5jb20=');
-  var ei = atob('aW5mb0BtaW50dHNlcnZpY2VzLmNvbQ==');
-  var ec = atob('Y29udHJhY3RzQG1pbnR0c2VydmljZXMuY29t');
-
-  ['copyRfq','copyContracts'].forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('click', function() { doCopy(ec, this); });
-  });
-  ['copyInfo','copyFooter'].forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('click', function() { doCopy(ei, this); });
-  });
 
   var hbg = document.getElementById('hamburger');
   if (hbg) hbg.addEventListener('click', function() {
