@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mintt Services LLC</title>
+<title>Mintt Services LLC | Government Procurement & Logistics</title>
 <link rel="icon" type="image/png" href="favicon-32x32.png">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -24,13 +24,15 @@
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);line-height:1.6;}
 
-nav{position:sticky;top:0;z-index:100;background:rgba(10,15,30,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--warm-border);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:80px;}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,15,30,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--warm-border);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:80px;}
 .nav-logo{height:72px;width:auto;display:block;}
-nav ul{list-style:none;display:flex;gap:36px;}
+nav ul{list-style:none;display:flex;gap:28px;align-items:center;}
 nav ul a{text-decoration:none;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
 nav ul a:hover{color:var(--warm);}
+.nav-rfq{background:var(--warm);color:var(--navy);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px 18px;border-radius:2px;text-decoration:none;transition:background 0.2s;}
+.nav-rfq:hover{background:var(--warm-dim);color:var(--navy);}
 
-.hero{min-height:62vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding:72px 6%;gap:60px;}
+.hero{min-height:65vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding:72px 6%;gap:60px;}
 .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:700px;height:700px;background:radial-gradient(circle,rgba(61,190,108,0.06) 0%,transparent 65%);pointer-events:none;}
 .hero::after{content:'';position:absolute;bottom:-60px;left:10%;width:400px;height:400px;background:radial-gradient(circle,rgba(212,175,55,0.04) 0%,transparent 65%);pointer-events:none;}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--warm);border:1px solid var(--warm-border);padding:6px 16px;border-radius:2px;margin-bottom:28px;width:fit-content;}
@@ -38,8 +40,10 @@ nav ul a:hover{color:var(--warm);}
 .hero-sub{font-size:17px;font-weight:400;color:var(--muted);max-width:500px;margin-bottom:20px;line-height:1.8;}
 .hero-capability{font-size:13px;font-weight:400;color:var(--muted);max-width:500px;margin-bottom:40px;border-left:2px solid var(--warm-border);padding-left:16px;font-style:italic;}
 .btn-row{display:flex;gap:14px;flex-wrap:wrap;}
-.cta-primary{display:inline-block;background:var(--mint);color:var(--navy);font-weight:600;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;border-radius:2px;text-decoration:none;transition:background 0.2s,transform 0.15s;}
+.cta-primary{display:inline-block;background:var(--mint);color:var(--navy);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;border-radius:2px;text-decoration:none;transition:background 0.2s,transform 0.15s;}
 .cta-primary:hover{background:var(--mint-dim);transform:translateY(-2px);}
+.cta-warm{display:inline-block;background:var(--warm);color:var(--navy);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;border-radius:2px;text-decoration:none;transition:background 0.2s,transform 0.15s;}
+.cta-warm:hover{background:var(--warm-dim);transform:translateY(-2px);}
 .cta-ghost{display:inline-block;color:var(--white);border:1px solid var(--warm-border);font-weight:400;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;border-radius:2px;text-decoration:none;transition:border-color 0.2s,color 0.2s;}
 .cta-ghost:hover{border-color:var(--warm);color:var(--warm);}
 .hero-left{display:flex;flex-direction:column;justify-content:center;}
@@ -69,13 +73,35 @@ section{padding:72px 6%;}
 .what-card h3{font-size:15px;font-weight:500;color:var(--white);margin-bottom:8px;}
 .what-card p{font-size:13px;color:var(--muted);line-height:1.8;font-weight:400;}
 
-.supply{background:var(--navy);}
+.why{background:var(--navy);}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.why-card{background:var(--navy-mid);padding:32px 28px;border-top:2px solid transparent;transition:border-color 0.2s;}
+.why-card:hover{border-color:var(--warm);}
+.why-stat{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--warm);line-height:1;margin-bottom:8px;}
+.why-card h3{font-size:14px;font-weight:500;color:var(--white);margin-bottom:8px;}
+.why-card p{font-size:13px;color:var(--muted);line-height:1.8;font-weight:400;}
+
+.supply{background:var(--navy-mid);}
 .supply-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
 .supply-list{display:flex;flex-direction:column;}
 .supply-item{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--warm-border);font-size:15px;font-weight:400;color:var(--white);transition:color 0.2s;}
 .supply-item:last-child{border-bottom:none;}
 .supply-item::before{content:'';flex-shrink:0;width:5px;height:5px;background:var(--warm);border-radius:50%;}
 .supply-item:hover{color:var(--warm);}
+
+.naics-section{background:var(--navy);}
+.naics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
+.naics-card{background:var(--navy-mid);border:none;cursor:pointer;text-align:left;width:100%;padding:0;transition:background 0.2s;}
+.naics-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;gap:16px;}
+.naics-code{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--warm);letter-spacing:1px;flex-shrink:0;}
+.naics-name{font-size:13px;font-weight:500;color:var(--white);}
+.naics-arrow{font-size:12px;color:var(--muted);transition:transform 0.2s;flex-shrink:0;}
+.naics-card.open .naics-arrow{transform:rotate(180deg);}
+.naics-body{display:none;padding:0 24px 20px;border-top:1px solid var(--warm-border);}
+.naics-card.open .naics-body{display:block;}
+.naics-body p{font-size:13px;color:var(--muted);line-height:1.8;padding-top:16px;}
+.naics-body .naics-size{font-size:11px;color:var(--warm);letter-spacing:1px;text-transform:uppercase;margin-top:8px;}
+.naics-primary-tag{background:var(--warm);color:var(--navy);font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-left:10px;vertical-align:middle;}
 
 .serve{background:var(--navy-mid);}
 .serve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
@@ -86,19 +112,19 @@ section{padding:72px 6%;}
 .serve-card h3{font-size:16px;font-weight:500;color:var(--white);margin-bottom:8px;}
 .serve-card p{font-size:13px;color:var(--muted);line-height:1.8;font-weight:400;}
 
-.why{background:var(--navy);}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
-.why-card{background:var(--navy-mid);padding:32px 28px;border-top:2px solid transparent;transition:border-color 0.2s;}
-.why-card:hover{border-color:var(--warm);}
-.why-stat{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--warm);line-height:1;margin-bottom:8px;}
-.why-card h3{font-size:14px;font-weight:500;color:var(--white);margin-bottom:8px;letter-spacing:0.3px;}
-.why-card p{font-size:13px;color:var(--muted);line-height:1.8;font-weight:400;}
-
-.credentials{background:var(--navy-mid);}
+.credentials{background:var(--navy);}
 .cred-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
 .cred-card{background:var(--navy-card);padding:24px 20px;border-top:2px solid var(--warm-border);text-align:center;}
 .cred-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--warm);margin-bottom:8px;}
 .cred-value{font-size:14px;font-weight:500;color:var(--white);}
+
+.teaming{background:var(--navy-mid);}
+.teaming-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.teaming-cards{display:flex;flex-direction:column;gap:2px;}
+.teaming-card{background:var(--navy-card);padding:28px;border-left:3px solid var(--warm-border);transition:border-color 0.2s;}
+.teaming-card:hover{border-color:var(--warm);}
+.teaming-card h3{font-size:15px;font-weight:500;color:var(--white);margin-bottom:8px;}
+.teaming-card p{font-size:13px;color:var(--muted);line-height:1.8;}
 
 .how{background:var(--navy);}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
@@ -107,6 +133,26 @@ section{padding:72px 6%;}
 .step-num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(212,175,55,0.10);line-height:1;margin-bottom:10px;}
 .step h3{font-size:14px;font-weight:500;color:var(--white);margin-bottom:8px;}
 .step p{font-size:13px;color:var(--muted);line-height:1.7;font-weight:400;}
+
+.rfq-section{background:var(--navy-card);border-top:1px solid var(--warm-border);border-bottom:1px solid var(--warm-border);}
+.rfq-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.rfq-info{display:flex;flex-direction:column;gap:20px;}
+.rfq-badge{display:inline-block;background:rgba(212,175,55,0.1);border:1px solid var(--warm-border);color:var(--warm);font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border-radius:2px;width:fit-content;}
+.rfq-sla{font-size:28px;font-family:'Bebas Neue',sans-serif;color:var(--warm);letter-spacing:1px;}
+.rfq-sla span{font-size:14px;font-family:'DM Sans',sans-serif;color:var(--muted);font-weight:400;letter-spacing:0;display:block;margin-top:4px;}
+.rfq-detail{font-size:13px;color:var(--muted);line-height:1.8;}
+.rfq-form{display:flex;flex-direction:column;gap:12px;}
+.rfq-form input,.rfq-form select,.rfq-form textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:2px;padding:13px 16px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:400;outline:none;transition:border-color 0.2s;width:100%;appearance:none;}
+.rfq-form input::placeholder,.rfq-form textarea::placeholder{color:var(--muted);}
+.rfq-form input:focus,.rfq-form textarea:focus,.rfq-form select:focus{border-color:var(--warm);}
+.rfq-form select option{background:var(--navy-mid);color:var(--white);}
+.rfq-form textarea{min-height:90px;resize:vertical;}
+.rfq-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.rfq-submit{background:var(--warm);color:var(--navy);border:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;border-radius:2px;cursor:pointer;transition:background 0.2s;width:fit-content;}
+.rfq-submit:hover{background:var(--warm-dim);}
+.file-label{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.03);border:1px dashed rgba(212,175,55,0.3);color:var(--muted);font-size:12px;padding:12px 16px;border-radius:2px;cursor:pointer;transition:border-color 0.2s;}
+.file-label:hover{border-color:var(--warm);color:var(--warm);}
+.file-label input{display:none;}
 
 .contact{background:var(--navy-mid);}
 .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
@@ -121,7 +167,7 @@ section{padding:72px 6%;}
 .contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--warm);}
 .contact-form select option{background:var(--navy-mid);color:var(--white);}
 .contact-form textarea{min-height:100px;resize:vertical;}
-.submit-btn{background:var(--mint);color:var(--navy);border:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;border-radius:2px;cursor:pointer;transition:background 0.2s;width:fit-content;}
+.submit-btn{background:var(--mint);color:var(--navy);border:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;border-radius:2px;cursor:pointer;transition:background 0.2s;width:fit-content;}
 .submit-btn:hover{background:var(--mint-dim);}
 .cap-download{display:inline-flex;align-items:center;gap:10px;background:var(--warm);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:12px 20px;border-radius:2px;text-decoration:none;transition:background 0.2s;width:fit-content;}
 .cap-download:hover{background:var(--warm-dim);}
@@ -141,13 +187,14 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
   .hero-right{border-left:none;border-top:1px solid var(--warm-border);padding-left:0;padding-top:32px;margin-top:8px;}
   .what-grid,.steps,.why-grid{grid-template-columns:1fr 1fr;}
   .cred-grid{grid-template-columns:1fr 1fr;}
-  .supply-inner,.contact-inner{grid-template-columns:1fr;gap:48px;}
+  .naics-grid{grid-template-columns:1fr;}
+  .supply-inner,.contact-inner,.rfq-inner,.teaming-inner{grid-template-columns:1fr;gap:48px;}
   .serve-grid{grid-template-columns:1fr;}
   nav ul{display:none;}
 }
 @media(max-width:540px){
   .what-grid,.steps,.why-grid{grid-template-columns:1fr;}
-  .cred-grid{grid-template-columns:1fr 1fr;}
+  .rfq-row{grid-template-columns:1fr;}
   .trust-divider{display:none;}
   .trust-inner{gap:14px;}
   .serve-card{flex-direction:column;gap:16px;}
@@ -164,22 +211,23 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
     <li><a href="#serve">Clients</a></li>
     <li><a href="#how">Process</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#rfq" class="nav-rfq">Submit RFQ</a></li>
   </ul>
 </nav>
 
 <section class="hero">
   <div class="hero-left">
     <div class="eyebrow">Government Procurement &amp; Logistics</div>
-    <p class="hero-sub">Procurement and logistics solutions for government agencies and institutions.</p>
-    <p class="hero-capability">Focused on cost-effective sourcing, reliable fulfillment, and scalable supply solutions.</p>
+    <p class="hero-sub">Procurement and logistics solutions built for government agencies and institutions.</p>
+    <p class="hero-capability">Cost-effective sourcing. Reliable fulfillment. Scalable supply solutions. Led by a decade of military logistics experience.</p>
     <div class="btn-row">
-      <a href="#contact" class="cta-primary">Request a Quote</a>
+      <a href="#rfq" class="cta-warm">Submit an RFQ</a>
       <a href="#what" class="cta-ghost">See What We Do</a>
     </div>
   </div>
   <div class="hero-right">
     <p class="hero-mission">We connect organizations with the products they need, <em>on time</em> and within budget.</p>
-    <p class="hero-mission-sub">From bulk apparel to safety equipment, Mintt Services LLC handles sourcing, coordination, and fulfillment so you can focus on your mission.</p>
+    <p class="hero-mission-sub">From bulk apparel to military supply, Mintt Services LLC handles sourcing, coordination, and fulfillment so you can focus on your mission. Led by leadership with direct Oshkosh Defense experience.</p>
   </div>
 </section>
 
@@ -192,6 +240,8 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
     <div class="trust-badge"><span class="trust-icon">✦</span><span class="trust-text">SAM Registered</span></div>
     <div class="trust-divider"></div>
     <div class="trust-badge"><span class="trust-icon">✦</span><span class="trust-text">Nevada Licensed</span></div>
+    <div class="trust-divider"></div>
+    <div class="trust-badge"><span class="trust-icon">✦</span><span class="trust-text">C-TPAT Certified</span></div>
   </div>
 </section>
 
@@ -231,46 +281,6 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
   </div>
 </section>
 
-<section class="credentials">
-  <div class="section-label">Compliance &amp; Credentials</div>
-  <h2 class="section-title">Verified. Registered. Ready.</h2>
-  <div class="section-title-line"></div>
-  <div class="cred-grid">
-    <div class="cred-card">
-      <div class="cred-label">SAM Status</div>
-      <div class="cred-value">Registered</div>
-    </div>
-    <div class="cred-card">
-      <div class="cred-label">Entity Type</div>
-      <div class="cred-value">Small Business LLC</div>
-    </div>
-    <div class="cred-card">
-      <div class="cred-label">Ownership</div>
-      <div class="cred-value">Minority-Owned</div>
-    </div>
-    <div class="cred-card">
-      <div class="cred-label">State License</div>
-      <div class="cred-value">Nevada Licensed</div>
-    </div>
-    <div class="cred-card">
-      <div class="cred-label">Primary NAICS</div>
-      <div class="cred-value">541614</div>
-    </div>
-    <div class="cred-card">
-      <div class="cred-label">Certification</div>
-      <div class="cred-value">C-TPAT</div>
-    </div>
-    <div class="cred-card">
-      <div class="cred-label">CAGE Code</div>
-      <div class="cred-value">Pending</div>
-    </div>
-    <div class="cred-card">
-      <div class="cred-label">8(a) Status</div>
-      <div class="cred-value">Eligible</div>
-    </div>
-  </div>
-</section>
-
 <section class="supply" id="supply">
   <div class="supply-inner">
     <div>
@@ -285,7 +295,133 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
       <div class="supply-item">Wristbands and Event Materials</div>
       <div class="supply-item">Safety Equipment</div>
       <div class="supply-item">Office and Facility Supplies</div>
+      <div class="supply-item">Janitorial and Facility Services</div>
+      <div class="supply-item">Courier and Local Delivery</div>
     </div>
+  </div>
+</section>
+
+<section class="naics-section" id="naics">
+  <div class="section-label">NAICS Codes</div>
+  <h2 class="section-title">Our Classification Codes</h2>
+  <div class="section-title-line"></div>
+  <p class="section-sub">Click any code to view the full description and size standard. Use these codes when searching for Mintt Services on SAM.gov or submitting an RFQ.</p>
+  <div class="naics-grid">
+    <button class="naics-card" onclick="toggleNaics(this)">
+      <div class="naics-header">
+        <span class="naics-code">541614 <span class="naics-primary-tag">Primary</span></span>
+        <span class="naics-name">Process, Physical Distribution &amp; Logistics Consulting</span>
+        <span class="naics-arrow">▼</span>
+      </div>
+      <div class="naics-body">
+        <p>Establishments providing management consulting services related to physical distribution, transportation, logistics, and supply chain management. Includes procurement consulting and process optimization.</p>
+        <p class="naics-size">Size Standard: $25.5M average annual receipts</p>
+      </div>
+    </button>
+    <button class="naics-card" onclick="toggleNaics(this)">
+      <div class="naics-header">
+        <span class="naics-code">493110</span>
+        <span class="naics-name">General Warehousing and Storage</span>
+        <span class="naics-arrow">▼</span>
+      </div>
+      <div class="naics-body">
+        <p>Establishments primarily engaged in operating merchandise warehousing and storage facilities. Includes general merchandise, refrigerated goods, and other warehouse products.</p>
+        <p class="naics-size">Size Standard: $34M average annual receipts</p>
+      </div>
+    </button>
+    <button class="naics-card" onclick="toggleNaics(this)">
+      <div class="naics-header">
+        <span class="naics-code">488510</span>
+        <span class="naics-name">Freight Transportation Arrangement</span>
+        <span class="naics-arrow">▼</span>
+      </div>
+      <div class="naics-body">
+        <p>Establishments arranging transportation of freight between shippers and carriers. Includes freight forwarders, shipping agents, brokers, and customs brokers.</p>
+        <p class="naics-size">Size Standard: $20M average annual receipts</p>
+      </div>
+    </button>
+    <button class="naics-card" onclick="toggleNaics(this)">
+      <div class="naics-header">
+        <span class="naics-code">424990</span>
+        <span class="naics-name">Other Misc. Nondurable Goods Wholesalers</span>
+        <span class="naics-arrow">▼</span>
+      </div>
+      <div class="naics-body">
+        <p>Establishments primarily engaged in the merchant wholesale distribution of miscellaneous nondurable goods including supplies, safety equipment, and consumables.</p>
+        <p class="naics-size">Size Standard: 250 employees</p>
+      </div>
+    </button>
+    <button class="naics-card" onclick="toggleNaics(this)">
+      <div class="naics-header">
+        <span class="naics-code">423990</span>
+        <span class="naics-name">Other Misc. Durable Goods Wholesalers</span>
+        <span class="naics-arrow">▼</span>
+      </div>
+      <div class="naics-body">
+        <p>Establishments primarily engaged in the merchant wholesale distribution of miscellaneous durable goods including equipment, hardware, and other durable items.</p>
+        <p class="naics-size">Size Standard: 250 employees</p>
+      </div>
+    </button>
+    <button class="naics-card" onclick="toggleNaics(this)">
+      <div class="naics-header">
+        <span class="naics-code">339999</span>
+        <span class="naics-name">All Other Misc. Manufacturing</span>
+        <span class="naics-arrow">▼</span>
+      </div>
+      <div class="naics-body">
+        <p>Establishments engaged in miscellaneous manufacturing including wristbands, novelty items, identification materials, and other manufactured goods for government and institutional use.</p>
+        <p class="naics-size">Size Standard: 750 employees</p>
+      </div>
+    </button>
+    <button class="naics-card" onclick="toggleNaics(this)">
+      <div class="naics-header">
+        <span class="naics-code">561720</span>
+        <span class="naics-name">Janitorial Services</span>
+        <span class="naics-arrow">▼</span>
+      </div>
+      <div class="naics-body">
+        <p>Establishments engaged in cleaning building interiors, transportation equipment interiors, and windows. Covers custodial services, housekeeping, and facility sanitation services.</p>
+        <p class="naics-size">Size Standard: $22M average annual receipts</p>
+      </div>
+    </button>
+    <button class="naics-card" onclick="toggleNaics(this)">
+      <div class="naics-header">
+        <span class="naics-code">492110</span>
+        <span class="naics-name">Couriers and Express Delivery Services</span>
+        <span class="naics-arrow">▼</span>
+      </div>
+      <div class="naics-body">
+        <p>Establishments providing air, surface, or combined courier and express delivery services. Covers local, regional, and national delivery of parcels, documents, and freight.</p>
+        <p class="naics-size">Size Standard: 1,500 employees</p>
+      </div>
+    </button>
+    <button class="naics-card" onclick="toggleNaics(this)">
+      <div class="naics-header">
+        <span class="naics-code">561110</span>
+        <span class="naics-name">Office Administrative Services</span>
+        <span class="naics-arrow">▼</span>
+      </div>
+      <div class="naics-body">
+        <p>Establishments providing a range of day-to-day office administrative services including records management, supply procurement coordination, and operational support.</p>
+        <p class="naics-size">Size Standard: $12M average annual receipts</p>
+      </div>
+    </button>
+  </div>
+</section>
+
+<section class="credentials">
+  <div class="section-label">Compliance &amp; Credentials</div>
+  <h2 class="section-title">Verified. Registered. Ready.</h2>
+  <div class="section-title-line"></div>
+  <div class="cred-grid">
+    <div class="cred-card"><div class="cred-label">SAM Status</div><div class="cred-value">Registered</div></div>
+    <div class="cred-card"><div class="cred-label">Entity Type</div><div class="cred-value">Small Business LLC</div></div>
+    <div class="cred-card"><div class="cred-label">Ownership</div><div class="cred-value">Minority-Owned</div></div>
+    <div class="cred-card"><div class="cred-label">State License</div><div class="cred-value">Nevada Licensed</div></div>
+    <div class="cred-card"><div class="cred-label">Primary NAICS</div><div class="cred-value">541614</div></div>
+    <div class="cred-card"><div class="cred-label">Certification</div><div class="cred-value">C-TPAT</div></div>
+    <div class="cred-card"><div class="cred-label">CAGE Code</div><div class="cred-value">Pending</div></div>
+    <div class="cred-card"><div class="cred-label">8(a) Status</div><div class="cred-value">Eligible</div></div>
   </div>
 </section>
 
@@ -314,6 +450,32 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
   </div>
 </section>
 
+<section class="teaming" id="teaming">
+  <div class="teaming-inner">
+    <div>
+      <div class="section-label">Teaming &amp; Partnerships</div>
+      <h2 class="section-title">Let's Win Together.</h2>
+      <div class="section-title-line"></div>
+      <p class="section-sub">Mintt Services actively pursues teaming arrangements with prime contractors and qualified small businesses. We bring verified compliance, military logistics experience, and minority-owned status to every team.</p>
+      <a href="mailto:contracts@minttservices.com" class="cta-warm" style="margin-top:8px;">Discuss a Teaming Opportunity</a>
+    </div>
+    <div class="teaming-cards">
+      <div class="teaming-card">
+        <h3>Subcontracting</h3>
+        <p>Large primes seeking a qualified, compliant small business for subcontracting opportunities. We bring procurement, logistics, and supply chain capabilities to your prime contract.</p>
+      </div>
+      <div class="teaming-card">
+        <h3>Joint Ventures</h3>
+        <p>Partnering with established contractors to pursue set-aside contracts, expanding reach and capabilities for both parties.</p>
+      </div>
+      <div class="teaming-card">
+        <h3>Mentor-Protege</h3>
+        <p>Seeking experienced primes for SBA Mentor-Protege relationships to accelerate growth and expand contract vehicle access.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="how" id="how">
   <div class="section-label">How We Work</div>
   <h2 class="section-title">Our Process</h2>
@@ -327,20 +489,68 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
   </div>
 </section>
 
+<section class="rfq-section" id="rfq">
+  <div class="section-label">Government RFQ Portal</div>
+  <h2 class="section-title">Submit Your Requirements.</h2>
+  <div class="section-title-line"></div>
+  <div class="rfq-inner">
+    <div class="rfq-info">
+      <div class="rfq-badge">For Contracting Officers &amp; Primes</div>
+      <div class="rfq-sla">4 Hours
+        <span>Government RFQ response guarantee, business hours</span>
+      </div>
+      <p class="rfq-detail">Submit your requirements directly. Include part numbers, quantities, delivery timelines, and any SOW or specifications. We review every government submission personally and respond within 4 business hours.</p>
+      <p class="rfq-detail" style="margin-top:8px;">For urgent requirements or classified submissions, contact us directly at <a href="mailto:contracts@minttservices.com" style="color:var(--warm);text-decoration:none;">contracts&#64;minttservices&#46;com</a> or call <a href="tel:+17025181813" style="color:var(--warm);text-decoration:none;">(702) 518-1813</a>.</p>
+      <div class="c-item" style="margin-top:8px;">
+        <div class="label">Capabilities Statement</div>
+        <a href="/MinttServices_CapabilitiesStatement.pdf" download class="cap-download">Download Capabilities Statement</a>
+      </div>
+    </div>
+    <div class="rfq-form">
+      <div class="rfq-row">
+        <input type="text" placeholder="Your name">
+        <input type="text" placeholder="Agency or organization">
+      </div>
+      <div class="rfq-row">
+        <input type="email" placeholder="Email address">
+        <input type="tel" placeholder="Phone number">
+      </div>
+      <select>
+        <option value="" disabled selected>Contract vehicle (if applicable)</option>
+        <option>Open Market</option>
+        <option>GSA Schedule</option>
+        <option>IDIQ</option>
+        <option>BPA</option>
+        <option>Other</option>
+      </select>
+      <div class="rfq-row">
+        <input type="text" placeholder="Required delivery date">
+        <input type="text" placeholder="Estimated value (optional)">
+      </div>
+      <textarea placeholder="Describe your requirement: item description, NSN or part number, quantity, delivery location, and any special requirements"></textarea>
+      <label class="file-label">
+        <input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx">
+        ↑ Attach SOW, specs, or requirements document (optional)
+      </label>
+      <button class="rfq-submit">Submit RFQ</button>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="section-label">Contact</div>
-  <h2 class="section-title">Request a Quote</h2>
+  <h2 class="section-title">General Inquiries</h2>
   <div class="section-title-line"></div>
   <br>
   <div class="contact-inner">
     <div class="contact-info">
       <div class="contact-badge">We respond within 24 hours</div>
       <div class="c-item">
-        <div class="label">Email</div>
+        <div class="label">General Email</div>
         <a href="mailto:info@minttservices.com">info&#64;minttservices&#46;com</a>
       </div>
       <div class="c-item">
-        <div class="label">Contracts</div>
+        <div class="label">Government &amp; Contracts</div>
         <a href="mailto:contracts@minttservices.com">contracts&#64;minttservices&#46;com</a>
       </div>
       <div class="c-item">
@@ -355,10 +565,6 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
         <div class="label">Hours</div>
         <p>Monday &ndash; Friday, 9am &ndash; 5pm PST</p>
       </div>
-      <div class="c-item">
-        <div class="label">Capabilities Statement</div>
-        <a href="/MinttServices_CapabilitiesStatement.pdf" download class="cap-download">Download Capabilities Statement</a>
-      </div>
     </div>
     <div class="contact-form">
       <input type="text" placeholder="Your name">
@@ -369,10 +575,11 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
         <option>Bulk product sourcing</option>
         <option>Vendor coordination</option>
         <option>Order fulfillment support</option>
+        <option>Teaming opportunity</option>
         <option>Other</option>
       </select>
       <textarea placeholder="Describe your need, quantity, and timeline"></textarea>
-      <button class="submit-btn">Send Request</button>
+      <button class="submit-btn">Send Message</button>
     </div>
   </div>
 </section>
@@ -389,10 +596,17 @@ footer p{font-size:12px;color:var(--muted);font-weight:400;}
     <a href="/privacy.html">Privacy Policy</a> |
     <a href="/terms.html">Terms of Use</a>
   </div>
-  <p class="footer-sam">UEI, and SAM registration available upon request.</p>
+  <p class="footer-sam">UEI and SAM registration available upon request.</p>
   <p>&copy; <span id="year"></span> Mintt Services LLC. All rights reserved.</p>
 </footer>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+function toggleNaics(card) {
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.naics-card').forEach(c => c.classList.remove('open'));
+  if (!isOpen) card.classList.add('open');
+}
+</script>
 </body>
 </html>
