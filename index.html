@@ -364,7 +364,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="rfq-contacts">
         <div class="c-item">
           <div class="clabel">Government &amp; Contracts</div>
-          <a href="/cdn-cgi/l/email-protection#95f6fafbe1e7f4f6e1e6d5f8fcfbe1e1e6f0e7e3fcf6f0e6bbf6faf8">contracts&#64;minttservices&#46;com</a>
+          <a class="em" data-u="contracts" data-d="minttservices.com">contracts&#64;minttservices&#46;com</a>
         </div>
         <div class="c-item"><div class="clabel">Direct Line</div><a href="tel:+17025181813">(702) 518-1813</a></div>
       </div>
@@ -392,7 +392,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
         <div class="dollar-wrap"><input type="number" name="estimated_value" min="0" step="100" placeholder="Estimated value (optional)"></div>
       </div>
       <textarea name="requirements" placeholder="Describe your requirement: item, NSN or part number, quantity, delivery location, and any special requirements *" required></textarea>
-      <p style="font-size:11px;color:var(--muted);padding:4px 0;">To attach a SOW or specs, email it directly to <a href="/cdn-cgi/l/email-protection#c8aba7a6bcbaa9abbcbb88a5a1a6bcbcbbadbabea1abadbbe6aba7a5" style="color:var(--white);text-decoration:none;">contracts&#64;minttservices&#46;com</a></p>
+      <p style="font-size:11px;color:var(--muted);padding:4px 0;">To attach a SOW or specs, email it directly to <a class="em" data-u="contracts" data-d="minttservices.com" style="color:var(--white);text-decoration:none;">contracts&#64;minttservices&#46;com</a></p>
       <button type="submit" class="rfq-submit" id="rfqSubmit">Submit RFQ</button>
       <div class="msg-success" id="rfqSuccess">&#10003; Your RFQ has been submitted. We will respond within 4 business hours.</div>
       <div class="msg-error" id="rfqError">Something went wrong. Please call (702) 518-1813 to reach us directly.</div>
@@ -407,8 +407,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="section-line"></div>
   <div class="contact-layout" style="margin-bottom:48px;">
     <div class="contact-info">
-      <div class="c-item"><div class="clabel">General Email</div><a href="/cdn-cgi/l/email-protection#fe97909891be9397908a8a8d9b8c88979d9b8dd09d9193">info&#64;minttservices&#46;com</a></div>
-      <div class="c-item"><div class="clabel">Government &amp; Contracts</div><a href="/cdn-cgi/l/email-protection#3a5955544e485b594e497a5753544e4e495f484c53595f4914595557">contracts&#64;minttservices&#46;com</a></div>
+      <div class="c-item"><div class="clabel">General Email</div><a class="em" data-u="info" data-d="minttservices.com">info&#64;minttservices&#46;com</a></div>
+      <div class="c-item"><div class="clabel">Government &amp; Contracts</div><a class="em" data-u="contracts" data-d="minttservices.com">contracts&#64;minttservices&#46;com</a></div>
       <div class="c-item"><div class="clabel">Phone</div><a href="tel:+17025181813">(702) 518-1813</a></div>
       <div class="c-item"><div class="clabel">Location</div><p>Las Vegas, NV</p></div>
       <div class="c-item"><div class="clabel">Hours</div><p>Monday &ndash; Friday, 9am &ndash; 5pm PST</p></div>
@@ -434,7 +434,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="site-footer" style="margin:0 -5%;width:calc(100% + 10%);">
     <img src="logo.png" class="footer-logo" alt="Mintt Services LLC">
     <p class="footer-story">Mintt is built from the initials of our founder's five children.<br>Mekhi, Izaiah, Nevaiah, Tyler, and Trenton.<br><em>It's not just a business. It's a legacy.</em></p>
-    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection#3a53545c557a5753544e4e495f484c53595f4914595557" style="color:var(--muted);text-decoration:none;">info&#64;minttservices&#46;com</a></p>
+    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <a class="em" data-u="info" data-d="minttservices.com" style="color:var(--muted);text-decoration:none;">info&#64;minttservices&#46;com</a></p>
     <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
     <p class="footer-copy">&copy; <span id="year"></span> Mintt Services LLC. All rights reserved.</p>
   </div>
@@ -444,6 +444,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 document.getElementById('year').textContent = new Date().getFullYear();
 
 document.addEventListener('DOMContentLoaded', function() {
+
+  document.querySelectorAll('a.em[data-u]').forEach(function(a) {
+    var href = 'mail' + 'to:' + a.getAttribute('data-u') + '@' + a.getAttribute('data-d');
+    a.setAttribute('href', href);
+  });
 
   var hbg = document.getElementById('hamburger');
   if (hbg) hbg.addEventListener('click', function() {
