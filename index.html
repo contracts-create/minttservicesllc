@@ -48,6 +48,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .page-dot .dot-label{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(10,15,30,0.95);color:var(--white);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;border:1px solid var(--gold-border);}
 .page-dot:hover .dot-label{opacity:1;}
 .snap-section{min-height:100vh;padding:88px 5% 48px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+@media(min-width:901px){.snap-section{height:100vh;overflow:hidden;}}
+.dollar-wrap{position:relative;display:flex;align-items:center;}
+.dollar-wrap::before{content:'$';position:absolute;left:14px;color:var(--muted);font-size:13px;pointer-events:none;z-index:1;}
+.dollar-wrap input{padding-left:26px;width:100%;}
 .page-dark{background:var(--navy);}
 .page-mid{background:var(--navy-mid);}
 .page-card{background:var(--navy-card);}
@@ -408,7 +412,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       </select>
       <div class="rfq-row">
         <input type="date" id="deliveryDate" placeholder="MM/DD/YYYY" style="color-scheme:dark;" onchange="formatDate(this)">
-        <input type="text" placeholder="Estimated value (optional)">
+        <div class="dollar-wrap"><input type="number" min="0" step="100" placeholder="Estimated value (optional)" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:2px;padding:11px 14px 11px 26px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;width:100%;appearance:none;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='rgba(255,255,255,0.07)'"></div>
       </div>
       <textarea placeholder="Describe your requirement: item, NSN or part number, quantity, delivery location, and any special requirements"></textarea>
       <label class="file-upload"><input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx">↑ &nbsp;Attach SOW, specs, or requirements document (optional)</label>
@@ -424,8 +428,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="section-line"></div>
   <div class="contact-layout" style="margin-bottom:48px;">
     <div class="contact-info">
-      <div class="c-item"><div class="clabel">General Email</div><a href="mailto:info@minttservices.com">info&#64;minttservices&#46;com</a></div>
-      <div class="c-item"><div class="clabel">Government &amp; Contracts</div><a href="mailto:contracts@minttservices.com">contracts&#64;minttservices&#46;com</a></div>
+      <div class="c-item"><div class="clabel">General Email</div><a href="/cdn-cgi/l/email-protection#6f060109002f0206011b1b1c0a1d19060c0a1c410c0002">info&#64;minttservices&#46;com</a></div>
+      <div class="c-item"><div class="clabel">Government &amp; Contracts</div><a href="/cdn-cgi/l/email-protection#d2b1bdbca6a0b3b1a6a192bfbbbca6a6a1b7a0a4bbb1b7a1fcb1bdbf">contracts&#64;minttservices&#46;com</a></div>
       <div class="c-item"><div class="clabel">Phone</div><a href="tel:+17025181813">(702) 518-1813</a></div>
       <div class="c-item"><div class="clabel">Location</div><p>Las Vegas, NV</p></div>
       <div class="c-item"><div class="clabel">Hours</div><p>Monday &ndash; Friday, 9am &ndash; 5pm PST</p></div>
@@ -449,7 +453,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="site-footer" style="margin:0 -5%;width:calc(100% + 10%);">
     <img src="logo.png" class="footer-logo" alt="Mintt Services LLC">
     <p class="footer-story">Mintt is built from the initials of our founder's five children.<br>Mekhi, Izaiah, Nevaiah, Tyler, and Trenton.<br><em>It's not just a business. It's a legacy.</em></p>
-    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <a href="mailto:info@minttservices.com" style="color:var(--muted);text-decoration:none;">info&#64;minttservices&#46;com</a></p>
+    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <span id="footerEmail" style="color:var(--muted);cursor:pointer;text-decoration:none;"></span></p>
     <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
     <p class="footer-copy">&copy; <span id="year"></span> Mintt Services LLC. All rights reserved.</p>
   </div>
@@ -457,6 +461,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.getElementById('year').textContent = new Date().getFullYear();
+const u='info',d='minttservices.com';
+const fe=document.getElementById('footerEmail');
+if(fe){const a=document.createElement('a');a.href='mailto:'+u+'@'+d;a.textContent=u+'@'+d;a.style.color='var(--muted)';a.style.textDecoration='none';fe.appendChild(a);}
 const pages = document.querySelectorAll('.snap-section');
 const indicator = document.getElementById('pageIndicator');
 pages.forEach((page,i) => {
@@ -516,16 +523,4 @@ function closeMenu(page) {
   spans[1].style.opacity = '1';
   spans[2].style.transform = '';
   setTimeout(() => {
-    document.getElementById(page).scrollIntoView({behavior:'smooth'});
-  }, 100);
-}
-
-function formatDate(input) {
-  if(input.value) {
-    const parts = input.value.split('-');
-    if(parts.length === 3) {
-      input.setAttribute('data-formatted', parts[1]+'/'+parts[2]+'/'+parts[0]);
-    }
-  }
-}
-</script>
+    document.getElementById(page).scrollIntoView({behavior
