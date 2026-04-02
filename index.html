@@ -47,17 +47,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .page-dot:hover{background:var(--green);}
 .page-dot .dot-label{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(10,15,30,0.95);color:var(--white);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;border:1px solid var(--gold-border);}
 .page-dot:hover .dot-label{opacity:1;}
-.snap-section{min-height:100vh;padding:88px 5% 48px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
-@media(min-width:901px){.snap-section{height:100vh;overflow:hidden;}}
+.snap-section{min-height:100vh;padding:88px 5% 60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
 .dollar-wrap{position:relative;display:flex;align-items:center;}
 .dollar-wrap::before{content:'$';position:absolute;left:14px;color:var(--muted);font-size:13px;pointer-events:none;z-index:1;}
 .dollar-wrap input{padding-left:26px;width:100%;}
 .page-dark{background:var(--navy);}
 .page-mid{background:var(--navy-mid);}
 .page-card{background:var(--navy-card);}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(27,122,110,0.12) 0%,rgba(76,175,111,0.06) 50%,rgba(212,175,55,0.04) 100%);pointer-events:none;}
-.clients-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(27,122,110,0.1) 0%,rgba(76,175,111,0.05) 100%);pointer-events:none;}
-.rfq-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,20,34,0.95) 0%,rgba(27,122,110,0.07) 100%);pointer-events:none;}
+.hero-bg{position:absolute;inset:0;background-image:url('img-hero.jpg');background-size:cover;background-position:center;opacity:0.09;pointer-events:none;}
+.clients-bg{position:absolute;inset:0;background-image:url('img-clients.jpg');background-size:cover;background-position:center;opacity:0.08;pointer-events:none;}
+.rfq-bg{position:absolute;inset:0;background-image:url('img-rfq.jpg');background-size:cover;background-position:center;opacity:0.07;pointer-events:none;}
 .trust-bar{background:rgba(27,122,110,0.1);border-top:1px solid var(--teal-border);border-bottom:1px solid var(--teal-border);padding:14px 0;margin:0 -5%;width:calc(100% + 10%);position:relative;z-index:1;}
 .trust-inner{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
 .trust-badge{display:flex;align-items:center;gap:8px;}
@@ -461,9 +460,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.getElementById('year').textContent = new Date().getFullYear();
-const u='info',d='minttservices.com';
 const fe=document.getElementById('footerEmail');
-if(fe){const a=document.createElement('a');a.href='mailto:'+u+'@'+d;a.textContent=u+'@'+d;a.style.color='var(--muted)';a.style.textDecoration='none';fe.appendChild(a);}
+if(fe){const p=['i','n','f','o'];const d=['m','i','n','t','t','s','e','r','v','i','c','e','s','.','c','o','m'];const e=p.join('')+'@'+d.join('');const a=document.createElement('a');a.href='mail'+'to:'+e;a.textContent=e;a.style.color='var(--muted)';a.style.textDecoration='none';fe.appendChild(a);}
 const pages = document.querySelectorAll('.snap-section');
 const indicator = document.getElementById('pageIndicator');
 pages.forEach((page,i) => {
