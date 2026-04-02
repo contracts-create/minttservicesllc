@@ -196,10 +196,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .footer-links{display:flex;gap:16px;}
 .footer-links a{color:var(--muted);text-decoration:none;font-size:10px;transition:color 0.2s;}
 .footer-links a:hover{color:var(--gold);}
-.email-copy{font-size:14px;color:var(--white);cursor:pointer;font-weight:400;position:relative;display:inline-flex;align-items:center;gap:8px;}
+.email-copy{font-size:14px;color:var(--white);cursor:pointer;font-weight:400;position:relative;display:inline-flex;align-items:center;gap:0;}
 .email-copy:hover{color:var(--green);}
-.copy-tip{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+.email-part{font-size:14px;}
+.email-at{font-size:14px;color:var(--gold);padding:0 1px;}
+.copy-tip{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-left:8px;transition:color 0.2s;}
 .email-copy:hover .copy-tip{color:var(--green);}
+.copied-confirm{font-size:11px;color:#4CAF6F;margin-left:8px;display:none;}
 .footer-copy{font-size:10px;color:#3A3A4A;}
 @media(max-width:1024px){.services-layout{grid-template-columns:1fr;}.services-nav{flex-direction:row;flex-wrap:wrap;position:static;margin-bottom:16px;}.rfq-layout{grid-template-columns:1fr;}}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.hero-right{border-left:none;border-top:1px solid var(--teal-border);padding-left:0;padding-top:24px;margin-top:8px;}.stats-grid,.teaming-grid,.steps-grid{grid-template-columns:1fr 1fr;}.cred-logos,.cred-grid{grid-template-columns:1fr 1fr;}.naics-grid,.serve-grid,.contact-layout,.svc-grid{grid-template-columns:1fr;}.page-indicator{display:none;}.nav-links{display:none;}.hamburger{display:flex;}}
@@ -347,7 +350,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="teaming-card"><h3>Joint Ventures</h3><p>Partnering with established contractors to pursue set-aside contracts, expanding reach and capabilities for both parties.</p></div>
       <div class="teaming-card"><h3>Mentor-Protege</h3><p>Seeking experienced primes for SBA Mentor-Protege relationships to accelerate growth and expand contract vehicle access.</p></div>
     </div>
-    <a href="/cdn-cgi/l/email-protection#35565a5b41475456414675585c5b4141465047435c5650461b565a58" class="cta-green">Discuss a Teaming Opportunity</a>
+    <span class="email-copy cta-green" data-user="contracts" data-domain="minttservices.com" style="display:inline-block;padding:14px 28px;border-radius:2px;cursor:pointer;"><span class="copy-tip" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--navy);">Discuss a Teaming Opportunity</span></span>
   </div>
 </section>
 
@@ -421,7 +424,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <p style="font-size:11px;color:var(--muted);padding:4px 0;">To attach a SOW or requirements document, email it directly to <span class="email-copy" data-user="contracts" data-domain="minttservices.com" style="font-size:11px;"><span class="copy-tip">click to copy</span></span></p>
       <button type="submit" class="rfq-submit">Submit RFQ</button>
       <div id="rfqSuccess" style="display:none;background:rgba(76,175,111,0.1);border:1px solid var(--green);border-radius:2px;padding:16px;color:var(--green);font-size:13px;text-align:center;">✓ Your RFQ has been submitted. We will respond within 4 business hours.</div>
-      <div id="rfqError" style="display:none;background:rgba(212,60,60,0.1);border:1px solid #D43C3C;border-radius:2px;padding:16px;color:#D43C3C;font-size:13px;text-align:center;">Something went wrong. Please email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c5a6aaabb1b7a4a6b1b685a8acabb1b1b6a0b7b3aca6a0b6eba6aaa8">[email&#160;protected]</a> directly.</div>
+      <div id="rfqError" style="display:none;background:rgba(212,60,60,0.1);border:1px solid #D43C3C;border-radius:2px;padding:16px;color:#D43C3C;font-size:13px;text-align:center;">Something went wrong. Please use the contact information on the left to reach us directly.</div>
     </form>
   </div>
 </section>
@@ -454,19 +457,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <textarea name="message" placeholder="Tell us about your need, timeline, and any relevant details *" required></textarea>
       <button type="submit" class="contact-submit">Send Message</button>
       <div id="contactSuccess" style="display:none;background:rgba(76,175,111,0.1);border:1px solid var(--green);border-radius:2px;padding:16px;color:var(--green);font-size:13px;text-align:center;">✓ Message sent. We will get back to you within 24 hours.</div>
-      <div id="contactError" style="display:none;background:rgba(212,60,60,0.1);border:1px solid #D43C3C;border-radius:2px;padding:16px;color:#D43C3C;font-size:13px;text-align:center;">Something went wrong. Please email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7f161119103f1216110b0b0c1a0d09161c1a0c511c1012">[email&#160;protected]</a> directly.</div>
+      <div id="contactError" style="display:none;background:rgba(212,60,60,0.1);border:1px solid #D43C3C;border-radius:2px;padding:16px;color:#D43C3C;font-size:13px;text-align:center;">Something went wrong. Please use the email address in the contact section above.</div>
     </form>
   </div>
   <div class="site-footer" style="margin:0 -5%;width:calc(100% + 10%);">
     <img src="logo.png" class="footer-logo" alt="Mintt Services LLC">
     <p class="footer-story">Mintt is built from the initials of our founder's five children.<br>Mekhi, Izaiah, Nevaiah, Tyler, and Trenton.<br><em>It's not just a business. It's a legacy.</em></p>
-    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <a href="mailto:info@minttservices.com" style="color:var(--muted);text-decoration:none;">info@minttservices.com</a></p>
+    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <span class="email-copy" data-user="info" data-domain="minttservices.com" style="font-size:11px;"><span class="copy-tip" style="font-size:9px;">click to copy</span></span></p>
     <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
     <p class="footer-copy">&copy; <span id="year"></span> Mintt Services LLC. All rights reserved.</p>
   </div>
 </section>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false">
 document.getElementById('year').textContent = new Date().getFullYear();
 
 window.addEventListener('load', function(){
@@ -474,10 +477,51 @@ window.addEventListener('load', function(){
   document.getElementById('panel-supply').style.display='none';
   document.getElementById('panel-naics').style.display='none';
   document.querySelectorAll('.email-copy[data-user]').forEach(function(el) {
-    const email = el.getAttribute('data-user') + '@' + el.getAttribute('data-domain');
+    const user = el.getAttribute('data-user');
+    const domain = el.getAttribute('data-domain');
+    const email = user + '@' + domain;
     const tip = el.querySelector('.copy-tip');
-    el.insertBefore(document.createTextNode(email + ' '), tip);
-    el.addEventListener('click', function(){ copyEmail(el, email); });
+    const u = document.createElement('span');
+    u.className = 'email-part';
+    u.textContent = user;
+    const a = document.createElement('span');
+    a.className = 'email-at';
+    a.textContent = '[@]';
+    const d = document.createElement('span');
+    d.className = 'email-part';
+    d.textContent = domain;
+    const confirm = document.createElement('span');
+    confirm.className = 'copied-confirm';
+    confirm.textContent = '✓ copied';
+    el.insertBefore(u, tip);
+    el.insertBefore(a, tip);
+    el.insertBefore(d, tip);
+    el.appendChild(confirm);
+    el.addEventListener('click', function(){
+      const ta = document.createElement('textarea');
+      ta.value = email;
+      ta.style.cssText = 'position:fixed;left:-9999px;top:-9999px;opacity:0;';
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      function showConfirm() {
+        tip.style.display = 'none';
+        confirm.style.display = 'inline';
+        el.style.color = '#4CAF6F';
+        setTimeout(function(){
+          tip.style.display = '';
+          confirm.style.display = 'none';
+          el.style.color = '';
+        }, 2000);
+      }
+      if(navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(showConfirm).catch(function(){
+          try { document.execCommand('copy'); showConfirm(); } catch(e){}
+        });
+      } else {
+        try { document.execCommand('copy'); showConfirm(); } catch(e){}
+      }
+      document.body.removeChild(ta);
+    });
   });
 });
 
@@ -582,10 +626,4 @@ async function handleSubmit(e, formId, successId) {
   const form = document.getElementById(formId);
   const btn = form.querySelector('button[type="submit"]');
   const successEl = document.getElementById(successId);
-  const errorEl = document.getElementById(successId.replace('Success','Error'));
-  const origText = btn.textContent;
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  try {
-    const data = new FormData(form);
-    const res = await fetch(form.action, {method:'POST', body:data, headers:
+  const errorEl = document.getElementById(succ
