@@ -234,7 +234,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
         <div class="trust-divider"></div>
         <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">Nevada Licensed</span></div>
         <div class="trust-divider"></div>
-        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">C-TPAT Certified</span></div>
+        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">C-TPAT Experienced</span></div>
       </div>
     </div>
     <div class="stats-grid">
@@ -252,9 +252,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <div class="section-line"></div>
   <div class="services-layout">
     <div class="services-nav">
-      <button class="svc-tab active" data-panel="procurement">Procurement</button>
-      <button class="svc-tab" data-panel="supply">Supply Categories</button>
-      <button class="svc-tab" data-panel="naics">NAICS Codes</button>
+      <button type="button" class="svc-tab active" data-panel="procurement">Procurement</button>
+      <button type="button" class="svc-tab" data-panel="supply">Supply Categories</button>
+      <button type="button" class="svc-tab" data-panel="naics">NAICS Codes</button>
     </div>
     <div>
       <div class="svc-panel active" id="panel-procurement">
@@ -335,7 +335,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     <div class="cred-card"><div class="cred-label">Ownership</div><div class="cred-value">Minority-Owned</div></div>
     <div class="cred-card"><div class="cred-label">State License</div><div class="cred-value">Nevada Licensed</div></div>
     <div class="cred-card"><div class="cred-label">Primary NAICS</div><div class="cred-value">541614</div></div>
-    <div class="cred-card"><div class="cred-label">Certification</div><div class="cred-value">C-TPAT</div></div>
+    <div class="cred-card"><div class="cred-label">C-TPAT</div><div class="cred-value">Facility Experienced</div></div>
     <div class="cred-card"><div class="cred-label">CAGE Code</div><div class="cred-value">Pending</div></div>
     <div class="cred-card"><div class="cred-label">8(a) Status</div><div class="cred-value">Eligible</div></div>
   </div>
@@ -480,10 +480,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
   document.querySelectorAll('.svc-tab[data-panel]').forEach(function(tab) {
     tab.addEventListener('click', function() {
       var name = tab.getAttribute('data-panel');
-      document.querySelectorAll('.svc-panel').forEach(function(p) { p.classList.remove('active'); });
+      document.querySelectorAll('.svc-panel').forEach(function(p) { p.style.display = 'none'; });
       document.querySelectorAll('.svc-tab').forEach(function(t) { t.classList.remove('active'); });
-      var panel = document.getElementById('panel-' + name);
-      if (panel) panel.classList.add('active');
+      document.getElementById('panel-' + name).style.display = 'block';
       tab.classList.add('active');
     });
   });
