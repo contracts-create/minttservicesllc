@@ -37,7 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .page-dot:hover{background:var(--green);}
 .page-dot .dot-label{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(10,15,30,0.95);color:var(--white);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;border:1px solid var(--gold-border);}
 .page-dot:hover .dot-label{opacity:1;}
-.snap-section{min-height:100vh;padding:88px 5% 60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.snap-section{min-height:100vh;padding:88px 5% 32px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
 .page-dark{background:var(--navy);}
 .page-mid{background:var(--navy-mid);}
 .page-card{background:var(--navy-card);}
@@ -71,7 +71,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4vw,52px);letter-spacing:1px;color:var(--white);margin-bottom:10px;line-height:1;position:relative;z-index:1;}
 .section-line{display:inline-block;width:36px;height:2px;background:var(--gold);margin-bottom:18px;position:relative;z-index:1;}
 .section-sub{font-size:15px;color:var(--muted);max-width:540px;line-height:1.8;margin-bottom:28px;position:relative;z-index:1;}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:24px;position:relative;z-index:1;}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:16px;position:relative;z-index:1;}
 .stat-card{background:rgba(14,20,34,0.92);padding:28px;border-top:3px solid var(--teal);transition:border-color 0.2s;}
 .stat-card:hover{border-color:var(--gold);}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--green);line-height:1;margin-bottom:6px;}
@@ -203,8 +203,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <a href="#contact" data-dest="contact">Contact</a>
   <a href="#rfq" class="mob-rfq" data-dest="rfq">Submit RFQ</a>
 </div>
-
-<!-- HOME -->
 <section class="snap-section page-dark" id="home" data-label="Home">
   <div class="hero-bg"></div>
   <div class="hero-content">
@@ -244,8 +242,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     </div>
   </div>
 </section>
-
-<!-- SERVICES -->
 <section class="snap-section page-mid" id="services" data-label="Services">
   <div class="section-label">Services</div>
   <h2 class="section-title">What We Do.</h2>
@@ -297,8 +293,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     </div>
   </div>
 </section>
-
-<!-- CLIENTS -->
 <section class="snap-section page-dark" id="clients" data-label="Clients">
   <div class="clients-bg"></div>
   <div style="position:relative;z-index:1;">
@@ -323,8 +317,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     <a href="#contact" class="cta-green">Discuss a Teaming Opportunity</a>
   </div>
 </section>
-
-<!-- CREDENTIALS -->
 <section class="snap-section page-mid" id="credentials" data-label="Credentials">
   <div class="section-label">Compliance &amp; Credentials</div>
   <h2 class="section-title">Verified. Registered. Ready.</h2>
@@ -350,8 +342,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   </div>
   <a href="/MinttServices_CapabilitiesStatement.pdf" download class="cap-dl">&#8595; Download Capabilities Statement</a>
 </section>
-
-<!-- RFQ -->
 <section class="snap-section page-card" id="rfq" data-label="RFQ">
   <div class="rfq-bg"></div>
   <div class="section-label">Government RFQ Portal</div>
@@ -400,8 +390,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     </form>
   </div>
 </section>
-
-<!-- CONTACT -->
 <section class="snap-section page-mid" id="contact" data-label="Contact">
   <div class="section-label">Contact</div>
   <h2 class="section-title">General Inquiries.</h2>
@@ -440,115 +428,105 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     <p class="footer-copy">&copy; <span id="year"></span> Mintt Services LLC. All rights reserved.</p>
   </div>
 </section>
-
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
-
-  document.querySelectorAll('a.em[data-u]').forEach(function(a) {
-    var href = 'mail' + 'to:' + a.getAttribute('data-u') + '@' + a.getAttribute('data-d');
-    a.setAttribute('href', href);
-  });
-
-  var hbg = document.getElementById('hamburger');
-  if (hbg) hbg.addEventListener('click', function() {
-    var menu = document.getElementById('mobileMenu');
-    var open = menu.style.display === 'flex';
-    menu.style.display = open ? 'none' : 'flex';
+document.querySelectorAll('a.em[data-u]').forEach(function(a) {
+  var href = 'mail' + 'to:' + a.getAttribute('data-u') + '@' + a.getAttribute('data-d');
+  a.setAttribute('href', href);
+});
+var hbg = document.getElementById('hamburger');
+if (hbg) hbg.addEventListener('click', function() {
+  var menu = document.getElementById('mobileMenu');
+  var open = menu.style.display === 'flex';
+  menu.style.display = open ? 'none' : 'flex';
+  var s = document.querySelectorAll('.hamburger span');
+  if (!open) {
+    s[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+    s[1].style.opacity = '0';
+    s[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+  } else {
+    s[0].style.transform = '';
+    s[1].style.opacity = '1';
+    s[2].style.transform = '';
+  }
+});
+document.querySelectorAll('.mobile-menu [data-dest]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var dest = this.getAttribute('data-dest');
+    document.getElementById('mobileMenu').style.display = 'none';
     var s = document.querySelectorAll('.hamburger span');
-    if (!open) {
-      s[0].style.transform = 'rotate(45deg) translate(5px,5px)';
-      s[1].style.opacity = '0';
-      s[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
-    } else {
-      s[0].style.transform = '';
-      s[1].style.opacity = '1';
-      s[2].style.transform = '';
+    s[0].style.transform = ''; s[1].style.opacity = '1'; s[2].style.transform = '';
+    setTimeout(function() { document.getElementById(dest).scrollIntoView({behavior:'smooth'}); }, 100);
+  });
+});
+document.querySelectorAll('.svc-tab[data-panel]').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    var name = tab.getAttribute('data-panel');
+    document.querySelectorAll('.svc-panel').forEach(function(p) { p.style.display = 'none'; });
+    document.querySelectorAll('.svc-tab').forEach(function(t) { t.classList.remove('active'); });
+    document.getElementById('panel-' + name).style.display = 'block';
+    tab.classList.add('active');
+  });
+});
+document.querySelectorAll('.naics-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    var isOpen = card.classList.contains('open');
+    document.querySelectorAll('.naics-card').forEach(function(c) { c.classList.remove('open'); });
+    if (!isOpen) card.classList.add('open');
+  });
+});
+var rfq = document.getElementById('rfqForm');
+if (rfq) rfq.addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('rfqSubmit');
+  var ok = document.getElementById('rfqSuccess');
+  var err = document.getElementById('rfqError');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch(rfq.action, { method: 'POST', body: new FormData(rfq), headers: { Accept: 'application/json' } })
+    .then(function(r) {
+      if (r.ok) { rfq.reset(); ok.style.display = 'block'; err.style.display = 'none'; btn.textContent = 'Sent'; }
+      else { throw new Error(); }
+    })
+    .catch(function() { err.style.display = 'block'; ok.style.display = 'none'; btn.textContent = 'Submit RFQ'; btn.disabled = false; });
+});
+var cf = document.getElementById('contactForm');
+if (cf) cf.addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('contactSubmit');
+  var ok = document.getElementById('contactSuccess');
+  var err = document.getElementById('contactError');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch(cf.action, { method: 'POST', body: new FormData(cf), headers: { Accept: 'application/json' } })
+    .then(function(r) {
+      if (r.ok) { cf.reset(); ok.style.display = 'block'; err.style.display = 'none'; btn.textContent = 'Sent'; }
+      else { throw new Error(); }
+    })
+    .catch(function() { err.style.display = 'block'; ok.style.display = 'none'; btn.textContent = 'Send Message'; btn.disabled = false; });
+});
+var pages = document.querySelectorAll('.snap-section');
+var indicator = document.getElementById('pageIndicator');
+pages.forEach(function(page) {
+  var dot = document.createElement('div');
+  dot.className = 'page-dot';
+  dot.innerHTML = '<span class="dot-label">' + page.dataset.label + '</span>';
+  dot.addEventListener('click', function() { page.scrollIntoView({behavior:'smooth'}); });
+  indicator.appendChild(dot);
+});
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      var idx = Array.from(pages).indexOf(entry.target);
+      document.querySelectorAll('.page-dot').forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+      var id = entry.target.id;
+      document.querySelectorAll('[data-page]').forEach(function(a) { a.classList.toggle('active', a.getAttribute('data-page') === id); });
+      history.replaceState(null, '', '#' + id);
     }
   });
-
-  document.querySelectorAll('.mobile-menu [data-dest]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      var dest = this.getAttribute('data-dest');
-      document.getElementById('mobileMenu').style.display = 'none';
-      var s = document.querySelectorAll('.hamburger span');
-      s[0].style.transform = ''; s[1].style.opacity = '1'; s[2].style.transform = '';
-      setTimeout(function() { document.getElementById(dest).scrollIntoView({behavior:'smooth'}); }, 100);
-    });
-  });
-
-  document.querySelectorAll('.svc-tab[data-panel]').forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      var name = tab.getAttribute('data-panel');
-      document.querySelectorAll('.svc-panel').forEach(function(p) { p.style.display = 'none'; });
-      document.querySelectorAll('.svc-tab').forEach(function(t) { t.classList.remove('active'); });
-      document.getElementById('panel-' + name).style.display = 'block';
-      tab.classList.add('active');
-    });
-  });
-
-  document.querySelectorAll('.naics-card').forEach(function(card) {
-    card.addEventListener('click', function() {
-      var isOpen = card.classList.contains('open');
-      document.querySelectorAll('.naics-card').forEach(function(c) { c.classList.remove('open'); });
-      if (!isOpen) card.classList.add('open');
-    });
-  });
-
-  var rfq = document.getElementById('rfqForm');
-  if (rfq) rfq.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var btn = document.getElementById('rfqSubmit');
-    var ok = document.getElementById('rfqSuccess');
-    var err = document.getElementById('rfqError');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    fetch(rfq.action, { method: 'POST', body: new FormData(rfq), headers: { Accept: 'application/json' } })
-      .then(function(r) {
-        if (r.ok) { rfq.reset(); ok.style.display = 'block'; err.style.display = 'none'; btn.textContent = 'Sent'; }
-        else { throw new Error(); }
-      })
-      .catch(function() { err.style.display = 'block'; ok.style.display = 'none'; btn.textContent = 'Submit RFQ'; btn.disabled = false; });
-  });
-
-  var cf = document.getElementById('contactForm');
-  if (cf) cf.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var btn = document.getElementById('contactSubmit');
-    var ok = document.getElementById('contactSuccess');
-    var err = document.getElementById('contactError');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    fetch(cf.action, { method: 'POST', body: new FormData(cf), headers: { Accept: 'application/json' } })
-      .then(function(r) {
-        if (r.ok) { cf.reset(); ok.style.display = 'block'; err.style.display = 'none'; btn.textContent = 'Sent'; }
-        else { throw new Error(); }
-      })
-      .catch(function() { err.style.display = 'block'; ok.style.display = 'none'; btn.textContent = 'Send Message'; btn.disabled = false; });
-  });
-
-  var pages = document.querySelectorAll('.snap-section');
-  var indicator = document.getElementById('pageIndicator');
-  pages.forEach(function(page) {
-    var dot = document.createElement('div');
-    dot.className = 'page-dot';
-    dot.innerHTML = '<span class="dot-label">' + page.dataset.label + '</span>';
-    dot.addEventListener('click', function() { page.scrollIntoView({behavior:'smooth'}); });
-    indicator.appendChild(dot);
-  });
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        var idx = Array.from(pages).indexOf(entry.target);
-        document.querySelectorAll('.page-dot').forEach(function(d, i) { d.classList.toggle('active', i === idx); });
-        var id = entry.target.id;
-        document.querySelectorAll('[data-page]').forEach(function(a) { a.classList.toggle('active', a.getAttribute('data-page') === id); });
-        history.replaceState(null, '', '#' + id);
-      }
-    });
-  }, {threshold: 0.5});
-  pages.forEach(function(p) { obs.observe(p); });
-
+}, {threshold: 0.5});
+pages.forEach(function(p) { obs.observe(p); });
 </script>
 </body>
 </html>
