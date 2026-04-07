@@ -37,7 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .page-dot:hover{background:var(--green);}
 .page-dot .dot-label{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(10,15,30,0.95);color:var(--white);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;border:1px solid var(--gold-border);}
 .page-dot:hover .dot-label{opacity:1;}
-.snap-section{min-height:100vh;padding:88px 5% 32px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.snap-section{padding:120px 5% 80px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
 .page-dark{background:var(--navy);}
 .page-mid{background:var(--navy-mid);}
 .page-card{background:var(--navy-card);}
@@ -57,8 +57,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-border);padding:6px 16px;border-radius:2px;margin-bottom:24px;width:fit-content;}
 .eyebrow::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%;}
-.hero-sub{font-size:17px;color:var(--muted);max-width:500px;margin-bottom:12px;line-height:1.8;}
-.hero-capability{font-size:13px;color:var(--muted);max-width:480px;margin-bottom:20px;border-left:2px solid var(--teal-border);padding-left:16px;font-style:italic;}
+.hero-sub{font-size:17px;color:var(--muted);max-width:500px;margin-bottom:16px;line-height:1.8;}
+.hero-capability{font-size:13px;color:var(--muted);max-width:480px;margin-bottom:28px;border-left:2px solid var(--teal-border);padding-left:16px;font-style:italic;}
 .btn-row{display:flex;gap:12px;flex-wrap:wrap;}
 .cta-gold{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:14px 28px;border-radius:2px;text-decoration:none;transition:background 0.2s;}
 .cta-gold:hover{background:var(--gold-dim);}
@@ -74,7 +74,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4vw,52px);letter-spacing:1px;color:var(--white);margin-bottom:10px;line-height:1;position:relative;z-index:1;}
 .section-line{display:inline-block;width:36px;height:2px;background:var(--gold);margin-bottom:18px;position:relative;z-index:1;}
 .section-sub{font-size:15px;color:var(--muted);max-width:540px;line-height:1.8;margin-bottom:28px;position:relative;z-index:1;}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:10px;position:relative;z-index:1;}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:20px;position:relative;z-index:1;}
 .stat-card{background:rgba(14,20,34,0.92);padding:28px;border-top:3px solid var(--teal);transition:border-color 0.2s;}
 .stat-card:hover{border-color:var(--gold);}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--green);line-height:1;margin-bottom:6px;}
@@ -181,7 +181,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .msg-error{display:none;background:rgba(212,60,60,0.1);border:1px solid #D43C3C;border-radius:2px;padding:16px;color:#D43C3C;font-size:13px;text-align:center;}
 @media(max-width:1024px){.services-layout{grid-template-columns:1fr;}.services-nav{flex-direction:row;flex-wrap:wrap;}.rfq-layout{grid-template-columns:1fr;}}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.hero-right{border-left:none;border-top:1px solid var(--teal-border);padding-left:0;padding-top:24px;margin-top:8px;}.stats-grid,.teaming-grid,.steps-grid{grid-template-columns:1fr 1fr;}.cred-grid{grid-template-columns:1fr 1fr;}.naics-grid,.serve-grid,.contact-layout,.svc-grid{grid-template-columns:1fr;}.page-indicator{display:none;}.nav-links{display:none;}.hamburger{display:flex;}}
-@media(max-width:540px){.snap-section{padding:88px 4% 48px;}.stats-grid,.teaming-grid,.steps-grid{grid-template-columns:1fr;}.rfq-row{grid-template-columns:1fr;}.trust-divider{display:none;}.trust-inner{gap:12px;padding:0 4%;}.serve-card{flex-direction:column;}.btn-row{flex-direction:column;}.cta-gold,.cta-green,.cta-ghost{text-align:center;}.hero-sub{font-size:15px;}}
+@media(max-width:540px){.snap-section{padding:100px 4% 60px;}.stats-grid,.teaming-grid,.steps-grid{grid-template-columns:1fr;}.rfq-row{grid-template-columns:1fr;}.trust-divider{display:none;}.trust-inner{gap:12px;padding:0 4%;}.serve-card{flex-direction:column;}.btn-row{flex-direction:column;}.cta-gold,.cta-green,.cta-ghost{text-align:center;}.hero-sub{font-size:15px;}}
 </style>
 </head>
 <body>
@@ -225,7 +225,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
         <p class="hero-mission-sub">From military supply to facility services, Mintt Services LLC handles sourcing, coordination, and fulfillment so you can focus on your mission. Led by leadership with direct Oshkosh Defense contract experience.</p>
       </div>
     </div>
-    <div class="trust-bar" style="margin-top:20px;">
+    <div class="trust-bar" style="margin-top:28px;">
       <div class="trust-inner">
         <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">Minority-Owned Business</span><span class="trust-tooltip">Majority owned and operated by a minority individual, eligible for SBA 8(a) and minority set-aside contracts.</span></div>
         <div class="trust-divider"></div>
