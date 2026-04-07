@@ -46,7 +46,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .rfq-bg{position:absolute;inset:0;background-image:url('img-rfq.jpg');background-size:cover;background-position:center;opacity:0.07;pointer-events:none;}
 .trust-bar{background:rgba(27,122,110,0.1);border-top:1px solid var(--teal-border);border-bottom:1px solid var(--teal-border);padding:14px 0;margin:0 -5%;width:calc(100% + 10%);position:relative;z-index:1;}
 .trust-inner{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
-.trust-badge{display:flex;align-items:center;gap:8px;}
+.trust-badge{display:flex;align-items:center;gap:8px;position:relative;cursor:default;}
+.trust-tooltip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:rgba(10,15,30,0.97);border:1px solid var(--gold-border);color:var(--muted);font-size:11px;font-family:'DM Sans',sans-serif;font-weight:400;letter-spacing:0;text-transform:none;padding:8px 12px;border-radius:2px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;z-index:300;line-height:1.5;}
+.trust-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--gold-border);}
+.trust-badge:hover .trust-tooltip{opacity:1;}
 .trust-icon{color:var(--gold);font-size:8px;}
 .trust-text{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--white);}
 .trust-divider{width:1px;height:16px;background:var(--teal-border);}
@@ -224,15 +227,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     </div>
     <div class="trust-bar" style="margin-top:36px;">
       <div class="trust-inner">
-        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">Minority-Owned Business</span></div>
+        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">Minority-Owned Business</span><span class="trust-tooltip">Majority owned and operated by a minority individual, eligible for SBA 8(a) and minority set-aside contracts.</span></div>
         <div class="trust-divider"></div>
-        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">Small Business</span></div>
+        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">Small Business</span><span class="trust-tooltip">Certified small business under SBA size standards, eligible for small business set-aside contract opportunities.</span></div>
         <div class="trust-divider"></div>
-        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">SAM Registered</span></div>
+        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">SAM Registered</span><span class="trust-tooltip">Registered in the System for Award Management (SAM.gov), the federal database required to do business with the U.S. government. UEI: RUDQJF2HWX94</span></div>
         <div class="trust-divider"></div>
-        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">Nevada Licensed</span></div>
+        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">Nevada Licensed</span><span class="trust-tooltip">Active Nevada State Business License in good standing. License No. NV20263552549.</span></div>
         <div class="trust-divider"></div>
-        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">C-TPAT Experienced</span></div>
+        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">C-TPAT Experienced</span><span class="trust-tooltip">Direct operational experience managing C-TPAT certified facilities under U.S. Customs and Border Protection security standards at Tapestry/Coach Brand.</span></div>
       </div>
     </div>
     <div class="stats-grid">
