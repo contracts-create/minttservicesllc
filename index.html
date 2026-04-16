@@ -21,7 +21,7 @@
   --muted:#8A96AA;
   --teal-border:rgba(27,122,110,0.22);
   --gold-border:rgba(212,175,55,0.22);
-  --nav-h:84px;
+  --nav-h:96px;
 }
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);line-height:1.6;overflow-x:hidden;}
@@ -36,7 +36,7 @@ nav{
   display:flex;align-items:center;justify-content:space-between;
   height:var(--nav-h);
 }
-.nav-logo{height:62px;width:auto;display:block;}
+.nav-logo{height:80px;width:auto;display:block;}
 .nav-links{list-style:none;display:flex;gap:2px;align-items:center;}
 .nav-links li a{
   text-decoration:none;font-size:10px;font-weight:500;
@@ -84,7 +84,6 @@ nav{
   display:flex;flex-direction:column;justify-content:center;
   position:relative;overflow:hidden;min-height:100vh;
 }
-/* Non-hero sections don't need full viewport */
 #services,#clients,#credentials,#rfq,#contact{min-height:auto;}
 
 .page-dark{background:var(--navy);}
@@ -157,7 +156,7 @@ nav{
 }
 .cta-ghost:hover{border-color:var(--green);color:var(--green);transform:translateY(-1px);}
 
-/* Hero right — the proof statement */
+/* Hero right */
 .hero-mission{
   font-family:'Bebas Neue',sans-serif;
   font-size:clamp(30px,3.2vw,46px);
@@ -369,7 +368,7 @@ nav{
   padding:40px 5%;display:flex;flex-direction:column;
   align-items:center;gap:12px;text-align:center;position:relative;z-index:1;
 }
-.footer-logo{height:50px;width:auto;}
+.footer-logo{height:70px;width:auto;}
 .footer-story{font-size:12px;color:var(--muted);max-width:380px;line-height:1.9;font-weight:300;}
 .footer-story em{color:var(--green);font-style:normal;}
 .footer-links{display:flex;gap:20px;}
@@ -408,8 +407,8 @@ nav{
   .hamburger{display:flex;}
 }
 @media(max-width:540px){
-  :root{--nav-h:66px;}
-  .nav-logo{height:44px;}
+  :root{--nav-h:76px;}
+  .nav-logo{height:56px;}
   .snap-section{padding:calc(var(--nav-h) + 32px) 4% 56px;}
   .stats-grid,.teaming-grid,.steps-grid{grid-template-columns:1fr;}
   .rfq-row{grid-template-columns:1fr;}
@@ -453,7 +452,6 @@ nav{
   <div class="hero-bg"></div>
   <div class="hero-content">
     <div class="hero-grid">
-      <!-- LEFT: The pitch -->
       <div class="hero-left">
         <div class="eyebrow">Government Procurement &amp; Logistics</div>
         <p class="hero-sub">Procurement and logistics solutions built for government agencies and institutions.</p>
@@ -464,7 +462,6 @@ nav{
           <a href="#credentials" class="cta-ghost">Credentials</a>
         </div>
       </div>
-      <!-- RIGHT: The proof -->
       <div class="hero-right">
         <p class="hero-mission">We connect organizations with the products they need,&nbsp;<em>on time</em> and within budget.</p>
         <p class="hero-mission-sub">From military supply to facility services, Mintt Services LLC handles sourcing, coordination, and fulfillment so you can focus on your mission. Led by leadership with direct Oshkosh Defense contract experience.</p>
@@ -762,12 +759,10 @@ nav{
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Obfuscated emails
 document.querySelectorAll('a.em[data-u]').forEach(function(a){
   a.setAttribute('href','mail'+'to:'+a.getAttribute('data-u')+'@'+a.getAttribute('data-d'));
 });
 
-// Hamburger
 var hbg=document.getElementById('hamburger');
 if(hbg) hbg.addEventListener('click',function(){
   var menu=document.getElementById('mobileMenu');
@@ -788,7 +783,6 @@ document.querySelectorAll('.mobile-menu [data-dest]').forEach(function(link){
   });
 });
 
-// Service tabs
 document.querySelectorAll('.svc-tab[data-panel]').forEach(function(tab){
   tab.addEventListener('click',function(){
     var name=tab.getAttribute('data-panel');
@@ -799,7 +793,6 @@ document.querySelectorAll('.svc-tab[data-panel]').forEach(function(tab){
   });
 });
 
-// NAICS accordion
 document.querySelectorAll('.naics-card').forEach(function(card){
   card.addEventListener('click',function(){
     var isOpen=card.classList.contains('open');
@@ -808,7 +801,6 @@ document.querySelectorAll('.naics-card').forEach(function(card){
   });
 });
 
-// RFQ form
 var rfq=document.getElementById('rfqForm');
 if(rfq) rfq.addEventListener('submit',function(e){
   e.preventDefault();
@@ -824,7 +816,6 @@ if(rfq) rfq.addEventListener('submit',function(e){
     .catch(function(){err.style.display='block';ok.style.display='none';btn.textContent='Submit RFQ';btn.disabled=false;});
 });
 
-// Contact form
 var cf=document.getElementById('contactForm');
 if(cf) cf.addEventListener('submit',function(e){
   e.preventDefault();
@@ -840,7 +831,6 @@ if(cf) cf.addEventListener('submit',function(e){
     .catch(function(){err.style.display='block';ok.style.display='none';btn.textContent='Send Message';btn.disabled=false;});
 });
 
-// Page indicator
 var pages=document.querySelectorAll('.snap-section');
 var indicator=document.getElementById('pageIndicator');
 pages.forEach(function(page){
