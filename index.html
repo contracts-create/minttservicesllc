@@ -17,8 +17,8 @@
 }
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);line-height:1.6;overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--gold-border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:76px;}
-.nav-logo{height:68px;width:auto;display:block;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--gold-border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:84px;}
+.nav-logo{height:64px;width:auto;display:block;}
 .nav-links{list-style:none;display:flex;gap:4px;align-items:center;}
 .nav-links li a{text-decoration:none;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:8px 14px;border-radius:2px;transition:color 0.2s,background 0.2s;display:block;}
 .nav-links li a:hover{color:var(--white);background:rgba(255,255,255,0.05);}
@@ -27,7 +27,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 .nav-rfq:hover{background:var(--gold-dim)!important;}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
 .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:all 0.3s;}
-.mobile-menu{display:none;position:fixed;top:76px;left:0;right:0;background:rgba(10,15,30,0.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--gold-border);z-index:199;padding:16px 5%;flex-direction:column;gap:4px;}
+.mobile-menu{display:none;position:fixed;top:84px;left:0;right:0;background:rgba(10,15,30,0.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--gold-border);z-index:199;padding:16px 5%;flex-direction:column;gap:4px;}
 .mobile-menu a{text-decoration:none;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:12px 16px;display:block;border-left:3px solid transparent;transition:all 0.2s;}
 .mobile-menu a:hover{color:var(--white);border-color:var(--teal);}
 .mobile-menu .mob-rfq{background:var(--gold);color:var(--navy)!important;border-left:none;border-radius:2px;font-weight:700;margin-top:8px;}
@@ -187,7 +187,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
 <body>
 <div class="page-indicator" id="pageIndicator"></div>
 <nav>
-  <a href="#home" style="display:block;line-height:0;"><img src="mintt-logo-dark.png" class="nav-logo" alt="Mintt Services LLC"></a>
+  <a href="#home" style="display:block;line-height:0;"><img src="logo.png" class="nav-logo" alt="Mintt Services LLC"></a>
   <ul class="nav-links">
     <li><a href="#home" data-page="home">Home</a></li>
     <li><a href="#services" data-page="services">Services</a></li>
@@ -282,11 +282,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="svc-panel" id="panel-naics">
         <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Click any code to view the full description and size standard threshold.</p>
         <div class="naics-grid">
-          <button class="naics-card"><div class="naics-header"><span class="naics-code">541614<span class="naics-primary">Primary</span></span><span class="naics-name">Process, Physical Distribution &amp; Logistics Consulting</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Management consulting related to physical distribution, transportation, logistics, and supply chain management.</p><span class="naics-size">Size Standard: $25.5M average annual receipts</span></div></button>
+          <button class="naics-card"><div class="naics-header"><span class="naics-code">424990<span class="naics-primary">Primary</span></span><span class="naics-name">Other Misc. Nondurable Goods Wholesalers</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Merchant wholesale distribution of miscellaneous nondurable goods including supplies, safety equipment, and consumables.</p><span class="naics-size">Size Standard: 250 employees</span></div></button>
+          <button class="naics-card"><div class="naics-header"><span class="naics-code">423990</span><span class="naics-name">Other Misc. Durable Goods Wholesalers</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Merchant wholesale distribution of miscellaneous durable goods including equipment, hardware, and other durable items.</p><span class="naics-size">Size Standard: 250 employees</span></div></button>
+          <button class="naics-card"><div class="naics-header"><span class="naics-code">541614</span><span class="naics-name">Process, Physical Distribution &amp; Logistics Consulting</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Management consulting related to physical distribution, transportation, logistics, and supply chain management.</p><span class="naics-size">Size Standard: $25.5M average annual receipts</span></div></button>
           <button class="naics-card"><div class="naics-header"><span class="naics-code">493110</span><span class="naics-name">General Warehousing and Storage</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Operating merchandise warehousing and storage facilities including general merchandise and refrigerated goods.</p><span class="naics-size">Size Standard: $34M average annual receipts</span></div></button>
           <button class="naics-card"><div class="naics-header"><span class="naics-code">488510</span><span class="naics-name">Freight Transportation Arrangement</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Arranging transportation of freight between shippers and carriers. Includes freight forwarders, shipping agents, and brokers.</p><span class="naics-size">Size Standard: $20M average annual receipts</span></div></button>
-          <button class="naics-card"><div class="naics-header"><span class="naics-code">424990</span><span class="naics-name">Other Misc. Nondurable Goods Wholesalers</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Merchant wholesale distribution of miscellaneous nondurable goods including supplies, safety equipment, and consumables.</p><span class="naics-size">Size Standard: 250 employees</span></div></button>
-          <button class="naics-card"><div class="naics-header"><span class="naics-code">423990</span><span class="naics-name">Other Misc. Durable Goods Wholesalers</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Merchant wholesale distribution of miscellaneous durable goods including equipment, hardware, and other durable items.</p><span class="naics-size">Size Standard: 250 employees</span></div></button>
           <button class="naics-card"><div class="naics-header"><span class="naics-code">339999</span><span class="naics-name">All Other Misc. Manufacturing</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Miscellaneous manufacturing including wristbands, novelty items, and identification materials.</p><span class="naics-size">Size Standard: 750 employees</span></div></button>
           <button class="naics-card"><div class="naics-header"><span class="naics-code">561720</span><span class="naics-name">Janitorial Services</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Cleaning building interiors, transportation equipment interiors, and windows.</p><span class="naics-size">Size Standard: $22M average annual receipts</span></div></button>
           <button class="naics-card"><div class="naics-header"><span class="naics-code">492110</span><span class="naics-name">Couriers and Express Delivery Services</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Air, surface, or combined courier and express delivery services covering local, regional, and national delivery.</p><span class="naics-size">Size Standard: 1,500 employees</span></div></button>
@@ -329,7 +329,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     <div class="cred-card"><div class="cred-label">Entity Type</div><div class="cred-value">Small Business LLC</div></div>
     <div class="cred-card"><div class="cred-label">Ownership</div><div class="cred-value">Minority-Owned</div></div>
     <div class="cred-card"><div class="cred-label">State License</div><div class="cred-value">Nevada Licensed</div></div>
-    <div class="cred-card"><div class="cred-label">Primary NAICS</div><div class="cred-value">541614</div></div>
+    <div class="cred-card"><div class="cred-label">Primary NAICS</div><div class="cred-value">424990</div></div>
     <div class="cred-card"><div class="cred-label">C-TPAT</div><div class="cred-value">Facility Experienced</div></div>
     <div class="cred-card"><div class="cred-label">UEI</div><div class="cred-value">RUDQJF2HWX94</div></div>
     <div class="cred-card"><div class="cred-label">8(a) Status</div><div class="cred-value">Eligible</div></div>
@@ -444,7 +444,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     </form>
   </div>
   <div class="site-footer" style="margin:0 -5%;width:calc(100% + 10%);">
-    <img src="mintt-logo-dark.png" class="footer-logo" alt="Mintt Services LLC">
+    <img src="logo.png" class="footer-logo" alt="Mintt Services LLC">
     <p class="footer-story">Mintt is built from the initials of our founder's five children.<br>Mekhi, Izaiah, Nevaiah, Tyler, and Trenton.<br><em>It's not just a business. It's a legacy.</em></p>
     <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <a class="em" data-u="info" data-d="minttservices.com" style="color:var(--muted);text-decoration:none;">info&#64;minttservices&#46;com</a></p>
     <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
