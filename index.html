@@ -5,187 +5,428 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mintt Services LLC | Government Procurement & Logistics</title>
 <link rel="icon" type="image/png" href="favicon-32x32.png">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --navy:#0A0F1E;--navy-mid:#111827;--navy-card:#0E1422;
-  --green:#4CAF6F;--green-dim:#389A55;
-  --teal:#1B7A6E;--gold:#D4AF37;--gold-dim:#B8960C;
-  --white:#F5F7FA;--muted:#A0ABBE;
-  --teal-border:rgba(27,122,110,0.25);--gold-border:rgba(212,175,55,0.25);
-  --nav-h:88px;
+  --navy:#0A0F1E;
+  --navy-mid:#111827;
+  --navy-card:#0E1422;
+  --green:#4CAF6F;
+  --green-dim:#389A55;
+  --teal:#1B7A6E;
+  --gold:#D4AF37;
+  --gold-dim:#B8960C;
+  --white:#F5F7FA;
+  --muted:#8A96AA;
+  --teal-border:rgba(27,122,110,0.22);
+  --gold-border:rgba(212,175,55,0.22);
+  --nav-h:84px;
 }
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);line-height:1.6;overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--gold-border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);}
-.nav-logo{height:68px;width:auto;display:block;}
-.nav-links{list-style:none;display:flex;gap:4px;align-items:center;}
-.nav-links li a{text-decoration:none;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:9px 16px;border-radius:2px;transition:color 0.2s,background 0.2s;display:block;}
-.nav-links li a:hover{color:var(--white);background:rgba(255,255,255,0.05);}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(8,12,24,0.96);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--gold-border);
+  padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  height:var(--nav-h);
+}
+.nav-logo{height:62px;width:auto;display:block;}
+.nav-links{list-style:none;display:flex;gap:2px;align-items:center;}
+.nav-links li a{
+  text-decoration:none;font-size:10px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;color:var(--muted);
+  padding:9px 14px;border-radius:2px;
+  transition:color 0.2s,background 0.2s;display:block;
+}
+.nav-links li a:hover{color:var(--white);background:rgba(255,255,255,0.04);}
 .nav-links li a.active{color:var(--green);}
-.nav-rfq{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;}
+.nav-rfq{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;letter-spacing:1.5px!important;}
 .nav-rfq:hover{background:var(--gold-dim)!important;}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
 .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:all 0.3s;}
-.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(10,15,30,0.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--gold-border);z-index:199;padding:16px 5%;flex-direction:column;gap:4px;}
-.mobile-menu a{text-decoration:none;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:12px 16px;display:block;border-left:3px solid transparent;transition:all 0.2s;}
+.mobile-menu{
+  display:none;position:fixed;top:var(--nav-h);left:0;right:0;
+  background:rgba(8,12,24,0.98);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--gold-border);z-index:199;
+  padding:16px 5%;flex-direction:column;gap:4px;
+}
+.mobile-menu a{
+  text-decoration:none;font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;color:var(--muted);
+  padding:12px 16px;display:block;border-left:3px solid transparent;transition:all 0.2s;
+}
 .mobile-menu a:hover{color:var(--white);border-color:var(--teal);}
 .mobile-menu .mob-rfq{background:var(--gold);color:var(--navy)!important;border-left:none;border-radius:2px;font-weight:700;margin-top:8px;}
-.page-indicator{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:150;display:flex;flex-direction:column;gap:10px;}
-.page-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.3s;position:relative;}
-.page-dot.active{background:var(--gold);transform:scale(1.5);}
+
+/* ─── PAGE INDICATOR ─── */
+.page-indicator{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:150;display:flex;flex-direction:column;gap:8px;}
+.page-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.18);cursor:pointer;transition:all 0.3s;position:relative;}
+.page-dot.active{background:var(--gold);transform:scale(1.6);}
 .page-dot:hover{background:var(--green);}
-.page-dot .dot-label{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(10,15,30,0.95);color:var(--white);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;border:1px solid var(--gold-border);}
+.page-dot .dot-label{
+  position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  background:rgba(8,12,24,0.96);color:var(--white);
+  font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:4px 10px;border-radius:2px;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity 0.2s;border:1px solid var(--gold-border);
+}
 .page-dot:hover .dot-label{opacity:1;}
-.snap-section{padding:116px 5% 80px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+
+/* ─── SECTIONS ─── */
+.snap-section{
+  padding:calc(var(--nav-h) + 44px) 5% 72px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;min-height:100vh;
+}
+/* Non-hero sections don't need full viewport */
+#services,#clients,#credentials,#rfq,#contact{min-height:auto;}
+
 .page-dark{background:var(--navy);}
 .page-mid{background:var(--navy-mid);}
 .page-card{background:var(--navy-card);}
-.hero-bg{position:absolute;inset:0;background-image:url('img-hero.jpg');background-size:cover;background-position:center;opacity:0.09;pointer-events:none;}
-.clients-bg{position:absolute;inset:0;background-image:url('img-clients.jpg');background-size:cover;background-position:center;opacity:0.08;pointer-events:none;}
-.rfq-bg{position:absolute;inset:0;background-image:url('img-rfq.jpg');background-size:cover;background-position:center;opacity:0.07;pointer-events:none;}
-.trust-bar{background:rgba(27,122,110,0.1);border-top:1px solid var(--teal-border);border-bottom:1px solid var(--teal-border);padding:16px 0;margin:32px -5% 0;width:calc(100% + 10%);position:relative;z-index:1;}
-.trust-inner{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;}
-.trust-badge{display:flex;align-items:center;gap:9px;position:relative;cursor:default;}
-.trust-tooltip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:rgba(10,15,30,0.97);border:1px solid var(--gold-border);color:var(--muted);font-size:11px;font-family:'DM Sans',sans-serif;font-weight:400;letter-spacing:0;text-transform:none;padding:8px 12px;border-radius:2px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;z-index:300;line-height:1.5;}
-.trust-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--gold-border);}
-.trust-badge:hover .trust-tooltip{opacity:1;}
-.trust-icon{color:var(--gold);font-size:9px;}
-.trust-text{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--white);}
-.trust-divider{width:1px;height:18px;background:var(--teal-border);}
-.hero-content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;justify-content:center;}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-border);padding:7px 18px;border-radius:2px;margin-bottom:28px;width:fit-content;}
-.eyebrow::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%;}
-.hero-sub{font-size:19px;color:var(--muted);max-width:500px;margin-bottom:18px;line-height:1.8;font-weight:300;}
-.hero-capability{font-size:14px;color:var(--muted);max-width:480px;margin-bottom:36px;border-left:2px solid var(--teal-border);padding-left:18px;font-style:italic;line-height:1.9;}
-.btn-row{display:flex;gap:14px;flex-wrap:wrap;}
-.cta-gold{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:15px 30px;border-radius:2px;text-decoration:none;transition:background 0.2s;}
-.cta-gold:hover{background:var(--gold-dim);}
-.cta-green{display:inline-block;background:var(--green);color:var(--navy);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:15px 30px;border-radius:2px;text-decoration:none;transition:background 0.2s;}
-.cta-green:hover{background:var(--green-dim);}
-.cta-ghost{display:inline-block;color:var(--white);border:1px solid var(--gold-border);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:15px 30px;border-radius:2px;text-decoration:none;transition:border-color 0.2s,color 0.2s;}
-.cta-ghost:hover{border-color:var(--green);color:var(--green);}
-.hero-right{padding-left:52px;border-left:1px solid var(--teal-border);}
-.hero-mission{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4vw,56px);line-height:1.05;color:var(--white);margin-bottom:22px;letter-spacing:1px;}
+
+/* Background images */
+.hero-bg{position:absolute;inset:0;background-image:url('img-hero.jpg');background-size:cover;background-position:center top;opacity:0.10;pointer-events:none;}
+.clients-bg{position:absolute;inset:0;background-image:url('img-clients.jpg');background-size:cover;background-position:center;opacity:0.07;pointer-events:none;}
+.rfq-bg{position:absolute;inset:0;background-image:url('img-rfq.jpg');background-size:cover;background-position:center;opacity:0.06;pointer-events:none;}
+
+/* ─── HERO ─── */
+.hero-content{position:relative;z-index:1;display:flex;flex-direction:column;}
+.hero-grid{
+  display:grid;
+  grid-template-columns:52% 48%;
+  gap:0;
+  align-items:stretch;
+  min-height:420px;
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding-right:52px;
+  border-right:1px solid var(--teal-border);
+}
+.hero-right{
+  display:flex;flex-direction:column;justify-content:center;
+  padding-left:52px;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--gold-border);
+  padding:7px 16px;border-radius:2px;margin-bottom:22px;width:fit-content;
+}
+.eyebrow::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+.hero-sub{
+  font-size:clamp(22px,2.4vw,32px);
+  color:var(--white);
+  max-width:480px;margin-bottom:14px;
+  line-height:1.3;font-weight:400;
+  letter-spacing:-0.2px;
+}
+.hero-capability{
+  font-size:14px;color:var(--muted);
+  max-width:420px;margin-bottom:32px;
+  border-left:2px solid var(--teal-border);padding-left:16px;
+  font-style:italic;line-height:1.85;
+  font-weight:300;
+}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;}
+.cta-gold{
+  display:inline-block;background:var(--gold);color:var(--navy);
+  font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  padding:14px 28px;border-radius:2px;text-decoration:none;transition:background 0.2s,transform 0.15s;
+}
+.cta-gold:hover{background:var(--gold-dim);transform:translateY(-1px);}
+.cta-green{
+  display:inline-block;background:var(--green);color:var(--navy);
+  font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  padding:14px 28px;border-radius:2px;text-decoration:none;transition:background 0.2s,transform 0.15s;
+}
+.cta-green:hover{background:var(--green-dim);transform:translateY(-1px);}
+.cta-ghost{
+  display:inline-block;color:var(--muted);
+  border:1px solid rgba(255,255,255,0.12);
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  padding:14px 28px;border-radius:2px;text-decoration:none;
+  transition:border-color 0.2s,color 0.2s,transform 0.15s;
+}
+.cta-ghost:hover{border-color:var(--green);color:var(--green);transform:translateY(-1px);}
+
+/* Hero right — the proof statement */
+.hero-mission{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(30px,3.2vw,46px);
+  line-height:1.08;color:var(--white);
+  margin-bottom:20px;letter-spacing:0.5px;
+}
 .hero-mission em{color:var(--green);font-style:normal;}
-.hero-mission-sub{font-size:16px;color:var(--muted);line-height:1.9;font-weight:300;}
-.section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;position:relative;z-index:1;}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4.2vw,56px);letter-spacing:1px;color:var(--white);margin-bottom:10px;line-height:1;position:relative;z-index:1;}
-.section-line{display:inline-block;width:40px;height:2px;background:var(--gold);margin-bottom:20px;position:relative;z-index:1;}
-.section-sub{font-size:15px;color:var(--muted);max-width:560px;line-height:1.85;margin-bottom:32px;position:relative;z-index:1;font-weight:300;}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:28px;position:relative;z-index:1;}
-.stat-card{background:rgba(14,20,34,0.92);padding:32px;border-top:3px solid var(--teal);transition:border-color 0.2s;}
+.hero-mission-sub{font-size:15px;color:var(--muted);line-height:1.9;font-weight:300;max-width:440px;}
+
+/* ─── TRUST BAR ─── */
+.trust-bar{
+  background:rgba(27,122,110,0.08);
+  border-top:1px solid var(--teal-border);
+  border-bottom:1px solid var(--teal-border);
+  padding:14px 0;margin:40px -5% 0;
+  width:calc(100% + 10%);position:relative;z-index:1;
+}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
+.trust-badge{display:flex;align-items:center;gap:8px;position:relative;cursor:default;}
+.trust-tooltip{
+  position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);
+  background:rgba(8,12,24,0.97);border:1px solid var(--gold-border);
+  color:var(--muted);font-size:11px;font-family:'DM Sans',sans-serif;
+  font-weight:400;letter-spacing:0;text-transform:none;
+  padding:8px 12px;border-radius:2px;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity 0.2s;z-index:300;line-height:1.5;
+}
+.trust-tooltip::after{
+  content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:rgba(212,175,55,0.3);
+}
+.trust-badge:hover .trust-tooltip{opacity:1;}
+.trust-icon{color:var(--gold);font-size:8px;}
+.trust-text{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(245,247,250,0.85);}
+.trust-divider{width:1px;height:16px;background:var(--teal-border);}
+
+/* ─── STATS ─── */
+.stats-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2px;margin-top:28px;position:relative;z-index:1;
+}
+.stat-card{background:rgba(11,16,28,0.95);padding:30px 28px;border-top:3px solid var(--teal);transition:border-color 0.25s;}
 .stat-card:hover{border-color:var(--gold);}
-.stat-num{font-family:'Bebas Neue',sans-serif;font-size:58px;color:var(--green);line-height:1;margin-bottom:8px;}
-.stat-card h3{font-size:13px;font-weight:500;color:var(--white);margin-bottom:6px;}
-.stat-card p{font-size:12px;color:var(--muted);line-height:1.75;}
-.services-layout{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start;position:relative;z-index:1;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:54px;color:var(--green);line-height:1;margin-bottom:6px;}
+.stat-card h3{font-size:12px;font-weight:500;color:var(--white);margin-bottom:5px;letter-spacing:0.3px;}
+.stat-card p{font-size:12px;color:var(--muted);line-height:1.75;font-weight:300;}
+
+/* ─── SECTION HEADERS ─── */
+.section-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;position:relative;z-index:1;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,3.8vw,52px);letter-spacing:0.5px;color:var(--white);margin-bottom:8px;line-height:1;position:relative;z-index:1;}
+.section-line{display:inline-block;width:36px;height:2px;background:var(--gold);margin-bottom:20px;position:relative;z-index:1;}
+.section-sub{font-size:15px;color:var(--muted);max-width:540px;line-height:1.85;margin-bottom:32px;position:relative;z-index:1;font-weight:300;}
+
+/* ─── SERVICES ─── */
+.services-layout{display:grid;grid-template-columns:185px 1fr;gap:36px;align-items:start;position:relative;z-index:1;}
 .services-nav{display:flex;flex-direction:column;gap:2px;}
-.svc-tab{background:none;border:none;text-align:left;padding:14px 18px;cursor:pointer;border-left:3px solid transparent;color:var(--muted);font-size:12px;font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+.svc-tab{
+  background:none;border:none;text-align:left;
+  padding:13px 16px;cursor:pointer;
+  border-left:3px solid transparent;
+  color:var(--muted);font-size:11px;font-family:'DM Sans',sans-serif;
+  transition:all 0.2s;letter-spacing:0.3px;
+}
 .svc-tab:hover{color:var(--white);border-color:var(--teal);}
-.svc-tab.active{color:var(--white);border-color:var(--green);background:rgba(76,175,111,0.06);}
+.svc-tab.active{color:var(--white);border-color:var(--green);background:rgba(76,175,111,0.05);}
 .svc-panel{display:none;}
 .svc-panel.active{display:block;}
 .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
-.svc-card{background:var(--navy-card);padding:26px;border-top:2px solid transparent;transition:border-color 0.2s;}
+.svc-card{background:var(--navy-card);padding:24px;border-top:2px solid transparent;transition:border-color 0.2s;}
 .svc-card:hover{border-color:var(--green);}
-.svc-num{font-family:'Bebas Neue',sans-serif;font-size:30px;color:rgba(76,175,111,0.15);margin-bottom:8px;}
-.svc-card h3{font-size:13px;font-weight:500;color:var(--white);margin-bottom:6px;}
-.svc-card p{font-size:13px;color:#C4CEDB;line-height:1.8;}
+.svc-num{font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(76,175,111,0.12);margin-bottom:8px;}
+.svc-card h3{font-size:12px;font-weight:500;color:var(--white);margin-bottom:5px;letter-spacing:0.3px;}
+.svc-card p{font-size:12px;color:#9AAABB;line-height:1.8;font-weight:300;}
 .supply-list{display:flex;flex-direction:column;}
-.supply-item{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--teal-border);font-size:14px;color:var(--white);}
+.supply-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--teal-border);font-size:13px;color:var(--white);}
 .supply-item:last-child{border-bottom:none;}
-.supply-item::before{content:'';flex-shrink:0;width:5px;height:5px;background:var(--green);border-radius:50%;}
+.supply-item::before{content:'';flex-shrink:0;width:4px;height:4px;background:var(--green);border-radius:50%;}
+
+/* ─── NAICS ─── */
 .naics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
 .naics-card{background:var(--navy-card);border:none;cursor:pointer;text-align:left;width:100%;padding:0;transition:background 0.2s;}
-.naics-card:hover{background:#0D1320;}
-.naics-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;gap:12px;}
-.naics-code{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--green);letter-spacing:1px;flex-shrink:0;}
-.naics-name{font-size:11px;font-weight:500;color:var(--white);flex:1;}
-.naics-arrow{font-size:10px;color:var(--muted);transition:transform 0.2s;flex-shrink:0;}
+.naics-card:hover{background:#0c1220;}
+.naics-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;gap:12px;}
+.naics-code{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--green);letter-spacing:1px;flex-shrink:0;}
+.naics-name{font-size:11px;font-weight:400;color:var(--white);flex:1;line-height:1.4;}
+.naics-arrow{font-size:9px;color:var(--muted);transition:transform 0.2s;flex-shrink:0;}
 .naics-card.open .naics-arrow{transform:rotate(180deg);}
-.naics-body{display:none;padding:0 20px 16px;border-top:1px solid var(--teal-border);}
+.naics-body{display:none;padding:0 18px 14px;border-top:1px solid var(--teal-border);}
 .naics-card.open .naics-body{display:block;}
-.naics-body p{font-size:11px;color:var(--muted);line-height:1.8;padding-top:12px;}
-.naics-size{font-size:9px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-top:6px;display:block;}
-.naics-primary{background:var(--green);color:var(--navy);font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:8px;vertical-align:middle;}
+.naics-body p{font-size:11px;color:var(--muted);line-height:1.8;padding-top:10px;font-weight:300;}
+.naics-size{font-size:9px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-top:5px;display:block;}
+.naics-primary{background:var(--green);color:var(--navy);font-size:7px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:2px 6px;border-radius:2px;margin-left:8px;vertical-align:middle;}
+
+/* ─── CLIENTS ─── */
 .serve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;position:relative;z-index:1;}
-.serve-card{background:rgba(14,20,34,0.88);padding:30px;border-left:3px solid transparent;transition:all 0.2s;display:flex;gap:20px;align-items:flex-start;}
+.serve-card{
+  background:rgba(11,16,28,0.9);padding:28px;
+  border-left:3px solid transparent;transition:border-color 0.2s;
+  display:flex;gap:18px;align-items:flex-start;
+}
 .serve-card:hover{border-color:var(--green);}
-.serve-icon{flex-shrink:0;width:46px;height:46px;background:rgba(27,122,110,0.15);border:1px solid var(--teal-border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:20px;}
-.serve-card h3{font-size:14px;font-weight:500;color:var(--white);margin-bottom:6px;}
-.serve-card p{font-size:13px;color:#C4CEDB;line-height:1.8;}
+.serve-icon{
+  flex-shrink:0;width:42px;height:42px;
+  background:rgba(27,122,110,0.12);border:1px solid var(--teal-border);
+  border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+.serve-card h3{font-size:13px;font-weight:500;color:var(--white);margin-bottom:5px;}
+.serve-card p{font-size:12px;color:#9AAABB;line-height:1.8;font-weight:300;}
 .teaming-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;position:relative;z-index:1;}
-.teaming-card{background:rgba(14,20,34,0.88);padding:26px;border-top:3px solid var(--teal);transition:border-color 0.2s;}
+.teaming-card{background:rgba(11,16,28,0.9);padding:24px;border-top:3px solid var(--teal);transition:border-color 0.2s;}
 .teaming-card:hover{border-color:var(--green);}
-.teaming-card h3{font-size:14px;font-weight:500;color:var(--white);margin-bottom:8px;}
-.teaming-card p{font-size:13px;color:#C4CEDB;line-height:1.8;}
+.teaming-card h3{font-size:13px;font-weight:500;color:var(--white);margin-bottom:6px;}
+.teaming-card p{font-size:12px;color:#9AAABB;line-height:1.8;font-weight:300;}
+
+/* ─── CREDENTIALS ─── */
 .cred-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;position:relative;z-index:1;}
-.cred-card{background:var(--navy-card);padding:22px 18px;border-top:2px solid var(--teal-border);text-align:center;transition:border-color 0.2s;}
+.cred-card{
+  background:var(--navy-card);padding:20px 16px;
+  border-top:2px solid var(--teal-border);text-align:center;transition:border-color 0.2s;
+}
 .cred-card:hover{border-color:var(--gold);}
-.cred-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.cred-label{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
 .cred-value{font-size:13px;font-weight:500;color:var(--white);}
 .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;position:relative;z-index:1;}
-.step{background:var(--navy-card);padding:26px 22px;border-top:3px solid transparent;transition:border-color 0.2s;}
+.step{background:var(--navy-card);padding:24px 20px;border-top:3px solid transparent;transition:border-color 0.2s;}
 .step:hover{border-color:var(--teal);}
-.step-num{font-family:'Bebas Neue',sans-serif;font-size:44px;color:rgba(76,175,111,0.12);line-height:1;margin-bottom:8px;}
-.step h3{font-size:12px;font-weight:500;color:var(--white);margin-bottom:6px;}
-.step p{font-size:12px;color:#C4CEDB;line-height:1.75;}
-.cap-dl{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:11px 20px;border-radius:2px;text-decoration:none;transition:background 0.2s;}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:40px;color:rgba(76,175,111,0.10);line-height:1;margin-bottom:7px;}
+.step h3{font-size:12px;font-weight:500;color:var(--white);margin-bottom:5px;}
+.step p{font-size:12px;color:#9AAABB;line-height:1.75;font-weight:300;}
+.cap-dl{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--gold);color:var(--navy);
+  font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:11px 20px;border-radius:2px;text-decoration:none;transition:background 0.2s;
+}
 .cap-dl:hover{background:var(--gold-dim);}
-.rfq-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start;position:relative;z-index:1;}
-.rfq-info{display:flex;flex-direction:column;gap:20px;}
-.rfq-sla{font-family:'Bebas Neue',sans-serif;font-size:64px;color:var(--green);line-height:1;}
-.rfq-sla span{font-size:13px;font-family:'DM Sans',sans-serif;color:var(--muted);display:block;margin-top:4px;}
-.rfq-badge{display:inline-block;background:rgba(27,122,110,0.15);border:1px solid var(--teal-border);color:var(--green);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:2px;width:fit-content;}
-.rfq-detail{font-size:13px;color:var(--muted);line-height:1.85;}
+
+/* ─── RFQ ─── */
+.rfq-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:56px;align-items:start;position:relative;z-index:1;}
+.rfq-info{display:flex;flex-direction:column;gap:18px;}
+.rfq-sla{font-family:'Bebas Neue',sans-serif;font-size:62px;color:var(--green);line-height:1;}
+.rfq-sla span{font-size:12px;font-family:'DM Sans',sans-serif;color:var(--muted);display:block;margin-top:4px;font-weight:300;}
+.rfq-badge{
+  display:inline-block;background:rgba(27,122,110,0.12);
+  border:1px solid var(--teal-border);color:var(--green);
+  font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  padding:6px 12px;border-radius:2px;width:fit-content;
+}
+.rfq-detail{font-size:13px;color:var(--muted);line-height:1.85;font-weight:300;}
 .rfq-contacts{display:flex;flex-direction:column;gap:12px;}
-.rfq-contact-item .rlabel{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+.rfq-contact-item .rlabel{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
 .rfq-contact-item a{font-size:14px;color:var(--white);text-decoration:none;transition:color 0.2s;}
 .rfq-contact-item a:hover{color:var(--green);}
-.rfq-form{display:flex;flex-direction:column;gap:9px;background:rgba(14,20,34,0.92);padding:30px;border-top:3px solid var(--green);}
-.rfq-form input,.rfq-form select,.rfq-form textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:2px;padding:12px 14px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;width:100%;appearance:none;}
-.rfq-form input::placeholder,.rfq-form textarea::placeholder{color:var(--muted);}
+.rfq-form{
+  display:flex;flex-direction:column;gap:8px;
+  background:rgba(11,16,28,0.95);padding:28px;border-top:3px solid var(--green);
+}
+.rfq-form input,.rfq-form select,.rfq-form textarea{
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);
+  border-radius:2px;padding:11px 13px;color:var(--white);
+  font-family:'DM Sans',sans-serif;font-size:13px;outline:none;
+  transition:border-color 0.2s;width:100%;appearance:none;
+}
+.rfq-form input::placeholder,.rfq-form textarea::placeholder{color:rgba(160,171,190,0.6);}
 .rfq-form input:focus,.rfq-form textarea:focus,.rfq-form select:focus{border-color:var(--green);}
 .rfq-form select option{background:var(--navy-mid);}
-.rfq-form textarea{min-height:90px;resize:vertical;}
-.rfq-row{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.rfq-form textarea{min-height:88px;resize:vertical;}
+.rfq-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .dollar-wrap{position:relative;display:flex;align-items:center;}
-.dollar-wrap::before{content:'$';position:absolute;left:14px;color:var(--muted);font-size:13px;pointer-events:none;z-index:1;}
+.dollar-wrap::before{content:'$';position:absolute;left:13px;color:var(--muted);font-size:13px;pointer-events:none;z-index:1;}
 .dollar-wrap input{padding-left:26px;width:100%;}
-.rfq-submit{background:var(--gold);color:var(--navy);border:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:14px 26px;border-radius:2px;cursor:pointer;transition:background 0.2s;width:100%;}
+.rfq-submit{
+  background:var(--gold);color:var(--navy);border:none;
+  font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:13px 26px;border-radius:2px;cursor:pointer;
+  transition:background 0.2s;width:100%;margin-top:4px;
+}
 .rfq-submit:hover{background:var(--gold-dim);}
-.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;position:relative;z-index:1;}
-.c-item .clabel{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+
+/* ─── CONTACT ─── */
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;position:relative;z-index:1;}
+.c-item .clabel{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
 .c-item a,.c-item p,.c-item span{font-size:14px;color:var(--white);text-decoration:none;font-weight:400;}
 .c-item a:hover{color:var(--green);}
-.contact-form{display:flex;flex-direction:column;gap:9px;}
-.contact-form input,.contact-form select,.contact-form textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:2px;padding:12px 14px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;width:100%;appearance:none;}
-.contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--muted);}
+.contact-form{display:flex;flex-direction:column;gap:8px;}
+.contact-form input,.contact-form select,.contact-form textarea{
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);
+  border-radius:2px;padding:11px 13px;color:var(--white);
+  font-family:'DM Sans',sans-serif;font-size:13px;outline:none;
+  transition:border-color 0.2s;width:100%;appearance:none;
+}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(160,171,190,0.6);}
 .contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--green);}
 .contact-form select option{background:var(--navy-mid);}
-.contact-form textarea{min-height:90px;resize:vertical;}
-.contact-submit{background:var(--green);color:var(--navy);border:none;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:13px 26px;border-radius:2px;cursor:pointer;transition:background 0.2s;width:fit-content;}
-.contact-submit:hover{background:var(--green-dim);}
-.site-footer{background:var(--navy);border-top:1px solid var(--gold-border);padding:40px 5%;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;position:relative;z-index:1;}
-.footer-logo{height:52px;width:auto;}
-.footer-story{font-size:12px;color:var(--muted);max-width:420px;line-height:1.85;}
+.contact-form textarea{min-height:88px;resize:vertical;}
+.contact-submit{
+  background:var(--green);color:var(--navy);border:none;
+  font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:12px 24px;border-radius:2px;cursor:pointer;
+  transition:background 0.2s,transform 0.15s;width:fit-content;margin-top:4px;
+}
+.contact-submit:hover{background:var(--green-dim);transform:translateY(-1px);}
+
+/* ─── FOOTER ─── */
+.site-footer{
+  background:var(--navy);border-top:1px solid var(--gold-border);
+  padding:40px 5%;display:flex;flex-direction:column;
+  align-items:center;gap:12px;text-align:center;position:relative;z-index:1;
+}
+.footer-logo{height:50px;width:auto;}
+.footer-story{font-size:12px;color:var(--muted);max-width:380px;line-height:1.9;font-weight:300;}
 .footer-story em{color:var(--green);font-style:normal;}
 .footer-links{display:flex;gap:20px;}
-.footer-links a{color:var(--muted);text-decoration:none;font-size:10px;transition:color 0.2s;}
+.footer-links a{color:rgba(160,171,190,0.6);text-decoration:none;font-size:10px;transition:color 0.2s;}
 .footer-links a:hover{color:var(--gold);}
-.footer-copy{font-size:10px;color:#3A3A4A;}
-.msg-success{display:none;background:rgba(76,175,111,0.1);border:1px solid var(--green);border-radius:2px;padding:16px;color:var(--green);font-size:13px;text-align:center;}
-.msg-error{display:none;background:rgba(212,60,60,0.1);border:1px solid #D43C3C;border-radius:2px;padding:16px;color:#D43C3C;font-size:13px;text-align:center;}
-@media(max-width:1024px){.services-layout{grid-template-columns:1fr;}.services-nav{flex-direction:row;flex-wrap:wrap;}.rfq-layout{grid-template-columns:1fr;}}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.hero-right{border-left:none;border-top:1px solid var(--teal-border);padding-left:0;padding-top:28px;margin-top:12px;}.stats-grid,.teaming-grid,.steps-grid{grid-template-columns:1fr 1fr;}.cred-grid{grid-template-columns:1fr 1fr;}.naics-grid,.serve-grid,.contact-layout,.svc-grid{grid-template-columns:1fr;}.page-indicator{display:none;}.nav-links{display:none;}.hamburger{display:flex;}}
-@media(max-width:540px){:root{--nav-h:68px;}.nav-logo{height:46px;}.snap-section{padding:96px 4% 60px;}.stats-grid,.teaming-grid,.steps-grid{grid-template-columns:1fr;}.rfq-row{grid-template-columns:1fr;}.trust-divider{display:none;}.trust-inner{gap:14px;padding:0 4%;}.serve-card{flex-direction:column;}.btn-row{flex-direction:column;}.cta-gold,.cta-green,.cta-ghost{text-align:center;}.hero-sub{font-size:16px;}}
+.footer-copy{font-size:10px;color:rgba(60,60,74,0.8);}
+
+/* ─── UTILITY ─── */
+.msg-success{display:none;background:rgba(76,175,111,0.08);border:1px solid var(--green);border-radius:2px;padding:14px;color:var(--green);font-size:12px;text-align:center;}
+.msg-error{display:none;background:rgba(212,60,60,0.08);border:1px solid #D43C3C;border-radius:2px;padding:14px;color:#D43C3C;font-size:12px;text-align:center;}
+
+/* ─── CONTACT INFO ICONS ─── */
+.c-icon-row{display:flex;align-items:flex-start;gap:13px;}
+.c-icon{flex-shrink:0;width:36px;height:36px;background:rgba(27,122,110,0.12);border:1px solid var(--teal-border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.c-icon-text .c-icon-label{font-size:10px;font-weight:500;color:var(--white);margin-bottom:2px;}
+.c-icon-text .c-icon-sub{font-size:11px;color:var(--muted);line-height:1.6;font-weight:300;}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1100px){
+  .hero-grid{grid-template-columns:1fr 1fr;gap:0;}
+  .hero-left{padding-right:36px;}
+  .hero-right{padding-left:36px;}
+  .rfq-layout{grid-template-columns:1fr;}
+}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-left{border-right:none;border-bottom:1px solid var(--teal-border);padding-right:0;padding-bottom:32px;margin-bottom:8px;}
+  .hero-right{padding-left:0;padding-top:28px;}
+  .stats-grid,.teaming-grid,.steps-grid{grid-template-columns:1fr 1fr;}
+  .cred-grid{grid-template-columns:1fr 1fr;}
+  .naics-grid,.serve-grid,.contact-layout,.svc-grid{grid-template-columns:1fr;}
+  .services-layout{grid-template-columns:1fr;}
+  .services-nav{flex-direction:row;flex-wrap:wrap;}
+  .page-indicator{display:none;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+}
+@media(max-width:540px){
+  :root{--nav-h:66px;}
+  .nav-logo{height:44px;}
+  .snap-section{padding:calc(var(--nav-h) + 32px) 4% 56px;}
+  .stats-grid,.teaming-grid,.steps-grid{grid-template-columns:1fr;}
+  .rfq-row{grid-template-columns:1fr;}
+  .trust-divider{display:none;}
+  .trust-inner{gap:12px;padding:0 4%;}
+  .serve-card{flex-direction:column;}
+  .btn-row{flex-direction:column;}
+  .cta-gold,.cta-green,.cta-ghost{text-align:center;}
+  .hero-sub{font-size:22px;}
+}
 </style>
 </head>
 <body>
+
 <div class="page-indicator" id="pageIndicator"></div>
+
+<!-- NAV -->
 <nav>
   <a href="#home" style="display:block;line-height:0;"><img src="logo.png" class="nav-logo" alt="Mintt Services LLC"></a>
   <ul class="nav-links">
@@ -206,11 +447,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   <a href="#contact" data-dest="contact">Contact</a>
   <a href="#rfq" class="mob-rfq" data-dest="rfq">Submit RFQ</a>
 </div>
+
+<!-- HOME -->
 <section class="snap-section page-dark" id="home" data-label="Home">
   <div class="hero-bg"></div>
   <div class="hero-content">
     <div class="hero-grid">
-      <div>
+      <!-- LEFT: The pitch -->
+      <div class="hero-left">
         <div class="eyebrow">Government Procurement &amp; Logistics</div>
         <p class="hero-sub">Procurement and logistics solutions built for government agencies and institutions.</p>
         <p class="hero-capability">Cost-effective sourcing. Reliable fulfillment. Scalable supply solutions. Led by a decade of direct military logistics experience.</p>
@@ -220,31 +464,70 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
           <a href="#credentials" class="cta-ghost">Credentials</a>
         </div>
       </div>
+      <!-- RIGHT: The proof -->
       <div class="hero-right">
-        <p class="hero-mission">We connect organizations with the products they need, <em>on time</em> and within budget.</p>
+        <p class="hero-mission">We connect organizations with the products they need,&nbsp;<em>on time</em> and within budget.</p>
         <p class="hero-mission-sub">From military supply to facility services, Mintt Services LLC handles sourcing, coordination, and fulfillment so you can focus on your mission. Led by leadership with direct Oshkosh Defense contract experience.</p>
       </div>
     </div>
+
+    <!-- Trust bar -->
     <div class="trust-bar">
       <div class="trust-inner">
-        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">Minority-Owned Business</span><span class="trust-tooltip">Majority owned and operated by a minority individual, eligible for SBA 8(a) and minority set-aside contracts.</span></div>
+        <div class="trust-badge">
+          <span class="trust-icon">&#10022;</span>
+          <span class="trust-text">Minority-Owned Business</span>
+          <span class="trust-tooltip">Majority owned and operated by a minority individual, eligible for SBA 8(a) and minority set-aside contracts.</span>
+        </div>
         <div class="trust-divider"></div>
-        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">Small Business</span><span class="trust-tooltip">Certified small business under SBA size standards, eligible for small business set-aside contract opportunities.</span></div>
+        <div class="trust-badge">
+          <span class="trust-icon">&#10022;</span>
+          <span class="trust-text">Small Business</span>
+          <span class="trust-tooltip">Certified small business under SBA size standards, eligible for small business set-aside contract opportunities.</span>
+        </div>
         <div class="trust-divider"></div>
-        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">SAM Registered</span><span class="trust-tooltip">Registered in the System for Award Management (SAM.gov), the federal database required to do business with the U.S. government. UEI: RUDQJF2HWX94</span></div>
+        <div class="trust-badge">
+          <span class="trust-icon">&#10022;</span>
+          <span class="trust-text">SAM Registered</span>
+          <span class="trust-tooltip">Registered in the System for Award Management (SAM.gov). UEI: RUDQJF2HWX94</span>
+        </div>
         <div class="trust-divider"></div>
-        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">Nevada Licensed</span><span class="trust-tooltip">Active Nevada State Business License in good standing. License No. NV20263552549.</span></div>
+        <div class="trust-badge">
+          <span class="trust-icon">&#10022;</span>
+          <span class="trust-text">Nevada Licensed</span>
+          <span class="trust-tooltip">Active Nevada State Business License in good standing. License No. NV20263552549.</span>
+        </div>
         <div class="trust-divider"></div>
-        <div class="trust-badge"><span class="trust-icon">&#10022;</span><span class="trust-text">C-TPAT Experienced</span><span class="trust-tooltip">Direct operational experience managing C-TPAT certified facilities under U.S. Customs and Border Protection security standards at Tapestry/Coach Brand.</span></div>
+        <div class="trust-badge">
+          <span class="trust-icon">&#10022;</span>
+          <span class="trust-text">C-TPAT Experienced</span>
+          <span class="trust-tooltip">Direct operational experience managing C-TPAT certified facilities under U.S. Customs and Border Protection security standards at Tapestry/Coach Brand.</span>
+        </div>
       </div>
     </div>
+
+    <!-- Stats -->
     <div class="stats-grid">
-      <div class="stat-card"><div class="stat-num">10+</div><h3>Years Military Logistics</h3><p>Direct experience managing military parts distribution and global shipments on behalf of Oshkosh Defense.</p></div>
-      <div class="stat-card"><div class="stat-num">$9.6M</div><h3>Operations Managed</h3><p>Led a $9.6M annual revenue logistics operation with 100+ personnel and full P&amp;L responsibility.</p></div>
-      <div class="stat-card"><div class="stat-num">800K</div><h3>Sq Ft Facility Leadership</h3><p>Built and scaled an 800,000 sq ft fulfillment center from startup to a 160-person operation.</p></div>
+      <div class="stat-card">
+        <div class="stat-num">10+</div>
+        <h3>Years Military Logistics</h3>
+        <p>Direct experience managing military parts distribution and global shipments on behalf of Oshkosh Defense.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">$9.6M</div>
+        <h3>Operations Managed</h3>
+        <p>Led a $9.6M annual revenue logistics operation with 100+ personnel and full P&amp;L responsibility.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">800K</div>
+        <h3>Sq Ft Facility Leadership</h3>
+        <p>Built and scaled an 800,000 sq ft fulfillment center from startup to a 160-person operation.</p>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- SERVICES -->
 <section class="snap-section page-mid" id="services" data-label="Services">
   <div class="section-label">Services</div>
   <h2 class="section-title">What We Do.</h2>
@@ -267,7 +550,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
         </div>
       </div>
       <div class="svc-panel" id="panel-supply">
-        <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.85;">We source across a range of product categories for government agencies, institutions, and businesses.</p>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.85;font-weight:300;">We source across a range of product categories for government agencies, institutions, and businesses.</p>
         <div class="supply-list">
           <div class="supply-item">Government and Military Supply</div>
           <div class="supply-item">Apparel and Uniforms</div>
@@ -280,7 +563,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
         </div>
       </div>
       <div class="svc-panel" id="panel-naics">
-        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Click any code to view the full description and size standard threshold.</p>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:14px;font-weight:300;">Click any code to view the full description and size standard threshold.</p>
         <div class="naics-grid">
           <button class="naics-card"><div class="naics-header"><span class="naics-code">424990<span class="naics-primary">Primary</span></span><span class="naics-name">Other Misc. Nondurable Goods Wholesalers</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Merchant wholesale distribution of miscellaneous nondurable goods including supplies, safety equipment, and consumables.</p><span class="naics-size">Size Standard: 250 employees</span></div></button>
           <button class="naics-card"><div class="naics-header"><span class="naics-code">423990</span><span class="naics-name">Other Misc. Durable Goods Wholesalers</span><span class="naics-arrow">&#9660;</span></div><div class="naics-body"><p>Merchant wholesale distribution of miscellaneous durable goods including equipment, hardware, and other durable items.</p><span class="naics-size">Size Standard: 250 employees</span></div></button>
@@ -296,6 +579,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     </div>
   </div>
 </section>
+
+<!-- CLIENTS -->
 <section class="snap-section page-dark" id="clients" data-label="Clients">
   <div class="clients-bg"></div>
   <div style="position:relative;z-index:1;">
@@ -310,7 +595,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="serve-card"><div class="serve-icon">&#127970;</div><div><h3>Businesses &amp; Primes</h3><p>Companies and prime contractors looking to consolidate vendor relationships and engage qualified small business partners.</p></div></div>
     </div>
     <div class="section-label">Teaming &amp; Partnerships</div>
-    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,3vw,40px);color:var(--white);margin-bottom:8px;letter-spacing:1px;">Let's Win Together.</h3>
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.8vw,38px);color:var(--white);margin-bottom:8px;letter-spacing:0.5px;">Let's Win Together.</h3>
     <div class="section-line"></div>
     <div class="teaming-grid" style="margin-bottom:24px;">
       <div class="teaming-card"><h3>Subcontracting</h3><p>Large primes seeking a qualified, compliant small business. We bring procurement, logistics, and supply chain capabilities to your prime contract.</p></div>
@@ -320,6 +605,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     <a href="#contact" class="cta-green">Discuss a Teaming Opportunity</a>
   </div>
 </section>
+
+<!-- CREDENTIALS -->
 <section class="snap-section page-mid" id="credentials" data-label="Credentials">
   <div class="section-label">Compliance &amp; Credentials</div>
   <h2 class="section-title">Verified. Registered. Ready.</h2>
@@ -335,7 +622,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
     <div class="cred-card"><div class="cred-label">8(a) Status</div><div class="cred-value">Eligible</div></div>
   </div>
   <div class="section-label">Our Process</div>
-  <h3 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,3vw,40px);color:var(--white);margin-bottom:8px;letter-spacing:1px;">From Requirement to Delivery.</h3>
+  <h3 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.8vw,38px);color:var(--white);margin-bottom:8px;letter-spacing:0.5px;">From Requirement to Delivery.</h3>
   <div class="section-line"></div>
   <div class="steps-grid" style="margin-bottom:32px;">
     <div class="step"><div class="step-num">01</div><h3>Identify the Need</h3><p>We review your requirements, quantities, and delivery timeline to scope the order accurately.</p></div>
@@ -345,6 +632,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
   </div>
   <a href="/MinttServices_Capabilities_Statement.pdf" download class="cap-dl">&#8595; Download Capabilities Statement</a>
 </section>
+
+<!-- RFQ -->
 <section class="snap-section page-card" id="rfq" data-label="RFQ">
   <div class="rfq-bg"></div>
   <div class="section-label">Government RFQ Portal</div>
@@ -356,11 +645,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
       <div class="rfq-sla">4 Hours<span>Government RFQ response guarantee, business hours</span></div>
       <p class="rfq-detail">Submit your requirements directly. Include part numbers, quantities, delivery timelines, and any SOW or specifications. We review every government submission personally and respond within 4 business hours.</p>
       <div class="rfq-contacts">
-        <div class="c-item">
-          <div class="clabel">Government &amp; Contracts</div>
+        <div class="rfq-contact-item">
+          <div class="rlabel">Government &amp; Contracts</div>
           <a class="em" data-u="contracts" data-d="minttservices.com">contracts&#64;minttservices&#46;com</a>
         </div>
-        <div class="c-item"><div class="clabel">Direct Line</div><a href="tel:+17025181813">(702) 518-1813</a></div>
+        <div class="rfq-contact-item">
+          <div class="rlabel">Direct Line</div>
+          <a href="tel:+17025181813">(702) 518-1813</a>
+        </div>
       </div>
     </div>
     <form class="rfq-form" id="rfqForm" action="https://formspree.io/f/xbdpazjr" method="POST">
@@ -386,36 +678,38 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
         <div class="dollar-wrap"><input type="number" name="estimated_value" min="0" step="100" placeholder="Estimated value (optional)"></div>
       </div>
       <textarea name="requirements" placeholder="Describe your requirement: item, NSN or part number, quantity, delivery location, and any special requirements *" required></textarea>
-      <p style="font-size:11px;color:var(--muted);padding:4px 0;">To attach a SOW or specs, email it directly to <a class="em" data-u="contracts" data-d="minttservices.com" style="color:var(--white);text-decoration:none;">contracts&#64;minttservices&#46;com</a></p>
+      <p style="font-size:11px;color:var(--muted);padding:2px 0;font-weight:300;">To attach a SOW or specs, email to <a class="em" data-u="contracts" data-d="minttservices.com" style="color:var(--white);text-decoration:none;">contracts&#64;minttservices&#46;com</a></p>
       <button type="submit" class="rfq-submit" id="rfqSubmit">Submit RFQ</button>
       <div class="msg-success" id="rfqSuccess">&#10003; Your RFQ has been submitted. We will respond within 4 business hours.</div>
       <div class="msg-error" id="rfqError">Something went wrong. Please call (702) 518-1813 to reach us directly.</div>
     </form>
   </div>
 </section>
+
+<!-- CONTACT -->
 <section class="snap-section page-mid" id="contact" data-label="Contact">
   <div class="section-label">Contact</div>
   <h2 class="section-title">General Inquiries.</h2>
   <div class="section-line"></div>
   <div class="contact-layout" style="margin-bottom:52px;align-items:stretch;">
-    <div style="border-right:1px solid var(--teal-border);padding-right:44px;display:flex;flex-direction:column;gap:24px;">
+    <div style="border-right:1px solid var(--teal-border);padding-right:44px;display:flex;flex-direction:column;gap:22px;">
       <div class="c-item"><div class="clabel">General Email</div><a class="em" data-u="info" data-d="minttservices.com">info&#64;minttservices&#46;com</a></div>
       <div class="c-item"><div class="clabel">Government &amp; Contracts</div><a class="em" data-u="contracts" data-d="minttservices.com">contracts&#64;minttservices&#46;com</a></div>
       <div class="c-item"><div class="clabel">Phone</div><a href="tel:+17025181813">(702) 518-1813</a></div>
       <div class="c-item"><div class="clabel">Location</div><p>Las Vegas, NV</p></div>
       <div class="c-item"><div class="clabel">Hours</div><p>Monday &ndash; Friday, 9am &ndash; 5pm PST</p></div>
-      <div style="margin-top:28px;border-top:1px solid var(--teal-border);padding-top:24px;display:flex;flex-direction:column;gap:18px;">
-        <div style="display:flex;align-items:flex-start;gap:14px;">
-          <div style="flex-shrink:0;width:38px;height:38px;background:rgba(27,122,110,0.15);border:1px solid var(--teal-border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:15px;">&#9201;</div>
-          <div><div style="font-size:11px;font-weight:500;color:var(--white);margin-bottom:3px;">4-Hour RFQ Response</div><div style="font-size:11px;color:var(--muted);line-height:1.65;">Government RFQs receive a response within 4 business hours.</div></div>
+      <div style="margin-top:20px;border-top:1px solid var(--teal-border);padding-top:22px;display:flex;flex-direction:column;gap:16px;">
+        <div class="c-icon-row">
+          <div class="c-icon">&#9201;</div>
+          <div class="c-icon-text"><div class="c-icon-label">4-Hour RFQ Response</div><div class="c-icon-sub">Government RFQs receive a response within 4 business hours.</div></div>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:14px;">
-          <div style="flex-shrink:0;width:38px;height:38px;background:rgba(27,122,110,0.15);border:1px solid var(--teal-border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:15px;">&#128222;</div>
-          <div><div style="font-size:11px;font-weight:500;color:var(--white);margin-bottom:3px;">Direct Access</div><div style="font-size:11px;color:var(--muted);line-height:1.65;">You reach the decision maker directly. No call centers, no runaround.</div></div>
+        <div class="c-icon-row">
+          <div class="c-icon">&#128222;</div>
+          <div class="c-icon-text"><div class="c-icon-label">Direct Access</div><div class="c-icon-sub">You reach the decision maker directly. No call centers, no runaround.</div></div>
         </div>
-        <div style="display:flex;align-items:flex-start;gap:14px;">
-          <div style="flex-shrink:0;width:38px;height:38px;background:rgba(27,122,110,0.15);border:1px solid var(--teal-border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:15px;">&#128230;</div>
-          <div><div style="font-size:11px;font-weight:500;color:var(--white);margin-bottom:3px;">UEI: RUDQJF2HWX94</div><div style="font-size:11px;color:var(--muted);line-height:1.65;">SAM registered. Ready to receive and execute government contract awards.</div></div>
+        <div class="c-icon-row">
+          <div class="c-icon">&#128230;</div>
+          <div class="c-icon-text"><div class="c-icon-label">UEI: RUDQJF2HWX94</div><div class="c-icon-sub">SAM registered. Ready to receive and execute government contract awards.</div></div>
         </div>
       </div>
     </div>
@@ -433,123 +727,141 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,15,30,0.9
         <option>General inquiry</option>
       </select>
       <input type="text" name="product" placeholder="Product or service needed (e.g. office supplies, uniforms, PPE)">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
         <input type="text" name="quantity" placeholder="Estimated quantity">
         <input type="date" name="needed_by" style="color-scheme:dark;">
       </div>
-      <textarea name="message" placeholder="Any additional details — delivery location, specifications, or other requirements" style="min-height:70px;resize:vertical;"></textarea>
+      <textarea name="message" placeholder="Additional details — delivery location, specifications, or other requirements" style="min-height:70px;resize:vertical;"></textarea>
       <button type="submit" class="contact-submit" id="contactSubmit">Send Message</button>
       <div class="msg-success" id="contactSuccess">&#10003; Message sent. We will get back to you within 24 hours.</div>
       <div class="msg-error" id="contactError">Something went wrong. Please call (702) 518-1813 to reach us directly.</div>
     </form>
   </div>
+
+  <!-- FOOTER -->
   <div class="site-footer" style="margin:0 -5%;width:calc(100% + 10%);">
     <img src="logo.png" class="footer-logo" alt="Mintt Services LLC">
-    <p class="footer-story">Mintt is built from the initials of our founder's five children.<br>Mekhi, Izaiah, Nevaiah, Tyler, and Trenton.<br><em>It's not just a business. It's a legacy.</em></p>
-    <p style="font-size:11px;color:var(--muted);">Las Vegas, NV &nbsp;|&nbsp; <a href="tel:+17025181813" style="color:var(--muted);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp; <a class="em" data-u="info" data-d="minttservices.com" style="color:var(--muted);text-decoration:none;">info&#64;minttservices&#46;com</a></p>
-    <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
+    <p class="footer-story">
+      Mintt is built from the initials of our founder's five children.<br>
+      Mekhi, Izaiah, Nevaiah, Tyler, and Trenton.<br>
+      <em>It's not just a business. It's a legacy.</em>
+    </p>
+    <p style="font-size:11px;color:rgba(160,171,190,0.55);">
+      Las Vegas, NV &nbsp;|&nbsp;
+      <a href="tel:+17025181813" style="color:rgba(160,171,190,0.55);text-decoration:none;">(702) 518-1813</a> &nbsp;|&nbsp;
+      <a class="em" data-u="info" data-d="minttservices.com" style="color:rgba(160,171,190,0.55);text-decoration:none;">info&#64;minttservices&#46;com</a>
+    </p>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+    </div>
     <p class="footer-copy">&copy; <span id="year"></span> Mintt Services LLC. All rights reserved.</p>
   </div>
 </section>
+
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
-document.querySelectorAll('a.em[data-u]').forEach(function(a) {
-  var href = 'mail' + 'to:' + a.getAttribute('data-u') + '@' + a.getAttribute('data-d');
-  a.setAttribute('href', href);
+
+// Obfuscated emails
+document.querySelectorAll('a.em[data-u]').forEach(function(a){
+  a.setAttribute('href','mail'+'to:'+a.getAttribute('data-u')+'@'+a.getAttribute('data-d'));
 });
-var hbg = document.getElementById('hamburger');
-if (hbg) hbg.addEventListener('click', function() {
-  var menu = document.getElementById('mobileMenu');
-  var open = menu.style.display === 'flex';
-  menu.style.display = open ? 'none' : 'flex';
-  var s = document.querySelectorAll('.hamburger span');
-  if (!open) {
-    s[0].style.transform = 'rotate(45deg) translate(5px,5px)';
-    s[1].style.opacity = '0';
-    s[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
-  } else {
-    s[0].style.transform = '';
-    s[1].style.opacity = '1';
-    s[2].style.transform = '';
-  }
+
+// Hamburger
+var hbg=document.getElementById('hamburger');
+if(hbg) hbg.addEventListener('click',function(){
+  var menu=document.getElementById('mobileMenu');
+  var open=menu.style.display==='flex';
+  menu.style.display=open?'none':'flex';
+  var s=document.querySelectorAll('.hamburger span');
+  if(!open){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)';}
+  else{s[0].style.transform='';s[1].style.opacity='1';s[2].style.transform='';}
 });
-document.querySelectorAll('.mobile-menu [data-dest]').forEach(function(link) {
-  link.addEventListener('click', function(e) {
+document.querySelectorAll('.mobile-menu [data-dest]').forEach(function(link){
+  link.addEventListener('click',function(e){
     e.preventDefault();
-    var dest = this.getAttribute('data-dest');
-    document.getElementById('mobileMenu').style.display = 'none';
-    var s = document.querySelectorAll('.hamburger span');
-    s[0].style.transform = ''; s[1].style.opacity = '1'; s[2].style.transform = '';
-    setTimeout(function() { document.getElementById(dest).scrollIntoView({behavior:'smooth'}); }, 100);
+    var dest=this.getAttribute('data-dest');
+    document.getElementById('mobileMenu').style.display='none';
+    var s=document.querySelectorAll('.hamburger span');
+    s[0].style.transform='';s[1].style.opacity='1';s[2].style.transform='';
+    setTimeout(function(){document.getElementById(dest).scrollIntoView({behavior:'smooth'});},100);
   });
 });
-document.querySelectorAll('.svc-tab[data-panel]').forEach(function(tab) {
-  tab.addEventListener('click', function() {
-    var name = tab.getAttribute('data-panel');
-    document.querySelectorAll('.svc-panel').forEach(function(p) { p.style.display = 'none'; });
-    document.querySelectorAll('.svc-tab').forEach(function(t) { t.classList.remove('active'); });
-    document.getElementById('panel-' + name).style.display = 'block';
+
+// Service tabs
+document.querySelectorAll('.svc-tab[data-panel]').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    var name=tab.getAttribute('data-panel');
+    document.querySelectorAll('.svc-panel').forEach(function(p){p.style.display='none';});
+    document.querySelectorAll('.svc-tab').forEach(function(t){t.classList.remove('active');});
+    document.getElementById('panel-'+name).style.display='block';
     tab.classList.add('active');
   });
 });
-document.querySelectorAll('.naics-card').forEach(function(card) {
-  card.addEventListener('click', function() {
-    var isOpen = card.classList.contains('open');
-    document.querySelectorAll('.naics-card').forEach(function(c) { c.classList.remove('open'); });
-    if (!isOpen) card.classList.add('open');
+
+// NAICS accordion
+document.querySelectorAll('.naics-card').forEach(function(card){
+  card.addEventListener('click',function(){
+    var isOpen=card.classList.contains('open');
+    document.querySelectorAll('.naics-card').forEach(function(c){c.classList.remove('open');});
+    if(!isOpen) card.classList.add('open');
   });
 });
-var rfq = document.getElementById('rfqForm');
-if (rfq) rfq.addEventListener('submit', function(e) {
+
+// RFQ form
+var rfq=document.getElementById('rfqForm');
+if(rfq) rfq.addEventListener('submit',function(e){
   e.preventDefault();
-  var btn = document.getElementById('rfqSubmit');
-  var ok = document.getElementById('rfqSuccess');
-  var err = document.getElementById('rfqError');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  fetch(rfq.action, { method: 'POST', body: new FormData(rfq), headers: { Accept: 'application/json' } })
-    .then(function(r) {
-      if (r.ok) { rfq.reset(); ok.style.display = 'block'; err.style.display = 'none'; btn.textContent = 'Sent'; }
-      else { throw new Error(); }
+  var btn=document.getElementById('rfqSubmit');
+  var ok=document.getElementById('rfqSuccess');
+  var err=document.getElementById('rfqError');
+  btn.textContent='Sending...';btn.disabled=true;
+  fetch(rfq.action,{method:'POST',body:new FormData(rfq),headers:{Accept:'application/json'}})
+    .then(function(r){
+      if(r.ok){rfq.reset();ok.style.display='block';err.style.display='none';btn.textContent='Sent';}
+      else{throw new Error();}
     })
-    .catch(function() { err.style.display = 'block'; ok.style.display = 'none'; btn.textContent = 'Submit RFQ'; btn.disabled = false; });
+    .catch(function(){err.style.display='block';ok.style.display='none';btn.textContent='Submit RFQ';btn.disabled=false;});
 });
-var cf = document.getElementById('contactForm');
-if (cf) cf.addEventListener('submit', function(e) {
+
+// Contact form
+var cf=document.getElementById('contactForm');
+if(cf) cf.addEventListener('submit',function(e){
   e.preventDefault();
-  var btn = document.getElementById('contactSubmit');
-  var ok = document.getElementById('contactSuccess');
-  var err = document.getElementById('contactError');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  fetch(cf.action, { method: 'POST', body: new FormData(cf), headers: { Accept: 'application/json' } })
-    .then(function(r) {
-      if (r.ok) { cf.reset(); ok.style.display = 'block'; err.style.display = 'none'; btn.textContent = 'Sent'; }
-      else { throw new Error(); }
+  var btn=document.getElementById('contactSubmit');
+  var ok=document.getElementById('contactSuccess');
+  var err=document.getElementById('contactError');
+  btn.textContent='Sending...';btn.disabled=true;
+  fetch(cf.action,{method:'POST',body:new FormData(cf),headers:{Accept:'application/json'}})
+    .then(function(r){
+      if(r.ok){cf.reset();ok.style.display='block';err.style.display='none';btn.textContent='Sent';}
+      else{throw new Error();}
     })
-    .catch(function() { err.style.display = 'block'; ok.style.display = 'none'; btn.textContent = 'Send Message'; btn.disabled = false; });
+    .catch(function(){err.style.display='block';ok.style.display='none';btn.textContent='Send Message';btn.disabled=false;});
 });
-var pages = document.querySelectorAll('.snap-section');
-var indicator = document.getElementById('pageIndicator');
-pages.forEach(function(page) {
-  var dot = document.createElement('div');
-  dot.className = 'page-dot';
-  dot.innerHTML = '<span class="dot-label">' + page.dataset.label + '</span>';
-  dot.addEventListener('click', function() { page.scrollIntoView({behavior:'smooth'}); });
+
+// Page indicator
+var pages=document.querySelectorAll('.snap-section');
+var indicator=document.getElementById('pageIndicator');
+pages.forEach(function(page){
+  var dot=document.createElement('div');
+  dot.className='page-dot';
+  dot.innerHTML='<span class="dot-label">'+page.dataset.label+'</span>';
+  dot.addEventListener('click',function(){page.scrollIntoView({behavior:'smooth'});});
   indicator.appendChild(dot);
 });
-var obs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      var idx = Array.from(pages).indexOf(entry.target);
-      document.querySelectorAll('.page-dot').forEach(function(d, i) { d.classList.toggle('active', i === idx); });
-      var id = entry.target.id;
-      document.querySelectorAll('[data-page]').forEach(function(a) { a.classList.toggle('active', a.getAttribute('data-page') === id); });
-      history.replaceState(null, '', '#' + id);
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      var idx=Array.from(pages).indexOf(entry.target);
+      document.querySelectorAll('.page-dot').forEach(function(d,i){d.classList.toggle('active',i===idx);});
+      var id=entry.target.id;
+      document.querySelectorAll('[data-page]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-page')===id);});
+      history.replaceState(null,'','#'+id);
     }
   });
-}, {threshold: 0.5});
-pages.forEach(function(p) { obs.observe(p); });
+},{threshold:0.4});
+pages.forEach(function(p){obs.observe(p);});
 </script>
 </body>
 </html>
